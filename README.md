@@ -4,7 +4,7 @@ Projeto que objetiva criar uma rede social para facilitar a troca de habilidades
 Integrantes:
 - Amanda Andrade [@amanandrade](https://github.com/amanandrade/)
 - Beatriz [@1beingbe1](https://github.com/1beingbe1)
-- Felgueiras [@GitSilni](https://github.com/GitSilni)
+- Felgueiras Zeferino Diogo da Silva [@GitSilni](https://github.com/GitSilni)
 - Guilherme Rodrigues [@Guiilhermerp](https://github.com/Guiilhermerp)
 - Nkuansambo Justem Dombaxe [@Dombaxe](https://github.com/Dombaxe)
 - Taísa Salton [@taisalton](https://github.com/taisalton)
