@@ -10,77 +10,93 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/localstyle.css">
     <title>Busca</title>
 </head>
 
 <body>
-    <header>
+    <!-- <header class="fixed-top"> -->
+    <header class="mx-md-4 d-flex justify-content-center">
         <div class="container">
+            <!-- navbar -->
             <div class="row">
-                <!-- navbar -->
-                <div class="col-12 bg-light sticky-top py-3">
-
-texto
-
-                </div>
-                <!-- busca -->
-                <div class="col-12 bg-secondary py-2 text-center">
+                <nav class="navbar navbar-expand-md navbar-light bg-light col-12">
+                    <div class="row px-2">
+                        <a class="navbar-item d-flex justify-content-center align-items center" href="index.html">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                        </a>
+                        <a class="nav-item">Busca</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="#">Home <span
+                                            class="sr-only">(atual)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="#">Configurações</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="#">Meu Perfil</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- busca -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 bg-light py-2 text-center">
                     <form class="form-row my-2 my-lg-0">
                         <span class="col-10">
                             <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
                         </span>
-                        <button class="btn btn-primary btn-sm col-2 d-flex justify-content-center align-items center" type="submit" value="Submit"><i class="material-icons">search</i></button>
+                        <button
+                            class="btn btn-outline-secondary px-md-3 d-flex justify-content-center align-items center"
+                            type="submit" value="Submit"><i class="material-icons">search</i></button>
                     </form>
                 </div>
-                <!-- navbar
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item py-2">
-                                <a class="navbar-item" href="index.html">
-                                    <i class="material-icons">keyboard_arrow_left</i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Busca</a>
-                            </li>
-                        </ul>
-    
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-    
-                        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Configurações <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Meu perfil<span class="sr-only">(current)</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-
-                <div class="col-12">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
-                        <button class="btn my-2 my-sm-0" type="submit"><i class="material-icons">search</i></button>
-                    </form>
-                </div> -->
             </div>
         </div>
     </header>
-    <nav>
-
-    </nav>
-
+    <main class="mx-md-4 d-flex justify-content-center">
+        <div class="container">
+            <!-- buttons de filtro principal -->
+            <div class="row mt-4 mx-md-5 d-flex justify-content-around">
+                <div><button type="submit" value="pessoas" class="d-flex flex-column p-3 px-md-5 btn btn-success"><i
+                            class="material-icons d-flex flex-column">people</i>Pessoas</button></div>
+                <div><button type="submit" value="pessoas" class="d-flex flex-column p-3 px-md-5 btn btn-danger"><i
+                            class="material-icons d-flex flex-column">extension</i>Habilidades</button></div>
+                <div><button type="submit" value="pessoas" class="d-flex flex-column p-3 px-md-5 btn btn-info"><i
+                            class="material-icons d-flex flex-column">gamepad</i>Áreas DH</button></div>
+            </div>
+    
+            <span class="row pt-3 m-2"><p>Você pode se interessar também por: </p></span>
+    
+    
+            <!-- buttons de sugestões de busca -->
+            <div class="row mt-3 d-flex justify-content-around">
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">CSS</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">HTML</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">React</button>
+            </div>
+            <div class="row mt-3 d-flex justify-content-around">
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">Bootstrap</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">Marketing Digital</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">PHP</button>
+            </div>
+            <div class="row mt-3 d-flex justify-content-around">
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">Python</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">Ciência de Dados</button>
+                <button type="button" class="text-wrap py-3 btn btn-outline-info" style="width: 6rem;">Comunicação em Mídias Sociais</button>
+            </div>
+        </div>
+    </main>
 
 
     <!-- bootstrap script -->
