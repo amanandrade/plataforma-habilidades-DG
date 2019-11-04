@@ -37,15 +37,20 @@
             background: rgba(255, 204, 49, 0.7);
         }
 
-        .boxNav{
+        .boxNav {
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.7);
         }
 
-        img{
+        .boxPerfil>img {
             width: 225px;
             height: 225px;
+        }
+
+        .boxNav>ul>li>img {
+            width: 70px;
+            height: 70px;
         }
 
         p {
@@ -56,7 +61,7 @@
             line-height: 16px;
         }
 
-        .btn{
+        .btn {
             width: 100%;
         }
     </style>
@@ -67,7 +72,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            
+
             <!-- Box amarela -->
             <div class="boxPerfil">
 
@@ -75,11 +80,9 @@
                 <i class="material-icons menuButton d-flex flex-row-reverse pr-5 pt-5"> menu </i>
 
                 <!-- Foto / Nome / Descricao -->
-                <div>
-                    <img src="./img/perfil.jpg" alt="" class="rounded-circle  border border-white ">
-                    <h2 class="d-flex align-items-center">Nome Sobrenome</h2>
-                    <p class="">Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
-                </div>
+                <img src="./img/perfil.jpg" alt="" class="rounded-circle  border border-white ">
+                <h2 class="d-flex align-items-center">Nome Sobrenome</h2>
+                <p class="">Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
 
                 <!-- Botoes de navegacao -->
                 <div class="btn">
@@ -91,9 +94,28 @@
 
                 <!-- Box branca / Conteudo da navegacao -->
                 <div class="boxNav rounded">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptate ut voluptatum? Expedita reiciendis iste accusamus consectetur obcaecati pariatur, at officia atque corporis! Asperiores soluta delectus amet facere voluptatum accusantium.
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure culpa voluptate, magnam in, autem mollitia numquam aliquid dignissimos distinctio eum molestiae, sequi vitae atque dicta unde sed quaerat fugit eaque.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum at placeat dignissimos dolor exercitationem beatae. Eaque repellendus sint, asperiores quam consequuntur, neque, sit labore fugiat quaerat unde aperiam tenetur.
+                    <ul>
+                        <!-- Lista com foto de perfil e messagem da notificacao -->
+                        <li>
+                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                            <div class="border border-dark rounded-pill">
+                                Justem Dombaxe busca por ajuda em <b>PHP</b>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                            <div class="border border-dark rounded-pill">
+                                Amanda Andrade busca por ajuda em <b>Data Science</b>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                            <div class="border border-dark rounded-pill">
+                                Beatriz Amorim busca por ajuda em <b>CSS</b>
+                            </div>
+
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
