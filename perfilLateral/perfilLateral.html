@@ -13,24 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
 
+    <link rel="stylesheet" href="../style/localstyle.css">
+
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            height: 100%;
-            font-size: 16px;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
         .boxPerfil {
             width: 80%;
             height: 100%;
@@ -43,9 +28,9 @@
             background: rgba(255, 255, 255, 0.7);
         }
 
-        .boxPerfil>img {
-            width: 225px;
-            height: 225px;
+        #perfil {
+            width: 150px;
+            height: 150px;
         }
 
         .boxNav>ul>li>img {
@@ -57,8 +42,8 @@
             font-family: 'Roboto Condensed';
             font-style: normal;
             font-weight: bold;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 13px;
+            line-height: 15px;
         }
 
         .btn {
@@ -74,44 +59,63 @@
         <div class="row">
 
             <!-- Box amarela -->
-            <div class="boxPerfil">
+            <div class="boxPerfil ">
 
                 <!-- Botao de menu -->
-                <i class="material-icons menuButton d-flex flex-row-reverse pr-5 pt-5"> menu </i>
+                <i class="material-icons menuButton d-flex flex-row-reverse pr-5 pt-3"> menu </i>
 
-                <!-- Foto / Nome / Descricao -->
-                <img src="./img/perfil.jpg" alt="" class="rounded-circle  border border-white ">
-                <h2 class="d-flex align-items-center">Nome Sobrenome</h2>
-                <p class="">Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                <!-- Foto de Perfil -->
+                <img id="perfil" src="./img/perfil.jpg" alt="" class="rounded-circle  border border-white d-flex ">
+
+                <div class="d-flex flex-column ">
+                    <!-- Nome / Descricao -->
+                    <h3 class="">Nome Sobrenome</h3>
+                    <p class="">Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                </div>
+
 
                 <!-- Botoes de navegacao -->
                 <div class="btn">
                     <div class="btn-group border-bottom border-white" role="group" aria-label="Basic example">
-                        <button type="button" class="btn ">Notificações</button>
-                        <button type="button" class="btn ">Menssagens</button>
+                        <button type="button" class="btn btn-outline">Notificações</button>
+                        <button type="button" class="btn btn-outline-ligth">Menssagens</button>
                     </div>
                 </div>
 
                 <!-- Box branca / Conteudo da navegacao -->
                 <div class="boxNav rounded">
-                    <ul>
+                    <ul class="list-group">
                         <!-- Lista com foto de perfil e messagem da notificacao -->
                         <li>
                             <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill">
-                                Justem Dombaxe busca por ajuda em <b>PHP</b>
+                            <div class="border border-dark rounded-pill d-inline-flex">
+                                Justem Dombaxe busca por ajuda em PHP
                             </div>
                         </li>
                         <li>
                             <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill">
-                                Amanda Andrade busca por ajuda em <b>Data Science</b>
+                            <div class="border border-dark rounded-pill d-inline-flex">
+                                Amanda Andrade busca por ajuda em Data Science
                             </div>
                         </li>
                         <li>
                             <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill">
-                                Beatriz Amorim busca por ajuda em <b>CSS</b>
+                            <div class="border border-dark rounded-pill d-inline-flex">
+                                Beatriz Amorim busca por ajuda em CSS
+                            </div>
+
+                        </li>
+                        <li>
+                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                            <div class="border border-dark rounded-pill d-inline-flex">
+                                Roben busca por ajuda em JavaScript
+                            </div>
+
+                        </li>
+                        <li>
+                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                            <div class="border border-dark rounded-pill d-inline-flex">
+                                <m class="p-1">Ander busca por ajuda em HTML</m>
                             </div>
 
                         </li>
