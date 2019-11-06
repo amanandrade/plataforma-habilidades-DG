@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario Cadastro</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        .input-group-prepend>.input-group-text {
+            background: white;
+            width: 35px;
+            /*margin-bottom: 0;
+            padding-bottom: 0;*/
+        }
+
+        .input-group>.input_idade {
+            background: rgb(189, 186, 186);
+        }
+
+        .linha_input,
+        .input_idade,
+        .combobox_curso {
+            border-radius: 0;
+        }
+
+        .grupo_icone_input {
+            margin-top: 25px;
+        }
+
+        .c_footer {
+            margin-top: 50px;
+            margin-bottom: 2px;
+            background: rgb(214, 211, 211);
+            height: 30px;
+        }
+
+
+        /*-------------- styles foto perfil ------------*/
+
+        .imagePreview {
+            width: 150px;
+            height: 150px;
+            background-position: center center;
+
+            background-color: rgb(202, 196, 196);
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+
+            /*------------------------------------------------*/
+            border-radius: 100%;
+            /*------------------------------------------------*/
+        }
+
+        .botao_adicionar {
+            /*------------------------------------------------*/
+            width: 120px;
+            /*margin: 0 auto;*/
+            /*margin-top: 30px;*/
+            /*margin-left: 100px;*/
+            color: white;
+            border-radius: 10px;
+            background: rgb(230, 190, 13);
+            /*------------------------------------------------*/
+
+        }
+
+        .imgUp {
+            /* margin-top: 15px;
+            margin-bottom: 15px;
+            margin: 0 auto;*/
+
+        }
+
+        /*------------- end styles perfil --------------*/
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container c_header">
+
+        </div>
+    </header>
+
+
+    <!--------------------------------------------- container c_nav ------------------------------------------------------>
+    <div class="container c_nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">DHELP</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav align-items-center">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="#">Features</a>
+                    <a class="nav-item nav-link" href="#">Pricing</a>
+                    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!----------------------------------------------------- end container c_nav ---------------------------------------------->
+    <!------------------------------------------------- container c_form ------------------------------------------------------>
+    <div class="container c_form">
+
+        <form class="formulario" method="POST" action="" enctype="multipart/form-data">
+
+            <div class="row mt-3">
+                <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
+                    <h4>Formulario de Cadastro</h4>
+                </div>
+            </div>
+
+            <div class="form-row mt-3">
+                <div class="col-md-6 col-sm-12 m-auto mb-3">
+
+                    <!---------------------------------------------------- Nome -------------------------------------------------->
+                    <div class="input-group grupo_icone_input mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="Nome Sobrenome" required>
+                    </div>
+
+                    <!------------------------------------------------ E-mail -------------------------------------------------->
+                    <div class="input-group grupo_icone_input ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <input type="email" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="E-mail" required>
+                    </div>
+
+                    <!------------------------------------------------ Password -------------------------------------------------->
+                    <div class="input-group grupo_icone_input ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"></span>
+                        </div>
+                        <input type="password"
+                            class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste"
+                            placeholder="Digite sua senha" required>
+                    </div>
+
+                    <!------------------------------------------------ Confirm Password ------------------------------------------->
+                    <div class="input-group grupo_icone_input ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input type="password"
+                            class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste"
+                            placeholder="Confirmar senha" required>
+                    </div>
+
+                    <!------------------------------------------------ Telefone -------------------------------------------------->
+                    <div class="input-group grupo_icone_input ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"><i class="fa fa-phone"></i></span>
+                        </div>
+                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="Telefone" required>
+                    </div>
+
+                    <!-------------------------------------------------- Genero -------------------------------------------------->
+                    <div class="tipo_sexo">
+                        <div class="row mt-3">
+                            <div class="col ml-4">
+                                <label for="" class="">Genero</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ml-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                        Masculino
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios2" value="option2" checked>
+                                    <label class="form-check-label" for="exampleRadios2">
+                                        Feminino
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios3" value="option3" checked>
+                                    <label class="form-check-label" for="exampleRadios3">
+                                        Prefiro nao me identificar
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-------------------------------------------- Data Nascimento / idade -------------------------------------------------->
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="row mt-3 ml-3">
+                                <div class="col">
+                                    <label for="teste">Data Nascimento</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group grupo_icone_input mt-0">
+                                <div class="input-group-prepend">
+                                    <span
+                                        class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                        id="inputGroupPrepend"><i class="fa fa-circle"></i></span>
+                                </div>
+                                <input type="date"
+                                    class="form-control input_idade border-top-0 border-right-0 border-left-0"
+                                    id="teste" placeholder="Idade" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------------------------------------------ Comobobox Curso Actual -------------------------------------------------->
+                    <div class="row mt-3">
+                        <div class="col-sm-12">
+
+                            <div class="row mt-0 ml-3">
+                                <div class="col">
+                                    <label for="teste">Curso actual na digital house</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span
+                                        class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                        id="inputGroupPrepend"><i class="fa fa-graduation-cap"></i></span>
+                                </div>
+                                <select class="custom-select  combobox_curso" id="inlineFormCustomSelect">
+                                    <option class="escolha" selected>Choose...</option>
+                                    <option class="escolha" value="1">Full Stack 7</option>
+                                    <option class="escolha" value="2">Two</option>
+                                    <option class="escolha" value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!------------------------------------------------------ imagem de perfil ------------------------------------------------------->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 imgUp">
+                                <div class="row d-flex justify-content-center mt-3">
+                                    <div class="imagePreview" style=""></div>
+                                </div>
+                                <div class="row d-flex justify-content-center mt-2">
+                                    <label class="btn botao_adicionar">
+                                        Inserir foto<input type="file" class="uploadFile img" value="Upload Photo"
+                                            style="width: 0px;height: 0px;overflow: hidden;">
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!----------------------------------------------------------------------------------------------------------->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row d-flex justify-content-center mt-3">
+                    
+                        <button class="btn btn-primary mr-5" type="submit">CADASTRAR</button>
+                        <button class="btn btn-danger" type="submit">CANCELAR</button>
+                    
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <!-------------------------------------- end container c_form ------------------------------------------------------>
+    <div class="container">
+        <footer class="footer  c_footer d-flex justify-content-center">
+            <p>CopyRight_DHelp_2019</p>
+        </footer>
+    </div>
+
+
+    <!--------------------------------------------------- javascrip ---------------------------------------------------->
+
+    <script src="./js/jquery.min.js.transferir"></script>
+    <script src="./js/jquery-ui.min.js.transferir"></script>
+    <script src="./js/bootstrap.min.js.transferir"></script>
+
+    <script id="rendered-js">
+        $(".imgAdd").click(function () {
+            $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+        });
+        $(document).on("click", "i.del", function () {
+            $(this).parent().remove();
+        });
+        $(function () {
+            $(document).on("change", ".uploadFile", function () {
+                var uploadFile = $(this);
+                var files = !!this.files ? this.files : [];
+                if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+                if (/^image/.test(files[0].type)) {// only image file
+                    var reader = new FileReader(); // instance of the FileReader
+                    reader.readAsDataURL(files[0]); // read the local file
+
+                    reader.onloadend = function () {// set image data as background of div
+                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image", "url(" + this.result + ")");
+                    };
+                }
+
+            });
+        });
+            //# sourceURL=pen.js
+    </script>
+
+
+    <!-------------------------------------------------- end javascript ------------------------------------------------>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
