@@ -49,7 +49,7 @@
                             <a class="nav-link align-items text-right" href="../busca/busca.html">Busca</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link align-items text-right" href="#">Chat</a>
+                            <a class="nav-link align-items text-right" href="../chat/chat.html">Chat</a>
                         </li>
                     </ul>
                 </div>
@@ -57,18 +57,26 @@
         </nav>
 
         <div class="pt-3 row">
-            <div class=" d-flex justify-content-center ">
-                <!-- Foto de Perfil -->
-                <img id="imgPerfil" class="rounded-circle  border border-white d-flex " src="./img/perfil.jpg" alt="">
-            </div>
+            <!-- Parte superior FOTO-NOME-DESCRICAO -->
+            <div class="col-lg-12">
 
-            <!-- Nome / Descricao -->
-            <div class="d-flex flex-column ">
-                <h3>Nome Sobrenome</h3>
-                    <a style="color: black" class="navbar-item d-flex justify-content-center " href="##">
-                        <i class="material-icons">create</i>
-                    </a>
-                <p>Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                <!-- Foto de Perfil -->
+                <div class=" d-flex justify-content-center ">
+                    <img id="imgPerfil" class="rounded-circle  border border-white d-flex " src="./img/perfil.jpg" alt="">
+                </div>
+
+                <!-- Nome / Descricao -->
+                <div class="d-flex flex-column ">
+                    <div class="d-flex justify-contenter-center">
+                        <h3>Nome Sobrenome</h3>
+                        <div class="d-flex">
+                            <a style="color: black" class="pl-2 pt-2 navbar-item " href="##">
+                                <i class="material-icons">create</i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                </div>
             </div>
 
 
@@ -77,15 +85,15 @@
                 <div class="pt-3 col-lg-12 col-md-8 cold-sm-6 col-xs-3">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-notificacao-tab" data-toggle="tab" href="#nav-notificacao" role="tab" aria-controls="nav-notificacao"
+                            <a style="color: rgb(136, 136, 136)" class="nav-item nav-link active" id="nav-notificacao-tab" data-toggle="tab" href="#nav-notificacao" role="tab" aria-controls="nav-notificacao"
                                 aria-selected="true">Notificação</a>
-                            <a class="nav-item nav-link" id="nav-mensagens-tab" data-toggle="tab" href="#nav-mensagens" role="tab" aria-controls="nav-mensagens"
+                            <a style="color: rgb(136, 136, 136)" class="nav-item nav-link" id="nav-mensagens-tab" data-toggle="tab" href="#nav-mensagens" role="tab" aria-controls="nav-mensagens"
                                 aria-selected="false">Mensagens</a>
                         </div>
                     </nav>
 
                     <!-- Conteudo da navegacao  -->
-                    <div class="col-md-12 col-sm-12 col-xs-3">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-3">
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-notificacao" role="tabpanel" aria-labelledby="nav-notificacao-tab">
                                 <!-- lista de notificacoes -->
