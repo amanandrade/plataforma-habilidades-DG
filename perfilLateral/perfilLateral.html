@@ -16,38 +16,14 @@
     <link rel="stylesheet" href="../style/localstyle.css">
 
     <style>
-        .boxPerfil {
-            width: 80%;
-            height: 100%;
-            background: rgba(255, 204, 49, 0.7);
-        }
-
-        .boxNav {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        #perfil {
+        #imgPerfil {
             width: 150px;
             height: 150px;
         }
 
-        .boxNav>ul>li>img {
+        .list-group * img {
             width: 70px;
             height: 70px;
-        }
-
-        p {
-            font-family: 'Roboto Condensed';
-            font-style: normal;
-            font-weight: bold;
-            font-size: 13px;
-            line-height: 15px;
-        }
-
-        .btn {
-            /* width: 100%; */
         }
     </style>
 
@@ -55,75 +31,218 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container">
 
-            <!-- Box amarela -->
-            <div class="boxPerfil ">
-
-                <!-- Botao de menu -->
-                <i class="material-icons menuButton d-flex flex-row-reverse pr-5 pt-3"> menu </i>
-
-                <!-- Foto de Perfil -->
-                <img id="perfil" src="./img/perfil.jpg" alt="" class="rounded-circle  border border-white d-flex ">
-
-                <div class="d-flex flex-column ">
-                    <!-- Nome / Descricao -->
-                    <h3 class="">Nome Sobrenome</h3>
-                    <p class="">Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
-                </div>
-
-
-                <!-- Botoes de navegacao -->
-                <div class="btn">
-                    <div class="btn-group border-bottom border-white" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-outline">Notificações</button>
-                        <button type="button" class="btn btn-outline-ligth">Menssagens</button>
-                    </div>
-                </div>
-
-                <!-- Box branca / Conteudo da navegacao -->
-                <div class="boxNav rounded">
-                    <ul class="list-group">
-                        <!-- Lista com foto de perfil e messagem da notificacao -->
-                        <li>
-                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill d-inline-flex">
-                                Justem Dombaxe busca por ajuda em PHP
-                            </div>
-                        </li> 
-                        <li>
-                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill d-inline-flex">
-                                Amanda Andrade busca por ajuda em Data Science
-                            </div>
+        <!-- Navbar / Botao de menu -->
+        <nav class="navbar navbar-expand-md navbar-light col-12">
+            <a class="navbar-item d-flex justify-content-center align-items-center" href="../home/home.html">
+                <i class="material-icons">keyboard_arrow_left</i>Home
+            </a>
+            <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <div class="justify-content-end">
+                    <ul class="navbar-nav mr-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link align-items text-right" href="../busca/busca.html">Busca</a>
                         </li>
-                        <li>
-                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill d-inline-flex">
-                                Beatriz Amorim busca por ajuda em CSS
-                            </div>
-
-                        </li>
-                        <li>
-                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill d-inline-flex">
-                                Roben busca por ajuda em JavaScript
-                            </div>
-
-                        </li>
-                        <li>
-                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
-                            <div class="border border-dark rounded-pill d-inline-flex">
-                                <m class="p-1">Ander busca por ajuda em HTML</m>
-                            </div>
-
+                        <li class="nav-item">
+                            <a class="nav-link align-items text-right" href="../chat/chat.html">Chat</a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </nav>
+
+        <div class="pt-3 row">
+            <!-- Parte superior FOTO-NOME-DESCRICAO -->
+            <div class="col-lg-12">
+
+                <!-- Foto de Perfil -->
+                <div class=" d-flex justify-content-center ">
+                    <img id="imgPerfil" class="rounded-circle  border border-white d-flex " src="./img/perfil.jpg" alt="">
+                </div>
+
+                <!-- Nome / Descricao -->
+                <div class="d-flex flex-column ">
+                    <div class="d-flex justify-contenter-center">
+                        <h3>Nome Sobrenome</h3>
+                        <div class="d-flex">
+                            <a style="color: black" class="pl-2 pt-2 navbar-item " href="##">
+                                <i class="material-icons">create</i>
+                            </a>
+                        </div>
+                    </div>
+                    <p>Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                </div>
+            </div>
+
+
+            <!-- Botoes de navegacao -->
+            <div class="row">
+                <div class="pt-3 col-lg-12 col-md-8 cold-sm-6 col-xs-3">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a style="color: rgb(136, 136, 136)" class="nav-item nav-link active" id="nav-notificacao-tab" data-toggle="tab" href="#nav-notificacao" role="tab" aria-controls="nav-notificacao"
+                                aria-selected="true">Notificação</a>
+                            <a style="color: rgb(136, 136, 136)" class="nav-item nav-link" id="nav-mensagens-tab" data-toggle="tab" href="#nav-mensagens" role="tab" aria-controls="nav-mensagens"
+                                aria-selected="false">Mensagens</a>
+                        </div>
+                    </nav>
+
+                    <!-- Conteudo da navegacao  -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-3">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-notificacao" role="tabpanel" aria-labelledby="nav-notificacao-tab">
+                                <!-- lista de notificacoes -->
+                                <ul style="list-style-type: none;" class="list-group">
+                                    <!-- Lista com foto de perfil e messagem da notificacao -->
+                                    <li>
+                                        <div class="d-flex pt-4">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">Justem Dombaxe busca por ajuda em
+                                                        <kbd>PHP</kbd>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">Amanda Andrade busca por ajuda em
+                                                        <kbd>Data Science</kbd>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">Guilherme oferece oportuidade em
+                                                        <kbd>Mídias Digitais</kbd>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">Beatriz Amorim busca por ajuda em
+                                                        <kbd>CSS</kbd>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">Felgueiras busca por ajuda em
+                                                        <kbd>JAVA</kbd>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="nav-mensagens" role="tabpanel" aria-labelledby="nav-mensagens-tab">
+                                <!-- lista de mensagens -->
+                                <ul style="list-style-type: none;" class="list-group">
+                                    <!-- Lista com foto de perfil e notificao de mensagens -->
+                                    <li>
+                                        <div class="d-flex pt-4">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <kbd>Justem Dombaxe:</kbd> Olá, Vi sua postagem! Gostaria de ajudar =)
+                                                        Quer conversar sobre?
+                                                    </p>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-success">Aceitar</button>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-danger">Rejeitar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <kbd>Felgueiras:</kbd> Olá, Vi sua postagem! Gostaria de ajudar =) Quer
+                                                        conversar sobre?
+                                                    </p>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-success">Aceitar</button>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-danger">Rejeitar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <kbd>Amanda Andrade:</kbd> Olá, quer conversar sobre Bootstrap.</p>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-success">Aceitar</button>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-danger">Rejeitar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <kbd>Beatriz Amorim:</kbd> Olá, Vi sua postagem! Gostaria de ajudar =)
+                                                        Quer conversar sobre?
+                                                    </p>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-success">Aceitar</button>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-danger">Rejeitar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="d-flex">
+                                            <img src="./img/perfil2.jpg" alt="" class="rounded-circle border border-white">
+                                            <div class="card border-silver rounded mb-3 rounded">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                        <kbd>Guilherme:</kbd> Olá, gostaria de tirar algumas dúvidas sobre PHP.</p>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-success">Aceitar</button>
+                                                    <button type="submit" value="" class="p-1 m-1 btn btn-danger">Rejeitar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
 
 
@@ -131,14 +250,13 @@
 
 
 
-
-    <!-- bootstrap script -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        <!-- bootstrap script -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
