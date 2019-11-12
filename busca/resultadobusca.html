@@ -21,7 +21,7 @@
             <!-- navbar -->
             <div class="row">
                 <nav class="navbar navbar-expand-md navbar-light col-12">
-                    <a class="navbar-item d-flex justify-content-center align-items-center" href="#">
+                    <a class="navbar-item d-flex justify-content-center align-items-center" href="../home/home.html">
                         <i class="material-icons">keyboard_arrow_left</i>Busca
                     </a>
                     <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
@@ -33,14 +33,20 @@
                         <div class="justify-content-end">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Home <span
+                                    <a class="nav-link align-items text-right" href="../home/home.html">Home <span
                                             class="sr-only">(atual)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Configurações</a>
+                                    <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                        Cadastro</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Meu Perfil</a>
+                                    <a class="nav-link align-items text-right"
+                                        href="../chat/chathome.html">Mensagens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
                                 </li>
                             </ul>
                         </div>
@@ -51,120 +57,167 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 py-2 text-center">
                     <form class="form-row my-2 my-lg-0">
-                        <span class="col-10">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
+                        <span class="col-10 pl-3">
+                            <input class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
                         </span>
                         <button class="btn px-md-3 d-flex justify-content-center align-items center" type="submit"
-                            value="Submit" href="resultadobusca.html"><i class="material-icons text-secondary">search</i></button>
+                            value="Submit"><i class="material-icons text-secondary">search</i></button>
                     </form>
+                    <!-- <form action="row">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <button class="btn btn-outline-secondary border-right-0 py-1" style="border: 1px solid #ced4da" type="submit" id="button-addon1">
+                                <i class="material-icons text-secondary">search</i>
+                              </button>
+                            </div>
+                            <input type="text" class="form-control border-left-0 pb-2" placeholder="" aria-describedby="button-addon1">
+                          </div>
+                    </form> -->
                 </div>
             </div>
         </div>
     </header>
-    <main>
-        <div class="container">
-            <span class="row pt-3 m-2">
+    <div class="container">
+        <div class="row">
+            <span class="pt-3 m-2 col-12">
                 <p>Resultado da busca: </p>
             </span>
         </div>
-        <!-- cards de resultado da busca -->
-        <div class="container">
-            <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/mulher1.JPG"
-                                alt="Foto Maria da Graça">
-                            <h5 class="card-title my-0 ml-2">Maria da Graça</h5>
+    </div>
+    <main class="container">
+        <div class="row">
+            <!-- cards de resultado da busca -->
+            <div class="d-flex col-md-9 justify-content-center">
+                <div class="container mx-2 p-0">
+                    <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/mulher1.JPG"
+                                        alt="Foto Maria da Graça">
+                                    <h5 class="card-title my-0 ml-2">Maria da Graça</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text">PHP, Laravel, <mark>CSS</mark></p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
+                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                                </div>
+                            </div>
                         </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text">PHP, Laravel, <mark>CSS</mark></p>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
-                            <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/homem1.JPG"
+                                        alt="Foto Josias Ricardo">
+                                    <h5 class="card-title my-0 ml-2">Josias Ricardo</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text"><mark>CSS</mark>, Marketing Digital, Design</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
+                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/homem1.JPG"
-                                alt="Foto Josias Ricardo">
-                            <h5 class="card-title my-0 ml-2">Josias Ricardo</h5>
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/homem2.JPG"
+                                        alt="Foto Samuel Francisco">
+                                    <h5 class="card-title my-0 ml-2">Samuel Francisco</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text">PHP, <mark>CSS</mark>, Data Analytics</p>
+                                <div class="d-flex justify-content-between">
+                                    <button href="#" class="btn btn-light text-primary py-1 px-4">Perfil</button>
+                                    <button href="#" class="btn btn-info py-1 px-4">Chat</button>
+                                </div>
+                            </div>
                         </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text"><mark>CSS</mark>, Marketing Digital, Design</p>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
-                            <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/mulher2.JPG"
+                                        alt="Foto Susana Alencar">
+                                    <h5 class="card-title my-0 ml-2">Susana Alencar</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text">PHP, Laravel, <mark>CSS</mark></p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
+                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/homem2.JPG"
-                                alt="Foto Samuel Francisco">
-                            <h5 class="card-title my-0 ml-2">Samuel Francisco</h5>
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/mulher3.JPG"
+                                        alt="Foto Marina Ribeiro">
+                                    <h5 class="card-title my-0 ml-2">Marina Ribeiro</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text"><mark>CSS</mark>, Marketing Digital, Design</p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
+                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                                </div>
+                            </div>
                         </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text">PHP, <mark>CSS</mark>, Data Analytics</p>
-                        <div class="d-flex justify-content-between">
-                            <button href="#" class="btn btn-light text-primary py-1 px-4">Perfil</button>
-                            <button href="#" class="btn btn-info py-1 px-4">Chat</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/mulher2.JPG"
-                                alt="Foto Susana Alencar">
-                            <h5 class="card-title my-0 ml-2">Susana Alencar</h5>
-                        </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text">PHP, Laravel, <mark>CSS</mark></p>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
-                            <a href="#" class="btn btn-info py-1 px-4">Chat</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/mulher3.JPG"
-                                alt="Foto Marina Ribeiro">
-                            <h5 class="card-title my-0 ml-2">Marina Ribeiro</h5>
-                        </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text"><mark>CSS</mark>, Marketing Digital, Design</p>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a>
-                            <a href="#" class="btn btn-info py-1 px-4">Chat</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="row align-items-center mx-auto">
-                            <img class="card-img-top rounded-circle w-25" src="./img/homem3.JPG"
-                                alt="Foto Hugo Leal">
-                            <h5 class="card-title my-0 ml-2">Hugo Leonardo</h5>
-                        </div>
-                        <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
-                        <p class="card-text">PHP, <mark>CSS</mark>, Data Analytics</p>
-                        <div class="d-flex justify-content-between">
-                            <button href="#" class="btn btn-light text-primary py-1 px-4">Perfil</button>
-                            <button href="#" class="btn btn-info py-1 px-4">Chat</button>
+                        <div class="card mb-3" style="width: 22rem;">
+                            <div class="card-body">
+                                <div class="row align-items-center mx-auto">
+                                    <img class="card-img-top rounded-circle w-25" src="./img/homem3.JPG"
+                                        alt="Foto Hugo Leal">
+                                    <h5 class="card-title my-0 ml-2">Hugo Leonardo</h5>
+                                </div>
+                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                <p class="card-text">PHP, <mark>CSS</mark>, Data Analytics</p>
+                                <div class="d-flex justify-content-between">
+                                    <button href="#" class="btn btn-light text-primary py-1 px-4">Perfil</button>
+                                    <button href="#" class="btn btn-info py-1 px-4">Chat</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- aside cards de propaganda -->
+            <aside class="card d-flex card border-0 col-md-3 justify-content-top">
+                <div class="card">
+                    <img src="../home/issues/img/161ee49b5ea427342520fed80df71a97.webp" class="card-img-top " alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Job na área </h5>
+                        <p class="card-text">
+                            <b>João Freitas</b> precisa de alguém com habilidades na área de Front-end! Percebemos que
+                            você
+                            indicou essa mesma tag :) Que tal entrar nessa?</p>
+                        <a href="#" class="btn btn-primary stretched-link">Participe!</a>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <img src="../home/issues/img/191015172649.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Adicione na agenda!</h5>
+                        <p class="card-text"> Nesse encontro, professores apresentam os cursos oferecidos na DH e as
+                            oportinidades de trabalho
+                            de acordo com cada um deles. Tire suas dúvidas com as pessoas certas!!</p>
+                        <a href="#" class="btn btn-primary stretched-link">Inscreva-se!</a>
+                    </div>
+                </div>
+            </aside>
         </div>
-
     </main>
 
+    <footer class="container mt-3">
+        <div class="row justify-content-center align-itens-center pt-4 bg-light">
+            <a href="mailto:email@contato.com.br">Fale Conosco</a>
+        </div>
+        <div class="row justify-content-center align-itens-center pb-4 bg-light">
+            <p class="m-0">© Copyright (nome) 2019</p>
+        </div>
+    </footer>
 
     <!-- bootstrap script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

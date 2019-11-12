@@ -33,14 +33,20 @@
                         <div class="justify-content-end">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Home <span
+                                    <a class="nav-link align-items text-right" href="../home/home.html">Home <span
                                             class="sr-only">(atual)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Configurações</a>
+                                    <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                        Cadastro</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Meu Perfil</a>
+                                    <a class="nav-link align-items text-right"
+                                        href="../chat/chathome.html">Mensagens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
                                 </li>
                             </ul>
                         </div>
@@ -51,7 +57,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-12 py-2 text-center">
                     <form class="form-row my-2 my-lg-0">
-                        <span class="col-10">
+                        <span class="col-10 pl-3">
                             <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
                         </span>
                         <button class="btn px-md-3 d-flex justify-content-center align-items center" type="submit"
@@ -66,15 +72,15 @@
     <main>
         <div class="container">
             <!-- buttons de filtro principal -->
-            <div class="row mt-4 mx-md-5 d-flex justify-content-around">
+            <div class="row mx-md-5 d-flex justify-content-around">
                 <div><button type="submit" value="pessoas"
-                        class="d-flex flex-column p-3 px-md-5 btn btn-success align-items-center"><i
-                            class="material-icons d-flex flex-column ">people</i>Pessoas</button></div>
+                        class="d-flex flex-column btn btn-success align-items-center mt-3" style="width: 18rem"><i
+                            class="material-icons d-flex flex-column">people</i>Pessoas</button></div>
                 <div><button type="submit" value="pessoas"
-                        class="d-flex flex-column p-3 px-md-5 btn btn-danger align-items-center"><i
+                        class="d-flex flex-column btn btn-danger align-items-center mt-3" style="width: 18rem"><i
                             class="material-icons d-flex flex-column">extension</i>Habilidades</button></div>
                 <div><button type="submit" value="pessoas"
-                        class="d-flex flex-column p-3 px-md-5 btn btn-info align-items-center"><i
+                        class="d-flex flex-column btn btn-info align-items-center mt-3" style="width: 18rem"><i
                             class="material-icons d-flex flex-column">gamepad</i>Áreas DH</button></div>
             </div>
 
@@ -84,52 +90,69 @@
         </div>
         <div class="container">
             <div class="row">
-                <!-- buttons de sugestões de busca -->
-                <div class="col-md-9">
-                    <div class="row mt-3 d-flex justify-content-around">
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">CSS</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">HTML</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">React</button>
+                <div class="card-columns col-md-9">
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">CSS</p>
+                        </div>
                     </div>
-                    <div class="row mt-3 d-flex justify-content-around">
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">Bootstrap</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">Marketing
-                            Digital</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">PHP</button>
+                    <div class="card text-center p-3 btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">Ciência de Dados</p>
+                        </div>
                     </div>
-                    <div class="row mt-3 d-flex justify-content-around">
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">Python</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">Ciência de
-                            Dados</button>
-                        <button type="button" class="text-wrap py-3 btn btn-outline-info p-3 px-md-5">Comunicação
-                            em
-                            Mídias Sociais</button>
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">React</p>
+                        </div>
+                    </div>
+                    <div class="card text-center p-3 btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">Marketing Digital</p>
+                        </div>
+                    </div>
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">HTML</p>
+                        </div>
+                    </div>
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">Python</p>
+                        </div>
+                    </div>
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">PHP</p>
+                        </div>
+                    </div>
+                    <div class="card text-center btn-outline-info">
+                        <div class="card-body">
+                            <p class="card-text">Bootstrap</p>
+                        </div>
+                    </div>
+                    <div class="card text-center p-3 btn-outline-info">
+                        <div class="card-body p-2">
+                            <p class="card-text">Comunicação em Mídias Sociais</p>
+                        </div>
                     </div>
                 </div>
+
                 <!-- cards de propaganda -->
-                <div class="row d-flex col-md-3">
+                <div class="col-md-3">
                     <aside class="card d-flex card border-0 justify-content-top">
-                        <div class="card mt-3">
+                        <div class="card">
                             <img src="../home/issues/img/161ee49b5ea427342520fed80df71a97.webp" class="card-img-top "
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Job na área </h5>
                                 <p class="card-text">
-                                    <b>João Freitas</b> precisa de alguém com habilidades na área de Front-end! Percebemos
+                                    <b>João Freitas</b> precisa de alguém com habilidades na área de Front-end!
+                                    Percebemos
                                     que
                                     você
                                     indicou essa mesma tag :) Que tal entrar nessa?</p>
                                 <a href="#" class="btn btn-primary stretched-link">Participe!</a>
-                            </div>
-                        </div>
-                        <div class="card mt-4">
-                            <img src="../home/issues/img/191015172649.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Adicione na agenda!</h5>
-                                <p class="card-text"> Nesse encontro, professores apresentam os cursos oferecidos na DH e as
-                                    oportinidades de trabalho
-                                    de acordo com cada um deles. Tire suas dúvidas com as pessoas certas!!</p>
-                                <a href="#" class="btn btn-primary stretched-link">Inscreva-se!</a>
                             </div>
                         </div>
                     </aside>
@@ -138,6 +161,15 @@
         </div>
     </main>
 
+
+    <footer class="container mt-3">
+        <div class="row justify-content-center align-itens-center pt-4 bg-light">
+            <a href="mailto:email@contato.com.br">Fale Conosco</a>
+        </div>
+        <div class="row justify-content-center align-itens-center pb-4 bg-light">
+            <p class="m-0">© Copyright (nome) 2019</p>
+        </div>
+    </footer>
 
     <!-- bootstrap script -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
