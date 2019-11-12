@@ -1,0 +1,12 @@
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+p.card-text { font-weight: 100;
+     
+}
+li.list-group-item {
+    font-weight: 200;
+}
+div.toast-body {
+    font-weight: lighter;
+}
