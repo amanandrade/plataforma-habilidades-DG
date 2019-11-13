@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 }
     
 body{ 
@@ -14,4 +16,14 @@ mark{
 
 a:hover{
     text-decoration: none;
+}
+    
+p.card-text { font-weight: 100;
+     
+}
+li.list-group-item {
+    font-weight: 200;
+}
+div.toast-body {
+    font-weight: lighter;
 }
