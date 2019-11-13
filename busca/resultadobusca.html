@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- font awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+    
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -22,7 +27,7 @@
             <div class="row">
                 <nav class="navbar navbar-expand-md navbar-light col-12">
                     <a class="navbar-item d-flex justify-content-center align-items-center" href="busca.html">
-                        <i class="material-icons">keyboard_arrow_left</i>Busca
+                        <i class="material-icons">keyboard_arrow_left</i>Voltar
                     </a>
                     <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
@@ -56,23 +61,19 @@
             <!-- busca -->
             <div class="row d-flex justify-content-center">
                 <div class="col-12 py-2 text-center">
-                    <form class="form-row my-2 my-lg-0">
-                        <span class="col-10 pl-3">
-                            <input class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
-                        </span>
-                        <button class="btn px-md-3 d-flex justify-content-center align-items center" type="submit"
-                            value="Submit"><i class="material-icons text-secondary">search</i></button>
-                    </form>
-                    <!-- <form action="row">
-                        <div class="input-group">
+                    <form>
+                        <div class="input-group my-2">
                             <div class="input-group-prepend">
-                              <button class="btn btn-outline-secondary border-right-0 py-1" style="border: 1px solid #ced4da" type="submit" id="button-addon1">
-                                <i class="material-icons text-secondary">search</i>
-                              </button>
+                                <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
+                                    href="resultadobusca.html">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                                <!--mudar depois para tag button-->
                             </div>
-                            <input type="text" class="form-control border-left-0 pb-2" placeholder="" aria-describedby="button-addon1">
-                          </div>
-                    </form> -->
+                            <input type="text" class="form-control" placeholder=""
+                                aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
