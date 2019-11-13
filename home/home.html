@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Css -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="../style/localstyle.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,236 +15,218 @@
 </head>
 
 <body>
-        <div class="container">
-                
-                <img src="./issues/img/help!.jpg" class="img-fluid img-thumbnail" alt="...">
-            </div>
-              
-    <!-- <div class="header__container">
-        <nav class=" row d-flex justify-content-center align-items-center  m-5">
-        
-            <a href=""><img src="./issues/icons/search-24px.svg" alt=""></a>
-        </nav>
+    <!-- <header class="mx-md-4 d-flex justify-content-center"> -->
+    <div class="container">
+
+        <img src="./issues/img/help!.jpg" class="img-fluid img-thumbnail" alt="...">
     </div>
-     -->
-   
 
-    <div class="container align-items-center">
-        <main class="row flex-nowrap justify-content-between align-items-start mt-3 ">
-
-            <div id="feed">
-                <div class=" d-flex justify-content-center align-items-start ">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
+    <div class="container">
+        <!-- navbar -->
+        <div class="row">
+            <nav class="navbar navbar-expand-md navbar-light col-12">
+                <a class="navbar-item d-flex justify-content-center align-items-center" href="busca.html">
+                    <i class="material-icons"></i>Busca
+                </a>
+                <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <div class="justify-content-end">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link align-items text-right" href="../home/home.html">Home <span
+                                        class="sr-only">(atual)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                    Cadastro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link align-items text-right" href="../chat/chathome.html">Mensagens</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link align-items text-right"
+                                    href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class=" d-flex justify-content-center align-items-start ">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" d-flex justify-content-center align-items-start">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" d-flex justify-content-center align-items-start">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" d-flex justify-content-center align-items-start">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" d-flex justify-content-center align-items-start ">
-                    <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
-                    <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
-                        <div class="card-body">
-                            <h5 class="card-tittle">Amanda Andrade</h5>
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted"> 2 comentários</small>
-                            </p>
-                            <a href="#" class="btn btn-light">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Main
-        <div class="container align-items-center">
-        <main class="row flex-nowrap justify-content-between align-items-start ">
-        <div class="container ">
-            <div class="card mt-3 justify-content-center " style="width: 100%; height: auto; background-color:#fafafa;">
-                <div class="card-body p-1 ">
-                    <div class="d-flex flex-nowrap align-items-center p-1">
-                        <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3"
-                            style="width:50px; height: 50px;  ;">
-                        <h5 class="card-tittle">Amanda Andrade</h5>
-                    </div>
-                    <div class="p-1">
-                        <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com esse
-                            código? =/
-                        </p>
-                    </div>
-                    <div class="mr-2 ml-2 d-flex justify-content-between">
-                        <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                        <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-3 justify-content-center" style="width: 100%; height: auto;background-color:#fafafa;">
-                <div class="card-body p-1 ">
-                    <div class="d-flex flex-nowrap align-items-center p-1">
-                        <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3"
-                            style="width:50px; height: 50px;  ;">
-                        <h5 class="card-tittle">Amanda Andrade</h5>
-                    </div>
-                    <div class="p-1">
-                        <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com esse
-                            código? =/
-                        </p>
-                    </div>
-                    <div class="mr-2 ml-2 d-flex justify-content-between">
-                        <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                        <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-3 justify-content-center" style="width: 100%; height: auto;background-color:#fafafa;">
-                <div class="card-body p-1 ">
-                    <div class="d-flex flex-nowrap align-items-center p-1">
-                        <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3"
-                            style="width:50px; height: 50px;  ;">
-                        <h5 class="card-tittle">Amanda Andrade</h5>
-                    </div>
-                    <div class="p-1">
-                        <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com esse
-                            código? =/
-                        </p>
-                    </div>
-                    <div class="mr-2 ml-2 d-flex justify-content-between">
-                        <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                        <a href="#" class="card-link" style="color: #536DFE;">Comentar</a>
-                    </div>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div> -->
 
+        <div class="container">
+            <div class="container align-items-center">
+                <main class="row flex-nowrap justify-content-between align-items-start mt-3 ">
 
-
-            <div id="notificacoes" class=" col  ml-5 ">
-                
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <b>Beatriz Amorim</b> busca por ajuda em
-                        <kbd>CSS</kbd> .</li>
-                    <li class="list-group-item">
-                        <b>Justem Dumbaxe</b> busca por ajuda em
-                        <kbd>Javascript</kbd> .</li>
-                    <li class="list-group-item">
-                        <b>Felgueiras</b> busca por ajuda em
-                        <kbd>HTML</kbd>.</li>
-                    <li class="list-group-item">
-                        <b>Clara</b> busca por ajuda em
-                        <kbd>Wordpress</kbd>.</li>
-                    <li class="list-group-item">
-                        <b>Duda</b> busca por ajuda em
-                        <kbd>Mídias Sociais</kbd>.</li>
-                </ul>
-                <div class="card" style="width: 18rem; margin-top: 50px; margin-left: 10px;">
-                    <img src="./issues/img/161ee49b5ea427342520fed80df71a97.webp" class="card-img-top " alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Job na área </h5>
-                        <p class="card-text">
-                            <b>João Freitas</b> precisa de alguém com habilidades na área de Front-end! Percebemos que
-                            você
-                            indicou essa mesma tag :) Que tal entrar nessa?</p>
-                        <a href="#" class="btn btn-primary stretched-link">Participe!</a>
+                    <div id="feed">
+                        <div class=" d-flex justify-content-center align-items-start ">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Rosana Alvara</h5>
+                                    <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar
+                                        com esse
+                                        código? =/
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 1 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center align-items-start ">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Maria da Graça</h5>
+                                    <p class="card-text">Comecei a planejar um evento voltado para
+                                        segurança de dados e estou procurando indicações para palestrantes.. 
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 2 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center align-items-start">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Josias Ricardo</h5>
+                                    <p class="card-text">Estou iniciando um projeto relacionado a marketing digital
+                                        e gostaria de encontrar pessoas que queriam trabalhar com wordpress!
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 3 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center align-items-start">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Amanda Andrade</h5>
+                                    <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com
+                                        esse
+                                        código? =/
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 2 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center align-items-start">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Amanda Andrade</h5>
+                                    <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com
+                                        esse
+                                        código? =/
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 2 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex justify-content-center align-items-start ">
+                            <img src="./issues/img/felgueiras.jpg" alt="" class="rounded-circle mr-3">
+                            <div class="card border-silver rounded mb-3 w-60 shadow-sm  bg-white rounded">
+                                <div class="card-body">
+                                    <h5 class="card-tittle">Amanda Andrade</h5>
+                                    <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com
+                                        esse
+                                        código? =/
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted"> 2 comentários</small>
+                                    </p>
+                                    <a href="#" class="btn btn-light">Comentar</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="card" style="width: 18rem; margin-top: 50px; margin-left: 10px; ">
-                    <img src="./issues/img/191015172649.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Adicione na agenda..</h5>
-                        <p class="card-text"> Nesse encontro, professores apresentam os cursos oferecidos na DH e as
-                            oportinidades de trabalho
-                            de acordo com cada um deles. Tire suas dúvidas com as pessoas certas!!</p>
-                        <a href="#" class="btn btn-primary stretched-link">Inscreva-se!</a>
+
+
+
+                    <div id="notificacoes" class=" col  ml-5 ">
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <b>Beatriz Amorim</b> busca por ajuda em
+                                <kbd>CSS</kbd> .</li>
+                            <li class="list-group-item">
+                                <b>Justem Dumbaxe</b> busca por ajuda em
+                                <kbd>Javascript</kbd> .</li>
+                            <li class="list-group-item">
+                                <b>Felgueiras</b> busca por ajuda em
+                                <kbd>HTML</kbd>.</li>
+                            <li class="list-group-item">
+                                <b>Clara</b> busca por ajuda em
+                                <kbd>Wordpress</kbd>.</li>
+                            <li class="list-group-item">
+                                <b>Duda</b> busca por ajuda em
+                                <kbd>Mídias Sociais</kbd>.</li>
+                        </ul>
+                        <div class="card" style="width: 18rem; margin-top: 50px; margin-left: 10px;">
+                            <img src="./issues/img/161ee49b5ea427342520fed80df71a97.webp" class="card-img-top "
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Job na área </h5>
+                                <p class="card-text">
+                                    <b>João Freitas</b> precisa de alguém com habilidades na área de Front-end!
+                                    Percebemos que
+                                    você
+                                    indicou essa mesma tag :) Que tal entrar nessa?</p>
+                                <a href="#" class="btn btn-primary stretched-link">Participe!</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem; margin-top: 50px; margin-left: 10px; ">
+                            <img src="./issues/img/191015172649.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Adicione na agenda..</h5>
+                                <p class="card-text"> Nesse encontro, professores apresentam os cursos oferecidos na
+                                    DH e as
+                                    oportinidades de trabalho
+                                    de acordo com cada um deles. Tire suas dúvidas com as pessoas certas!!</p>
+                                <a href="#" class="btn btn-primary stretched-link">Inscreva-se!</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+            
+        </main>
+        </div>
     </div>
+    <!-- bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
-
-    </main>
-    </div>
-    <<<<<<< HEAD=======<!-- bootstrap script -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
-
-        >>>>>>> d6de1f4c64490a87b7f62fde78e37bc767db761f
+    <footer class="container mt-3">
+        <div class="row justify-content-center align-itens-center pt-4 bg-light">
+            <a href="mailto:email@contato.com.br">Fale Conosco</a>
+        </div>
+        <div class="row justify-content-center align-itens-center pb-4 bg-light">
+            <p class="m-0">© Copyright help! 2019</p>
+        </div>
+    </footer>
 </body>
 
 </html>
