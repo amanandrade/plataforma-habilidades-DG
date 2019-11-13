@@ -11,3 +11,7 @@ mark{
     padding: 0;
     background-color: #ffcc31;
 }
+
+a:hover{
+    text-decoration: none;
+}
