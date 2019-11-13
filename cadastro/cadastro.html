@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formulario Cadastro</title>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- style local -->
+    <link rel="stylesheet" href="../style/localstyle.css">
 
     <style>
         .input-group-prepend>.input-group-text {
@@ -35,14 +40,7 @@
             margin-top: 25px;
         }
 
-        .c_footer {
-            margin-top: 50px;
-            margin-bottom: 2px;
-            background: rgb(214, 211, 211);
-            height: 30px;
-        }
-
-
+        
         /*-------------- styles foto perfil ------------*/
 
         .imagePreview {
@@ -84,16 +82,51 @@
 
 <body>
 
-    <header class="header">
+    <header class="header mx-md-4 d-flex justify-content-center">
         <div class="container c_header">
-
+            <!-- navbar -->
+            <div class="row">
+                <nav class="navbar navbar-expand-md navbar-light col-12">
+                    <a class="navbar-item d-flex justify-content-center align-items-center"
+                        href="../home/home-feed.html">
+                        <i class="material-icons">keyboard_arrow_left</i>Voltar
+                    </a>
+                    <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../home/home.html">Home <span
+                                            class="sr-only">(atual)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                        Cadastro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../chat/chathome.html">Mensagens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
 
 
     <!--------------------------------------------- container c_nav ------------------------------------------------------>
     <div class="container c_nav">
-       
+
     </div>
     <!----------------------------------------------------- end container c_nav ---------------------------------------------->
     <!------------------------------------------------- container c_form ------------------------------------------------------>
@@ -103,7 +136,7 @@
 
             <div class="row mt-3">
                 <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
-                    <h4>Formulario de Cadastro</h4>
+                    <h4>Cadastro</h4>
                 </div>
             </div>
 
@@ -113,54 +146,61 @@
                     <!---------------------------------------------------- Nome -------------------------------------------------->
                     <div class="input-group grupo_icone_input mt-2">
                         <div class="input-group-prepend">
-                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend">
                                 <i class="fa fa-user"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste" placeholder="Nome Sobrenome"
-                            required>
+                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="Nome Sobrenome" required>
                     </div>
 
                     <!------------------------------------------------ E-mail -------------------------------------------------->
                     <div class="input-group grupo_icone_input ">
                         <div class="input-group-prepend">
-                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend">
                                 <i class="fa fa-envelope"></i>
                             </span>
                         </div>
-                        <input type="email" class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste" placeholder="E-mail"
-                            required>
+                        <input type="email" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="E-mail" required>
                     </div>
 
                     <!------------------------------------------------ Password -------------------------------------------------->
                     <div class="input-group grupo_icone_input ">
                         <div class="input-group-prepend">
-                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend"></span>
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend"></span>
                         </div>
-                        <input type="password" class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste" placeholder="Digite sua senha"
-                            required>
+                        <input type="password"
+                            class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste"
+                            placeholder="Digite sua senha" required>
                     </div>
 
                     <!------------------------------------------------ Confirm Password ------------------------------------------->
                     <div class="input-group grupo_icone_input ">
                         <div class="input-group-prepend">
-                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend">
                                 <i class="fa fa-lock"></i>
                             </span>
                         </div>
-                        <input type="password" class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste" placeholder="Confirmar senha"
-                            required>
+                        <input type="password"
+                            class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste"
+                            placeholder="Confirmar senha" required>
                     </div>
 
                     <!------------------------------------------------ Telefone -------------------------------------------------->
                     <div class="input-group grupo_icone_input ">
                         <div class="input-group-prepend">
-                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                            <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                id="inputGroupPrepend">
                                 <i class="fa fa-phone"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste" placeholder="Telefone"
-                            required>
+                        <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0"
+                            id="teste" placeholder="Telefone" required>
                     </div>
 
                     <!-------------------------------------------------- Genero -------------------------------------------------->
@@ -173,19 +213,22 @@
                         <div class="row">
                             <div class="col ml-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios1" value="option1" checked>
                                     <label class="form-check-label" for="exampleRadios1">
                                         Masculino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios2" value="option2" checked>
                                     <label class="form-check-label" for="exampleRadios2">
                                         Feminino
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked>
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                        id="exampleRadios3" value="option3" checked>
                                     <label class="form-check-label" for="exampleRadios3">
                                         Prefiro nao me identificar
                                     </label>
@@ -206,12 +249,15 @@
 
                             <div class="input-group grupo_icone_input mt-0">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                                    <span
+                                        class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                        id="inputGroupPrepend">
                                         <i class="fa fa-circle"></i>
                                     </span>
                                 </div>
-                                <input type="date" class="form-control input_idade border-top-0 border-right-0 border-left-0" id="teste" placeholder="Idade"
-                                    required>
+                                <input type="date"
+                                    class="form-control input_idade border-top-0 border-right-0 border-left-0"
+                                    id="teste" placeholder="Idade" required>
 
                             </div>
                         </div>
@@ -229,7 +275,9 @@
 
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0" id="inputGroupPrepend">
+                                    <span
+                                        class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
+                                        id="inputGroupPrepend">
                                         <i class="fa fa-graduation-cap"></i>
                                     </span>
                                 </div>
@@ -253,7 +301,8 @@
                                 <div class="row d-flex justify-content-center mt-2">
                                     <label class="btn botao_adicionar">
                                         Inserir foto
-                                        <input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;">
+                                        <input type="file" class="uploadFile img" value="Upload Photo"
+                                            style="width: 0px;height: 0px;overflow: hidden;">
                                     </label>
                                 </div>
 
@@ -268,7 +317,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center mt-3">
 
-                    <a class="btn btn-primary mr-5" type="submit" href="../home/home.html">CADASTRAR</a>
+                    <button class="btn btn-primary mr-5" type="submit" href="../home/home.html">CADASTRAR</button>
                     <button class="btn btn-danger" type="submit">CANCELAR</button>
 
                 </div>
@@ -278,11 +327,14 @@
 
     </div>
     <!-------------------------------------- end container c_form ------------------------------------------------------>
-    <div class="container">
-        <footer class="footer  c_footer d-flex justify-content-center">
-            <p>CopyRight_DHelp_2019</p>
-        </footer>
-    </div>
+    <footer class="container mt-3 fixed-botton">
+        <div class="row justify-content-center align-itens-center pt-4 bg-light">
+            <a href="mailto:email@contato.com.br">Fale Conosco</a>
+        </div>
+        <div class="row justify-content-center align-itens-center pb-4 bg-light">
+            <p class="m-0">© Copyright (nome) 2019</p>
+        </div>
+    </footer>
 
 
     <!--------------------------------------------------- javascrip ---------------------------------------------------->
@@ -322,11 +374,14 @@
 
     <!-------------------------------------------------- end javascript ------------------------------------------------>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
