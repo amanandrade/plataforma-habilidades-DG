@@ -24,65 +24,69 @@
 </head>
 
 <body>
-    <div class="container fixed-top bg-white">
-        <div class="row">
-            <nav class="navbar navbar-expand-md navbar-light col-12">
-              <a class="navbar-item d-flex justify-content-center align-items-center" href="../chat/chathome.html">
-                <i class="material-icons">keyboard_arrow_left</i>Voltar
-              </a>
-              <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                <div class="justify-content-end">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a class="nav-link align-items text-right" href="../home/home-feed.html">Home <span
-                          class="sr-only">(atual)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
-                        Cadastro</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link align-items text-right" href="../busca/busca.html">Busca</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link align-items text-right" href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          </div>
+    <div class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-md navbar-light col-12">
+                    <a class="navbar-item d-flex justify-content-center align-items-center"
+                        href="../chat/chathome.html">
+                        <i class="material-icons">keyboard_arrow_left</i>Voltar
+                    </a>
+                    <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../home/home-feed.html">Home <span
+                                            class="sr-only">(atual)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                        Cadastro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../busca/busca.html">Busca</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
 
-        <div class="dom1 mb-0">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <h2 class="display-4">
-                            <i class="fa fa-user-circle"></i>
-                        </h2>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Nome Sobrenome</a>
-                    <ol>
-                        <li>Online</li>
-                        <li class="h3">
-                            <i class="fa fa-phone"></i>
-                        </li>
-                        <li class="h3">
-                            <i class="fa fa-video"></i>
-                        </li>
-                        <li class="h3">
-                            <i class="fa fa-exclamation-circle"></i>
-                        </li>
-                    </ol>
-                    </a>
-                </li>
-            </ul>
+            <div class="dom1 mb-0">
+                <ul class="nav row">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <h2 class="display-4">
+                                <i class="fa fa-user-circle"></i>
+                            </h2>
+                        </a>
+                    </li>
+                    <a class="nav-item" href="#">Nome Sobrenome</a>
+                    <ul class="nav-item">
+                        <div class="row">
+                            <li class="nav-link">Online</li>
+                            <li class="h3 nav-link">
+                                <i class="fa fa-phone"></i>
+                            </li>
+                            <li class="h3 nav-link">
+                                <i class="fa fa-video"></i>
+                            </li>
+                            <li class="h3 nav-link">
+                                <i class="fa fa-exclamation-circle"></i>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+            </div>
         </div>
     </div>
 

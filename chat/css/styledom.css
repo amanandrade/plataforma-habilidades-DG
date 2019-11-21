@@ -20,8 +20,6 @@ li{
     font-size: 18px;
     font-weight: bold;
     align-items: center;
-
-    
 }
 .dom li i{
     font-weight: bold;
@@ -56,11 +54,11 @@ text-align:justify;
 
 }
 
-main{
+/* main{
     position: relative;
     top:180px;
     z-index: -1;
-}
+} */
 .chat{
     border-radius:10px; 
 }
