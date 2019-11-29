@@ -1,49 +1,79 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Nkuansambo Justem Dombaxe">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <!-- font awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styledom.css">
+    crossorigin="anonymous">
 
-    <title>DH-CHAT</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/localstyle.css">
+    <title>Busca</title>
+    <!-- Css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/localstyle.css">
 </head>
 
 <body>
-    <div class="container fixed-top bg-white">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="#">DHELP</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home
-                        <span class="sr-only">(current)</span>
+    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
+        <div class="container">
+            <!-- navbar -->
+            <div class="row">
+                <nav class="navbar navbar-expand-md navbar-light col-12">
+                    <a class="navbar-item d-flex justify-content-center align-items-center" href="../home/home-feed.html">
+                        <i class="material-icons">keyboard_arrow_left</i>Voltar
                     </a>
-                    <a class="nav-item nav-link" href="#">Features</a>
-                    <a class="nav-item nav-link" href="#">Pricing</a>
-                    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </div>
+                    <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                        <div class="justify-content-end">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../home/home-feed.html">Home<span
+                                            class="sr-only">(atual)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="../cadastro/cadastro.html">Meu
+                                        Cadastro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../chat/chathome.html">Mensagens</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="../perfilLateral/perfilLateral.html">Meu Perfil</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </nav>
-        <div class="dom">
-            <enter>
-                <li>
-                    <i class="fa fa-angle-left"></i>
-                </li>
-            </enter>
-            <li><a href="chathome.html">Mensagens</a></li>
+            <!-- busca -->
+            <form>
+                <div class="input-group my-2">
+                    <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <div class="input-group-prepend">
+                    <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1" href="resultadobusca.html">
+                        <i class="fa fa-search"></i>
+                    </a> <!--mudar depois para tag button-->
+                    </div>
+                </div>
+              </form>
+
         </div>
+    </header>
 
         <div class="dom1 mb-0">
             <ul class="nav justify-content-center">
