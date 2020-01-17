@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/usuarios/{id}', 'UserController@show');
+
+//Route::get('/login', 'LoginController@login');
+
+Route::get('/', 'HomeController@index');
