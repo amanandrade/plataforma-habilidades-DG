@@ -19,4 +19,4 @@ Route::get('/usuarios/{id}', 'UserController@show');
 
 //Route::get('/login', 'LoginController@login');
 
-Route::get('/', 'HomeController@index');
+Route::get('index', 'HomeController@index');

@@ -42,7 +42,7 @@
                                 aria-label="Example text with button addon" aria-describedby="button-addon1">
                             <div class="input-group-prepend">
                                 <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
-                                    href="./busca.html">
+                                    href="./buscaResultado.html">
                                     <i class="fa fa-search"></i>
                                 </a>
                             </div>
@@ -64,6 +64,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right" href="./cadastro.html">Meu
                                         Cadastro</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="./busca.html">Habilidades</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right"
