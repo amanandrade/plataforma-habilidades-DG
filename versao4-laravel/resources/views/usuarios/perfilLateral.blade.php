@@ -53,7 +53,7 @@
 
         <!-- Foto de Perfil -->
         <div class=" d-flex justify-content-center ">
-            <img class="rounded-circle  border border-white d-flex " src="{{asset(Auth::User()->foto)}}">
+            <img class="rounded-circle  border border-white d-flex" style="width: 150px" src="{{asset(Auth::User()->foto)}}">
         </div>
 
         <!-- Nome / Descricao -->
@@ -88,7 +88,7 @@
                             <!-- Lista com foto de perfil e messagem da notificacao -->
                             <li>
                                 <div class="d-flex pt-4">
-                                    <img src="{{asset('img/homem1.JPG')}}" alt="" class="rounded-circle border border-white">
+                                    <img src="{{asset('img/homem1.JPG')}}" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">Justem Dombaxe busca por ajuda em
@@ -100,7 +100,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="{{asset('img/mulher3.JPG')}}" alt="" class="rounded-circle border border-white">
+                                    <img src="{{asset('img/mulher3.JPG')}}" alt="" class="rounded-circle border border-white"style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">Amanda Andrade busca por ajuda em
@@ -112,7 +112,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="{{asset('img/mulher2.JPG')}}" alt="" class="rounded-circle border border-white">
+                                    <img src="{{asset('img/mulher2.JPG')}}" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">Juliana oferece oportuidade em
@@ -124,7 +124,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="{{asset('img/mulher1.JPG')}}" alt="" class="rounded-circle border border-white">
+                                    <img src="{{asset('img/mulher1.JPG')}}" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">Beatriz Amorim busca por ajuda em
@@ -136,7 +136,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="{{asset('img/homem2.JPG')}}" alt="" class="rounded-circle border border-white">
+                                    <img src="{{asset('img/homem2.JPG')}}" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">Felgueiras busca por ajuda em
@@ -154,7 +154,7 @@
                             <!-- Lista com foto de perfil e notificao de mensagens -->
                             <li>
                                 <div class="d-flex pt-4">
-                                    <img src="./img/homem1.JPG" alt="" class="rounded-circle border border-white">
+                                    <img src="./img/homem1.JPG" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">
@@ -169,7 +169,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="./img/homem2.JPG" alt="" class="rounded-circle border border-white">
+                                    <img src="./img/homem2.JPG" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">
@@ -184,7 +184,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="./img/mulher3.JPG" alt="" class="rounded-circle border border-white">
+                                    <img src="./img/mulher3.JPG" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">
@@ -197,7 +197,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="./img/mulher1.JPG" alt="" class="rounded-circle border border-white">
+                                    <img src="./img/mulher1.JPG" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">
@@ -212,7 +212,7 @@
                             </li>
                             <li>
                                 <div class="d-flex">
-                                    <img src="./img/mulher2.JPG" alt="" class="rounded-circle border border-white">
+                                    <img src="./img/mulher2.JPG" alt="" class="rounded-circle border border-white" style="width: 70px; height: 70px;">
                                     <div class="card border-silver rounded mb-3 rounded">
                                         <div class="card-body">
                                             <p class="card-text">
