@@ -77,11 +77,14 @@
     </div>
     <main class="container">
         <div class="row">
+            <div class="col-md-3">
+                <!-- epaço lateral para colocar filtros -->
+            </div> 
             <!-- cards de resultado da busca -->
-            <div class="d-flex col-md-9 justify-content-center">
+            <div class="d-flex col-md-6 justify-content-center">
                 <div class="container p-0">
                     <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
-                        <div class="card mb-3" style="width: 22rem;">
+                        <div class="card mb-3" style="width: 40rem; height: 13rem;">
                             <div class="card-body">
                                 <div class="row align-items-center mx-auto">
                                     <img class="card-img-top rounded-circle w-25" src="{{asset('img/mulher1.JPG')}}"

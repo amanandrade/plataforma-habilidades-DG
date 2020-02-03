@@ -54,7 +54,7 @@
                 <div class="input-group my-2">
                     <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1">
                     <div class="input-group-prepend">
-                    <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1" href="./buscaResultado.html">
+                    <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1" href="{{route('usuarios.habilidades.busca')}}">
                         <i class="fa fa-search"></i>
                     </a> <!--mudar depois para tag button-->
                     </div>
