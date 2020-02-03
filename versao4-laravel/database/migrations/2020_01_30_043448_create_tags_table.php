@@ -14,13 +14,15 @@ class CreateTagsTable extends Migration
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {
-            $table->bigIncrements('id');
+           $table->bigIncrements('id');
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('habilidade_id');
             $table->timestamps();
 
-            $table->foreign('usuario_id')->references('id')->on('users');
-            $table->foreign('habilidade_id')->references('id')->on('tab_habilidades');
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('habilidade_id')->references('id')->on('tab_habilidades')->onDelete('cascade');
+
+           // $table->primary(['habilidade_id']);
         });
     }
 

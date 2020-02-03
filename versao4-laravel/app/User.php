@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nome', 'email', 'password','telefone', 'genero','nascimento','foto','curso_id','status_id',
+        'nome', 'email', 'password','telefone', 'genero','nascimento','foto','estado','curso_id','status_id',
     ];
 
     /**
@@ -43,6 +43,14 @@ class User extends Authenticatable
 
     public function statu(){
         return $this->belongsTo(Statu::class, 'status_id','id');
+    }
+
+    public function habilidades(){
+        return $this->belongsToMany(Tab_habilidade::class, 'tags','usuario_id','habilidade_id');
+    }
+
+    public static function habilidadesTwo(){
+        return $this->belongsToMany(Tab_habilidade::class, 'tags','usuario_id','habilidade_id');
     }
     
 }

@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('genero');
             $table->date('nascimento'); 
             $table->string('foto')->nullable();
+            $table->integer('estado')->nullable();
             $table->unsignedBigInteger('curso_id');
             $table->unsignedBigInteger('status_id');
             $table->rememberToken();

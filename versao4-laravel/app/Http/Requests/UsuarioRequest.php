@@ -26,7 +26,7 @@ class UsuarioRequest extends FormRequest
     return [
 
         'nome'=>'required',
-        'email'=>'required|email',
+        'email'=>'required|email|unique:users',
         'password'=>'required',
         'telefone'=>'required',
         'genero'=>'required',
@@ -40,6 +40,7 @@ public function messages(){
     return [
         'email' => 'Deve ser um endereço de email válido.',
         'required' =>'Campo obrigatorio',
+        'unique' =>'Já existe o email no banco de dados',
     ];
     }
 }

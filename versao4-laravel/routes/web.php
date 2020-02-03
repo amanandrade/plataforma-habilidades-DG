@@ -37,12 +37,15 @@ Route::group(['middleware'=>['auth']], function(){
 
     Route::get('/home', 'HomeController@index')->name('usuarios.home');
     Route::post('/home/update/{id}', 'HomeController@update')->name('usuarios.home.update');
+    Route::post('/home/addTags', 'HomeController@addTags')->name('usuarios.home.addTags');
     
     Route::get('/perfil', 'PerfilController@index')->name('usuarios.perfil');
     Route::get('/perfil/create', 'PerfilController@create')->name('usuarios.perfil.create');
 
     Route::get('/habilidades', 'HabilidadeController@index')->name('usuarios.habilidades');
-    Route::get('/habidades/busca', 'HabilidadeController@create')->name('usuarios.habilidades.busca');
+    Route::post('/habidades/busca', 'HabilidadeController@create')->name('usuarios.habilidades.busca');
+    Route::post('/habidades/buscatag', 'HabilidadeController@buscatag')->name('usuarios.habilidades.buscatag');
+    Route::get('/habidades/buscapessoa', 'HabilidadeController@buscapessoa')->name('usuarios.habilidades.buscapessoa');
 });
 
 

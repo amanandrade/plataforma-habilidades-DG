@@ -2,30 +2,23 @@
 
 @section('titulo','Help')
 @section('conteudo')
-    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
+<header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
         <div class="container">
+
             <!-- navbar -->
             <div class="row">
-                <nav class="navbar navbar-expand-md navbar-light col-12 px-md-0 mt-1">
+                <nav class="navbar navbar-expand-md navbar-light col-12">
+
                     <a class="navbar-item" href="#">
                         <img src="{{asset('img/help_logo.jpg')}}" alt="logo" style="width: 57px" class="rounded">
                     </a>
-                    <!-- busca desktop -->
-                    <!--  -->
-                    <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
-                        @csrf
-                        <div class="input-group">
-                            <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <!--  -->
-                
+                   
+                    <button class="border-0 navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
                     <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                         <div class="justify-content-end">
                             <ul class="navbar-nav mr-auto">
@@ -49,9 +42,9 @@
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
                                 <div class="dropdown-menu">
                                     @if(Auth::guest())
-                                    <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
+                                        <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
                                     @else
-                                    <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
+                                        <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
                                     @endif
                                 </div>
                             </ul>
@@ -59,16 +52,56 @@
                     </div>
                 </nav>
             </div>
-        </div>          
+
+        </div>
     </header>
-    
-    <main class="container mt-5">
+
+    <main class="container">
+        
+            <!-- buttons de filtro principal -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4 col-sm-12">
+                    <button type="submit" value="pessoas" class="d-flex flex-column btn btn-success align-items-center mt-3 w-100">
+                        <i class="material-icons d-flex flex-column">people</i>
+                        Pessoas
+                    </button>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                    <a href="{{route('usuarios.habilidades')}}" class="d-flex flex-column btn btn-danger align-items-center mt-3 w-100">
+                        <i class="material-icons d-flex flex-column">extension</i>
+                        Habilidades
+                    </a>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                    <button type="submit" value="pessoas" class="d-flex flex-column btn btn-info align-items-center mt-3 w-100">
+                        <i class="material-icons d-flex flex-column">gamepad</i>
+                        Áreas DH
+                    </button>
+                </div>
+            </div>
+
+             <!-- busca -->
+             <form>
+                <div class="input-group my-5">
+                    <input type="text" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <div class="input-group-prepend">
+                        <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1" href="./buscaResultado.html">
+                            <i class="fa fa-search"></i>
+                        </a> <!--mudar depois para tag button-->
+                    </div>
+                </div>
+            </form>
+
+       
+
         <div class="row">
             <!-- cards de resultado da busca -->
             <div class="d-flex col-md-8 justify-content-center">
-
                 <div class="container p-0">
-                    <div class="row d-flex justify-content-md-between justify-content-center">
+                
+                    <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
                         @foreach ($usuarios as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
                                         <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
@@ -81,18 +114,18 @@
                                                     <h5 class="card-title my-0 ml-2"> {{$usuario['nome']}}</h5>
                                                 </div>
                                             
-                                                <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
+                                                <!-- <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
 
                                                 @foreach ($habilidades as $key => $value) 
                                                     <p class="card-text">{{$value['habilidades']}}</p>
-                                                @endforeach
+                                                @endforeach -->
 
                                                 <div class="d-flex justify-content-between">
                                                     <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
-                                                    <button type="button" class="btn btn-light text-primary py-1 px-4" data-toggle="modal" data-target="#perfil">
+                                                    <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil">
                                                         Perfil
                                                     </button>
-                                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
+                                                    <!-- <a href="#" class="btn btn-info py-1 px-4">Chat</a> -->
                                                 </div>
                                             
                                             </div>
@@ -118,8 +151,7 @@
                         ...
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>
                     </div>
                     </div>
                 </div>
