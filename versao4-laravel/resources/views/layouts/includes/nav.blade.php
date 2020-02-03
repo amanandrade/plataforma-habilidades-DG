@@ -1,3 +1,5 @@
+<!-- NÃO FOI CRIADO ROTAS PARA ESSA NAV AINDA -->
+
 <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
         <div class="container">
             <!-- navbar -->
