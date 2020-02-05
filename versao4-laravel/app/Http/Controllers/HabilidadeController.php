@@ -138,4 +138,22 @@ class HabilidadeController extends Controller
 
         return view('usuarios.habilidadesBuscaPessoa', compact('usuarios', 'habilidades','tag_busca'));
     }
+
+    public function buscapessoaconcreta(Request $request) {
+
+         $usuario = \App\User::where('nome', 'LIKE', "%{$request['nome']}%")->get();
+
+         if(count($usuario) > 0){
+            foreach ($usuario as $user) {
+                $usuario_habilidades = $user->habilidades()->get();
+            }
+            return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+         }
+         else{
+            $usuario = null; 
+            $usuario_habilidades =null;
+            return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+         }
+         
+    }
 }

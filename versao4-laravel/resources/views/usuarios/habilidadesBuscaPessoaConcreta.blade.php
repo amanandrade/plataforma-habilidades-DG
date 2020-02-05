@@ -61,10 +61,10 @@
             <!-- buttons de filtro principal -->
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4 col-sm-12">
-                    <button type="submit" value="pessoas" class="d-flex flex-column btn btn-success align-items-center mt-3 w-100">
+                    <a href="{{route('usuarios.habilidades.buscapessoa')}}" class="d-flex flex-column btn btn-success align-items-center mt-3 w-100">
                         <i class="material-icons d-flex flex-column">people</i>
                         Pessoas
-                    </button>
+                    </a>
                 </div>
 
                 <div class="col-md-4 col-sm-12">
@@ -84,16 +84,16 @@
 
              <!-- busca -->
              <form method="POST" action="{{route('usuarios.habilidades.buscapessoaconcreta')}}">
-                 @csrf
-                <div class="input-group my-5">
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button> <!--mudar depois para tag button-->
-                    </div>
-                </div>
-            </form>
+                @csrf
+               <div class="input-group my-5">
+                   <input type="text" name="nome" id="nome" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+                   <div class="input-group-prepend">
+                       <button class="btn btn-outline-secondary" type="submit">
+                           <i class="fa fa-search"></i>
+                       </button> <!--mudar depois para tag button-->
+                   </div>
+               </div>
+             </form>
 
        
 
@@ -103,7 +103,37 @@
                 <div class="container p-0">
                 
                     <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
-                        @foreach ($usuarios as $usuario)
+                        
+                        @if($usuario && !null)
+                            @foreach ($usuario as $user)
+                               @if($user['nome'] != Auth::User()->nome)
+                                    <div class="card mb-3" style="width: 22rem;">
+                                        <div class="card-body">
+                                            <div class="row align-items-center mx-auto">
+                                                <img class="card-img-top rounded-circle w-25" src="{{asset($user['foto'])}}"
+                                                    alt="">
+                                                <h5 class="card-title my-0 ml-2"> {{$user['nome']}}</h5>
+                                            </div>
+                                    @foreach ($usuario_habilidades as $item)
+                                            <p class="card-text">{{$item['habilidades']}}</p>
+                                    @endforeach
+                                            <div class="d-flex justify-content-between">
+                                                <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
+                                                <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil">
+                                                    Perfil
+                                                </button>
+                                                <!-- <a href="#" class="btn btn-info py-1 px-4">Chat</a> -->
+                                            </div>                                
+                                        </div>
+                                    </div>
+                               @endif
+                            @endforeach
+                            
+                        @else
+                            {{ 'USUARIO NAO ENCONTARDO' }}
+                        @endif
+                        
+                        {{-- @foreach ($usuarios as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
                                         <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
                                     @if(count($habilidades) > 0) 
@@ -133,7 +163,7 @@
                                         </div>
                                     @endif
                             @endif
-                        @endforeach
+                        @endforeach --}}
                     </div>
                 </div>
             </div>

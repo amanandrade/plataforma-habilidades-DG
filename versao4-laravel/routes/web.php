@@ -46,6 +46,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/habidades/busca', 'HabilidadeController@create')->name('usuarios.habilidades.busca');
     Route::post('/habidades/buscatag', 'HabilidadeController@buscatag')->name('usuarios.habilidades.buscatag');
     Route::get('/habidades/buscapessoa', 'HabilidadeController@buscapessoa')->name('usuarios.habilidades.buscapessoa');
+    Route::post('/habidades/buscapessoaconcreta', 'HabilidadeController@buscapessoaconcreta')->name('usuarios.habilidades.buscapessoaconcreta');
 });
 
 

@@ -13,7 +13,7 @@ class Tab_habilidadesTableSeeder extends Seeder
     {
         \DB::table('tab_habilidades')->insert(
             [
-              'habilidades'=>'React Native',
+              'habilidades'=>'PYTON',
         ]
     );
     }

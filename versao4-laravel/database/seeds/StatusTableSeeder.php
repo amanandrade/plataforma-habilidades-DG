@@ -13,7 +13,7 @@ class StatusTableSeeder extends Seeder
     {
         // \DB::table('status')->insert(
         //     [
-        //         'nome_status'=>'Concluído',
+        //         'nome_status'=>'Finalista',
         //     ]
         //     );
     }
