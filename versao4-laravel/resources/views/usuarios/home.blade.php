@@ -2,7 +2,7 @@
 
 @section('titulo', 'Help')
 @section('conteudo')
-    <!-- header - menu nav e busca -->
+    <!-- menu nav e busca -->
   
     <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
         <div class="container">
@@ -13,20 +13,19 @@
                         <img src="./img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
                     </a>
                     <!-- busca desktop -->
-                    <!--  -->
                     <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
                         @csrf
                         <div class="input-group">
                             <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar"
                                 aria-label="Example text with button addon" aria-describedby="button-addon1" required>
                             <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1">
+                                <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
+                                href="{{route('usuarios.habilidades.busca')}}">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
-                    <!--  -->
 
                     <button class="border-0 navbar-toggler p-0" type="button" data-toggle="collapse"
                         data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
@@ -54,14 +53,14 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown-menu">
-                                    @if(Auth::guest())
-                                    <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
-                                    @else
-                                    <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
-                                    @endif
-                               
-      
+                                <div class="dropdown show">
+                                    <div class="dropdown-menu">
+                                        @if(Auth::guest())
+                                        <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
+                                        @else
+                                        <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
+                                        @endif
+                                    </div>
                                 </div>
                             </ul>
                         </div>
@@ -103,23 +102,35 @@
     <!-- home mobile -->
     <main class="container d-none d-sm-block d-md-none d-block d-sm-none">
         <div class="row tab-content justify-content-center mx-1" id="nav-tabContent">
+            
             <!-- FEED -->
             <div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
 
+                <!-- INPUT PARA POSTAGENS -->
+                <div class="input-group mt-3">
+                    <textarea class="form-control py-3" aria-label="With textarea"
+                        placeholder="O que você está pensando, {{Auth::User()->nome}}?"></textarea>
+                </div>
+                <div class="input-group mt-1 justify-content-end">
+                    <button type="button" class="btn btn-primary btn-sm">Publicar</button>
+                </div>
+
+                <!-- cards de postagens -->
                 <div class="card mt-3" style="width: 100%; height: auto; background-color:#fafafa;">
                     <div class="card-body p-1 ">
                         <div class="d-flex flex-nowrap align-items-center p-1">
-                            <img src="./img/mulher1.JPG" alt="" class="rounded-circle mr-3"
+                            <!-- ajuastar foto quando o usuário não coloca foto -->
+                            <img src="{{Auth::User()->foto}}" alt="" class="rounded-circle mr-3"
                                 style="width:50px; height: 50px;  ;">
-                            <h5 class="card-tittle">Rosana Alvara</h5>
+                            <h5 class="card-tittle">{{Auth::User()->nome}}</h5>
                         </div>
                         <div class="p-1">
                             <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
                                 código? =/</p>
                         </div>
                         <div class="mr-2 ml-2 d-flex justify-content-between">
-                            <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                            <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
+                        <p class="card-text"><small class="text-muted"> 1 comentário</small></p>
+                            <a href="#" class="card-link" style="color:#536DFE;">Editar</a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +138,8 @@
                     <div class="card-body p-1 ">
                         <div class="d-flex flex-nowrap align-items-center p-1">
                             <img src="./img/mulher2.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                            style="width:50px; height: 50px;  ;">
+                            <h5 class="card-tittle">Maria da Graça</h5>
                         </div>
                         <div class="p-1">
                             <p class="card-text">Comecei a planejar um evento na digital voltado para segurança de dados
@@ -228,15 +240,12 @@
 
             <!-- CARD PERFIL E NOTIFICAÇÃO -->
             <div class="align-items-center card border-0 col-3 bg-info">
-
-                
                 @if(empty(Auth::User()->estado))
-               <center> <a href="" data-toggle="modal" data-target="#modal" class="text-warning">
-                <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle w-50 my-4">
-                </a></center>
+                <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle w-50 mt-4">
+                <a href="" data-toggle="modal" data-target="#modal" class="text-warning pb-2">Editar foto<i class="material-icons ml-1" style="font-size: 20px;" title="Editar foto">edit</i></a>
                 @elseif(Auth::User()->estado == 1)
 
-                <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 my-4" data-toggle="modal" data-target="#modal">
+                <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 mt-4" data-toggle="modal" data-target="#modal">
                
                
                 @endif
@@ -259,7 +268,6 @@
                                 aria-controls="habilidades" aria-selected="false">Habilidades</a>
                         </li>
                     </ul>
-                
                     <div class="tab-content" id="myTabContent">
 
                         <!-- Lista com notificações -->
@@ -331,14 +339,15 @@
 
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text"><img src="./img/homem3.JPG" alt="" class="rounded-circle"
+                        <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
                                 style="width:50px;"></span>
                     </div>
+
                     <textarea class="form-control py-3" aria-label="With textarea"
-                        placeholder="O que você está pensando, Guilherme?"></textarea>
+                        placeholder="O que você está pensando, {{Auth::User()->nome}}?"></textarea>
                 </div>
 
-                <div class="input-group justify-content-end mt-1">
+                <div class="input-group mt-1 justify-content-between">
                     <input type="hidden" class="form-control" aria-label="Text input with dropdown button">
                     <div class="input-group-append align-items-center">
                         <span class="mr-1">Classificar por: </span>
@@ -349,6 +358,7 @@
                             <a class="dropdown-item" href="#">Recentes</a>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-primary btn-sm">Publicar</button>
                 </div>
 
                 <!-- FEED -->
@@ -356,8 +366,9 @@
                     <div class="card mt-3 justify-content-center">
                         <div class="card-body p-2">
                             <div class="d-flex flex-nowrap align-items-center p-1">
-                                <img src="./img/mulher3.JPG" alt="" class="rounded-circle mr-3" style="width:50px;">
-                                <h5 class="card-tittle">Rosana Alvara</h5>
+                            <!-- ajuastar foto quando o usuário não coloca foto -->
+                            <img src="{{Auth::User()->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
+                                <h5 class="card-tittle">{{Auth::User()->nome}}</h5>
                             </div>
                             <div class="p-1">
                                 <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com
@@ -366,9 +377,9 @@
                             </div>
                             <div class="mr-2 ml-2 d-flex justify-content-between">
                                 <p class="card-text">
-                                    <small class="text-muted"> 1 comentário</small>
+                                <a href="#" class="text-muted" title="Ver"> 1 comentário</a>
                                 </p>
-                                <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
+                                <a href="#" class="card-link" style="color:#536DFE;">Editar</a>
                             </div>
                         </div>
                     </div>
@@ -383,7 +394,7 @@
                             </div>
                             <div class="ml-2 d-flex justify-content-between">
                                 <p class="card-text">
-                                    <small class="text-muted"></small>
+                                <a href="#" class="text-muted" title="Ver"></a>
                                 </p>
                                 <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
                             </div>
@@ -402,7 +413,7 @@
                             </div>
                             <div class="mr-2 ml-2 d-flex justify-content-between">
                                 <p class="card-text">
-                                    <small class="text-muted"> 2 comentários</small>
+                                    <a href="#" class="text-muted" title="Ver"> 2 comentários</a>
                                 </p>
                                 <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
                             </div>
@@ -420,12 +431,13 @@
                             </div>
                             <div class="mr-2 ml-2 d-flex justify-content-between">
                                 <p class="card-text">
-                                    <small class="text-muted"> 2 comentários</small>
+                                    <a href="#" class="text-muted" title="Ver"> 2 comentários</a>
                                 </p>
                                 <a href="#" class="card-link" style="color: #536DFE;">Comentar</a>
                             </div>
                         </div>
                     </div>
+                    <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
                 </div>
             </div>
 

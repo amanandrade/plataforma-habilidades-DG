@@ -1,4 +1,4 @@
-<footer class="container mt-3 fixed-bottom">
+<footer class="container mt-3">
         <div class="row justify-content-center align-itens-center pt-4 bg-light">
             <a href="mailto:email@contato.com.br">Fale Conosco</a>
         </div>
