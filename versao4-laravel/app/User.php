@@ -49,8 +49,12 @@ class User extends Authenticatable
         return $this->belongsToMany(Tab_habilidade::class, 'tags','usuario_id','habilidade_id');
     }
 
-    public static function habilidadesTwo(){
-        return $this->belongsToMany(Tab_habilidade::class, 'tags','usuario_id','habilidade_id');
+    // public static function habilidadesTwo(){
+    //     return $this->belongsToMany(Tab_habilidade::class, 'tags','usuario_id','habilidade_id');
+    // }
+
+    public function emissor() {
+        return $this->hasMany(Msg_emissor_feed::class);
     }
     
 }

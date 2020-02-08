@@ -337,108 +337,69 @@
             <div class="col-6 bg-light">
                 <!-- INPUT PARA POSTAGENS -->
 
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
-                                style="width:50px;"></span>
-                    </div>
-
-                    <textarea class="form-control py-3" aria-label="With textarea"
-                        placeholder="O que você está pensando, {{Auth::User()->nome}}?"></textarea>
-                </div>
-
-                <div class="input-group mt-1 justify-content-between">
-                    <input type="hidden" class="form-control" aria-label="Text input with dropdown button">
-                    <div class="input-group-append align-items-center">
-                        <span class="mr-1">Classificar por: </span>
-                        <button class="btn btn-sm border-0 py-0 dropdown-toggle rounded" type="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Principais</a>
-                            <a class="dropdown-item" href="#">Recentes</a>
+                <form method="POST"  action="{{route('usuarios.home.mensagens_emissor')}}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
+                                    style="width:50px;"></span>
                         </div>
+                        <textarea class="form-control py-3" name="mensagem" aria-label="With textarea"
+                            placeholder="O que você está pensando, {{Auth::User()->nome}}?" required></textarea>
                     </div>
-                    <button type="button" class="btn btn-primary btn-sm">Publicar</button>
-                </div>
+
+                    <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
+                    <input type="hidden" name="estado" value="1">
+                
+                    <div class="input-group mt-1 justify-content-between">
+                        <input type="hidden" class="form-control" aria-label="Text input with dropdown button">
+                        <div class="input-group-append align-items-center">
+                            <span class="mr-1">Classificar por: </span>
+                            <button class="btn btn-sm border-0 py-0 dropdown-toggle rounded" type="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Principais</a>
+                                <a class="dropdown-item" href="#">Recentes</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+                    </div>
+                </form>
 
                 <!-- FEED -->
-                <div class="mt-1">
-                    <div class="card mt-3 justify-content-center">
-                        <div class="card-body p-2">
-                            <div class="d-flex flex-nowrap align-items-center p-1">
-                            <!-- ajuastar foto quando o usuário não coloca foto -->
-                            <img src="{{Auth::User()->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
-                                <h5 class="card-tittle">{{Auth::User()->nome}}</h5>
+               
+                    <div class="mt-1">
+                        @foreach ($publicacao as $publicar)
+                            <div class="card mt-3 justify-content-center">
+                                <div class="card-body p-2">
+                                    <div class="d-flex flex-nowrap align-items-center p-1">
+                                    <!-- ajuastar foto quando o usuário não coloca foto -->
+                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
+                                        <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
+                                    </div>
+                                    <div class="p-1">
+                                        <p class="card-text">{{$publicar->mensagem}}</p>
+                                    </div>
+                                    <div class="mr-2 ml-2 d-flex justify-content-between">
+                                        <p class="card-text">
+                                        <a class="text-muted" title="Ver"> 1 comentário</a>
+                                        </p>
+                                        <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="p-1">
-                                <p class="card-text">Gente, estou desesperada com PHP ! Alguém pode me ajudar com
-                                    esse
-                                    código? =/</p>
+
+                            <div class="collapse mt-1" id="codigo{{$publicar->id}}">
+                                <div class="card card-body">
+                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
                             </div>
-                            <div class="mr-2 ml-2 d-flex justify-content-between">
-                                <p class="card-text">
-                                <a href="#" class="text-muted" title="Ver"> 1 comentário</a>
-                                </p>
-                                <a href="#" class="card-link" style="color:#536DFE;">Editar</a>
-                            </div>
-                        </div>
+                        @endforeach
+                        <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
                     </div>
-                    <div class="card mt-0 ml-5 border-top-0 justify-content-center">
-                        <div class="card-body">
-                            <div class="d-flex flex-nowrap align-items-center p-1">
-                                <img src="./img/homem2.JPG" alt="" class="rounded-circle mr-3" style="width:40px;">
-                                <h5 class="card-tittle">Rubens Gustavo</h5>
-                            </div>
-                            <div class="p-1">
-                                <p class="card-text">Eu posso de ajudar =)</p>
-                            </div>
-                            <div class="ml-2 d-flex justify-content-between">
-                                <p class="card-text">
-                                <a href="#" class="text-muted" title="Ver"></a>
-                                </p>
-                                <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mt-3 justify-content-center">
-                        <div class="card-body p-2">
-                            <div class="d-flex flex-nowrap align-items-center p-1">
-                                <img src="./img/mulher2.JPG" alt="" class="rounded-circle mr-3" style="width:50px;">
-                                <h5 class="card-tittle">Maria da Graça</h5>
-                            </div>
-                            <div class="p-1">
-                                <p class="card-text">Comecei a planejar um evento na digital voltado para segurança
-                                    de
-                                    dados e estou procurando palestrantes.. procuro por indicações :D</p>
-                            </div>
-                            <div class="mr-2 ml-2 d-flex justify-content-between">
-                                <p class="card-text">
-                                    <a href="#" class="text-muted" title="Ver"> 2 comentários</a>
-                                </p>
-                                <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mt-3 justify-content-center">
-                        <div class="card-body p-2">
-                            <div class="d-flex flex-nowrap align-items-center p-1">
-                                <img src="./img/homem2.JPG" alt="" class="rounded-circle mr-3" style="width:50px;">
-                                <h5 class="card-tittle">Josias Ricardo</h5>
-                            </div>
-                            <div class="p-1">
-                                <p class="card-text">Estou iniciando um projeto relacionado a marketing digital e
-                                    gostaria de encontrar pessoas que queriam trabalhar com wordpress!</p>
-                            </div>
-                            <div class="mr-2 ml-2 d-flex justify-content-between">
-                                <p class="card-text">
-                                    <a href="#" class="text-muted" title="Ver"> 2 comentários</a>
-                                </p>
-                                <a href="#" class="card-link" style="color: #536DFE;">Comentar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
-                </div>
+               
+                <!-- END FEED -->
+
             </div>
 
             <!-- EVENTOS -->

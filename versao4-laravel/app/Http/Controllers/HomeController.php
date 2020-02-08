@@ -9,10 +9,13 @@ use Auth;
 class HomeController extends Controller
 {
     public function index(){
+
         $user=Auth::User();
         $tags=$user->habilidades;
         $habilidades= \App\Tab_habilidade::all();
-        return view('usuarios.home', compact('user', 'tags', 'habilidades'));
+        $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->get();
+
+        return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao'));
     }
 
     public function update(Request $req){
@@ -87,5 +90,13 @@ class HomeController extends Controller
     
         return redirect()->route('usuarios.home');
 
+    }
+
+    public function mensagensEmissor(Request $request) {
+        $dados = $request->all();
+
+        $emissor = \App\Msg_emissor_feed::create($dados);
+
+        return redirect()->route('usuarios.home');
     }
 }

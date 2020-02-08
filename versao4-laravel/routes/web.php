@@ -38,6 +38,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/home', 'HomeController@index')->name('usuarios.home');
     Route::post('/home/update/{id}', 'HomeController@update')->name('usuarios.home.update');
     Route::post('/home/addTags', 'HomeController@addTags')->name('usuarios.home.addTags');
+    Route::post('/home/mensagens_emissor', 'HomeController@mensagensEmissor')->name('usuarios.home.mensagens_emissor');
     
     Route::get('/perfil', 'PerfilController@index')->name('usuarios.perfil');
     Route::get('/perfil/create', 'PerfilController@create')->name('usuarios.perfil.create');
