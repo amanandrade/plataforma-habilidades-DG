@@ -13,7 +13,7 @@ class CursosTableSeeder extends Seeder
     {
         // \DB::table('cursos')->insert(
         //     [
-        //         'nome_curso'=>'Designer',
+        //         'nome_curso'=>'Marketing Digital',
         //     ]
         // );
     }

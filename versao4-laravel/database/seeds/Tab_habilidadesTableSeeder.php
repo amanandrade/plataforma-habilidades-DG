@@ -11,10 +11,10 @@ class Tab_habilidadesTableSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('tab_habilidades')->insert(
-            [
-              'habilidades'=>'PYTON',
-        ]
-    );
+    //     \DB::table('tab_habilidades')->insert(
+    //         [
+    //           'habilidades'=>'PHP',
+    //     ]
+    // );
     }
 }

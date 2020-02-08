@@ -56,5 +56,7 @@ class User extends Authenticatable
     public function emissor() {
         return $this->hasMany(Msg_emissor_feed::class);
     }
-    
+    public function receptor(){
+        return $this->hasMany(Msg_receptor_feed::class);
+    }
 }

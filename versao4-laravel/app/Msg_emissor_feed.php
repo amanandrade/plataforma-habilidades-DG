@@ -11,4 +11,8 @@ class Msg_emissor_feed extends Model
     public function user() {
         return $this->belongsTo(User::class, 'usuario_id', 'id');
     }
+
+    public function receptor(){
+        return $this->hasMany(Msg_receptor_feed::class);
+    }
 }

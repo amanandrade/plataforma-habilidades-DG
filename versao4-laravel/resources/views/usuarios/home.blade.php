@@ -341,9 +341,15 @@
                     @csrf
                     <div class="input-group">
                         <div class="input-group-prepend">
+                        @if(empty(Auth::User()->estado))
+                        <span class="input-group-text"><img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle"
+                                    style="width:50px;"></span>
+                        @elseif(Auth::User()->estado == 1)
                             <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
                                     style="width:50px;"></span>
+                        @endif
                         </div>
+                        
                         <textarea class="form-control py-3" name="mensagem" aria-label="With textarea"
                             placeholder="O que você está pensando, {{Auth::User()->nome}}?" required></textarea>
                     </div>
@@ -391,7 +397,50 @@
 
                             <div class="collapse mt-1" id="codigo{{$publicar->id}}">
                                 <div class="card card-body">
-                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                <form method="post" action="{{route('usuarios.home.mensagens_receptor')}}" enctype="multipart/form-data">
+                                 @csrf
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                    @if(empty(Auth::User()->estado))
+                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width:40px;">
+                                    @elseif(Auth::User()->estado == 1)
+                                    <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
+                                            style="width:40px;">
+                                    @endif
+                                    </div>
+
+                                    <div class="col-sm-8">
+                                    <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0 py-0 ml-3"
+                                     id="teste" name="mensagem" placeholder="Escreve um comentário..." required>
+                                   
+                                    </div>
+                                    <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
+                                    <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
+                                    <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
+                                    </div>
+                                    </form>
+                                </div>
+                                
+                                   @foreach($comentarios as $comentar)
+                                      @if($publicar->id == $comentar->emissor_id)
+
+                                      <div class="row">
+                                          <div class="col-sm-1">
+                                          <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
+                                          </div>
+                                          <div class="col-sm-6 mt-2 ml-2">
+                                          <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
+                                          </div>
+                                          <div class="col-sm-4 mt-2">
+                                          <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
+                                          </div>
+                                          <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                      </div>
+                                                           
+                                      @endif
+                                   @endforeach
+                                
                                 </div>
                             </div>
                         @endforeach

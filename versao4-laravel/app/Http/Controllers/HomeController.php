@@ -14,8 +14,8 @@ class HomeController extends Controller
         $tags=$user->habilidades;
         $habilidades= \App\Tab_habilidade::all();
         $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->get();
-
-        return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao'));
+        $comentarios= \App\Msg_receptor_feed::orderBy('id','DESC')->get();
+        return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao','comentarios'));
     }
 
     public function update(Request $req){
@@ -98,5 +98,13 @@ class HomeController extends Controller
         $emissor = \App\Msg_emissor_feed::create($dados);
 
         return redirect()->route('usuarios.home');
+    }
+    public function mensagensReceptor(Request $request){
+
+          $dados=$request->all();
+
+          $receptor= \App\Msg_receptor_feed::create($dados);
+
+          return redirect()->route('usuarios.home');
     }
 }
