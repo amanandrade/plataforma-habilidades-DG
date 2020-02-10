@@ -47,7 +47,7 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu dropdown-menu-right">
                                     @if(Auth::guest())
                                     <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
                                     @else
