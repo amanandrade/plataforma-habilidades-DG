@@ -16,7 +16,7 @@
                     <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
                         @csrf
                         <div class="input-group">
-                            <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar"
+                            <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar por habilidades"
                                 aria-label="Example text with button addon" aria-describedby="button-addon1" required>
                             <div class="input-group-prepend">
                                 <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
@@ -70,15 +70,15 @@
 
             <div class="d-none d-sm-block d-md-none d-block d-sm-none">
                 <!-- busca mobile -->
-                <form>
+                <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
+                        @csrf
                     <div class="input-group my-2">
-                        <input type="text" class="form-control" placeholder=""
-                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <input type="text" name="habilidade_pesquisada" class="form-control" placeholder="Pesquisar por habilidades"
+                            aria-label="Example text with button addon" aria-describedby="button-addon1" required>
                         <div class="input-group-prepend">
-                            <a class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
-                                href="./buscaResultado.html">
+                            <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1">
                                 <i class="fa fa-search"></i>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -106,71 +106,112 @@
             <!-- FEED -->
             <div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
 
+    
                 <!-- INPUT PARA POSTAGENS -->
-                <div class="input-group mt-3">
-                    <textarea class="form-control py-3" aria-label="With textarea"
-                        placeholder="O que você está pensando, {{Auth::User()->nome}}?"></textarea>
-                </div>
-                <div class="input-group mt-1 justify-content-end">
-                    <button type="button" class="btn btn-primary btn-sm">Publicar</button>
-                </div>
 
-                <!-- cards de postagens -->
-                <div class="card mt-3" style="width: 100%; height: auto; background-color:#fafafa;">
-                    <div class="card-body p-1 ">
-                        <div class="d-flex flex-nowrap align-items-center p-1">
-                            <!-- ajuastar foto quando o usuário não coloca foto -->
-                            <img src="{{Auth::User()->foto}}" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;  ;">
-                            <h5 class="card-tittle">{{Auth::User()->nome}}</h5>
+                <form method="POST"  action="{{route('usuarios.home.mensagens_emissor')}}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="input-group">
+                        <div class="input-group-prepend mt-3">
+                        @if(empty(Auth::User()->estado))
+                        <span class="input-group-text"><img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle"
+                                    style="width:50px;"></span>
+                        @elseif(Auth::User()->estado == 1)
+                            <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
+                                    style="width:50px;"></span>
+                        @endif
                         </div>
-                        <div class="p-1">
-                            <p class="card-text">Gente, estou desesperada com PHP! Alguém pode me ajudar com esse
-                                código? =/</p>
-                        </div>
-                        <div class="mr-2 ml-2 d-flex justify-content-between">
-                        <p class="card-text"><small class="text-muted"> 1 comentário</small></p>
-                            <a href="#" class="card-link" style="color:#536DFE;">Editar</a>
-                        </div>
+                        
+                        <textarea class="form-control py-3 mt-3" name="mensagem" aria-label="With textarea"
+                            placeholder="O que você está pensando, {{Auth::User()->nome}}?" required></textarea>
                     </div>
-                </div>
-                <div class="card mt-3" style="width: 100%; height: auto;background-color:#fafafa;">
-                    <div class="card-body p-1 ">
-                        <div class="d-flex flex-nowrap align-items-center p-1">
-                            <img src="./img/mulher2.JPG" alt="" class="rounded-circle mr-3"
-                            style="width:50px; height: 50px;  ;">
-                            <h5 class="card-tittle">Maria da Graça</h5>
-                        </div>
-                        <div class="p-1">
-                            <p class="card-text">Comecei a planejar um evento na digital voltado para segurança de dados
-                                e estou procurando palestrantes.. procuro por indicações :D</p>
-                        </div>
-                        <div class="mr-2 ml-2 d-flex justify-content-between">
-                            <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                            <a href="#" class="card-link" style="color:#536DFE;">Comentar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mt-3" style="width: 100%; height: auto;background-color:#fafafa;">
-                    <div class="card-body p-1 ">
-                        <div class="d-flex flex-nowrap align-items-center p-1">
-                            <img src="./img/homem2.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;  ;">
-                            <h5 class="card-tittle">Josias Ricardo</h5>
-                        </div>
-                        <div class="p-1">
-                            <p class="card-text">Estou iniciando um projeto relacionado a marketing digital e gostaria
-                                de encontrar pessoas que queriam trabalhar com wordpress!</p>
-                        </div>
-                        <div class="mr-2 ml-2 d-flex justify-content-between">
-                            <p class="card-text"><small class="text-muted"> 2 comentários</small></p>
-                            <a href="#" class="card-link" style="color: #536DFE;">Comentar</a>
-                        </div>
-                    </div>
-                </div>
 
+                    <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
+                    <input type="hidden" name="estado" value="1">
+                
+                    <div class="text-right mt-1">
+                        <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
+                    </div>
+                </form>
+
+                <!-- FEED -->
+               
+                    <div class="mt-1">
+                        @foreach ($publicacao as $publicar)
+                            <div class="card mt-3 justify-content-center">
+                                <div class="card-body p-2">
+                                    <div class="d-flex flex-nowrap align-items-center p-1">
+                                    <!-- ajuastar foto quando o usuário não coloca foto -->
+                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
+                                        <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
+                                    </div>
+                                    <div class="p-1">
+                                        <p class="card-text">{{$publicar->mensagem}}</p>
+                                    </div>
+                                    <div class="mr-2 ml-2 d-flex justify-content-between">
+                                        <p class="card-text">
+                                        <a class="text-muted" title="Ver"> 1 comentário</a>
+                                        </p>
+                                        <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapse mt-1" id="codigo{{$publicar->id}}">
+                                <div class="card card-body">
+                                <form method="post" action="{{route('usuarios.home.mensagens_receptor')}}" enctype="multipart/form-data">
+                                 @csrf
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                    @if(empty(Auth::User()->estado))
+                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width:40px;">
+                                    @elseif(Auth::User()->estado == 1)
+                                    <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
+                                            style="width:40px;">
+                                    @endif
+                                    </div>
+
+                                    <div class="col-sm-8">
+                                    <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0 py-0 ml-3"
+                                     id="teste" name="mensagem" placeholder="Escreve um comentário..." required>
+                                   
+                                    </div>
+                                    <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
+                                    <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
+                                    <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
+                                    </div>
+                                    </form>
+                                </div>
+                                
+                                   @foreach($comentarios as $comentar)
+                                      @if($publicar->id == $comentar->emissor_id)
+
+                                      <div class="row">
+                                          <div class="col-sm-1">
+                                          <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
+                                          </div>
+                                          <div class="col-sm-6 mt-2 ml-2">
+                                          <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
+                                          </div>
+                                          <div class="col-sm-4 mt-2">
+                                          <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
+                                          </div>
+                                          <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                      </div>
+                                                           
+                                      @endif
+                                   @endforeach
+                                
+                                </div>
+                            </div>
+                        @endforeach
+                        <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
+                    </div>
+                
+              
             </div>
-
+              <!-- END FEED -->
             <!-- NOTIFICAÇÕES -->
             <div class="tab-pane fade" id="nav-notificacao" role="tabpanel" aria-labelledby="nav-notificacao-tab">
                 <div id="notificacoes" class="flex-nowrap justify-content-rigth align-items-start mt-3">

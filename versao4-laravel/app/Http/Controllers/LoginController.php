@@ -42,9 +42,38 @@ class LoginController extends Controller
         return view('auth.loginLembrarsenha');
       }
    
-      public function verificarEmail(){
-   
-       return view('auth.loginMudarsenha');
-   
+
+      public function verificarEmail(Request $req){
+  
+        $email=$req['email'];
+      
+        //dd($email);
+        $email_user= \App\User::where('email',$email)->get()->first();
+      
+       //dd($email_user);
+      
+          if($email_user){
+      
+            $verificado=$email_user;
+             
+            return view('Auth.loginMudarsenha', compact('verificado'));
+      
+          }else{
+      
+            return redirect()->back()->with('msg','O email não corresponde');;
+          }
+      
       }
+      
+      public function updateSenha(Request $req, $id){
+        $dados=$req->all();
+        $update= \App\User::find($id);
+        $update->password=bcrypt($dados['password']);
+        $update->save();
+         
+        return redirect()->route('usuarios.login');
+      
+      
+      }
+      
 }

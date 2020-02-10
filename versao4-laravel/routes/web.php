@@ -20,8 +20,9 @@ Route::get('/', 'LoginController@index')->name('usuarios.login');
 Route::post('/login/entrar', 'LoginController@entrar')->name('usuarios.login.entrar');
 
 Route::get('/usuario/Lembrarsenha', 'LoginController@Lembrarsenha')->name('usuarios.loginLembrarsenha');
-//Route::post('/usuario/Mudarsenha', 'UsuarioController@verificarEmail')->name('usuarios.loginLembrarsenha.salvar');
-Route::get('/usuario/Mudarsenha', 'LoginController@verificarEmail')->name('usuarios.loginMudarsenha');
+Route::post('/usuario/Mudarsenha', 'LoginController@verificarEmail')->name('usuarios.loginLembrarsenha.verificado');
+Route::post('/usuario/Mudarsenha/{id}', 'LoginController@updateSenha')->name('usuarios.loginupdatesenha');
+//Route::post('/usuario/Mudarsenha/{id}', 'LoginController@updateSenha')->name('usuarios.loginupdatesenha');
 
 
 Route::get('/index', 'UsuarioController@create')->name('usuarios.cadastro');
