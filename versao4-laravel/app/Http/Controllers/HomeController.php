@@ -15,6 +15,16 @@ class HomeController extends Controller
         $habilidades= \App\Tab_habilidade::all();
         $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->get();
         $comentarios= \App\Msg_receptor_feed::orderBy('id','DESC')->get();
+
+        // $publicacao_array = \App\Msg_emissor_feed::select('id', 'mensagem')->get();
+        // $comentario_array = \App\Msg_receptor_feed::select('mensagem', 'emissor_id')->get();
+
+        // $control = \App\Msg_receptor_feed::select('mensagem', 'emissor_id')->get();
+        // $control = \App\Msg_receptor_feed::select('mensagem')->where('emissor_id', 6)->get();
+        // $control = \App\Msg_receptor_feed::select('mensagem')->where('emissor_id', 7)->get()->count();
+
+        // select count(emissor_id) from msg_receptor_feeds where emissor_id = 6;
+
         return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao','comentarios'));
     }
 
@@ -99,6 +109,7 @@ class HomeController extends Controller
 
         return redirect()->route('usuarios.home');
     }
+
     public function mensagensReceptor(Request $request){
 
           $dados=$request->all();

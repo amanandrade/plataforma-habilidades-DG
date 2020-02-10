@@ -10,7 +10,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="inputSenha" class="sr-only"></label>
-                    <input type="email" class="form-control" id="inputSenha" placeholder="{{$verificado->email}}">
+                    <input type="email" class="form-control" id="inputSenha" placeholder="{{$verificado->email}}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="inputSenha" class="sr-only">Confirmar nova senha</label>
