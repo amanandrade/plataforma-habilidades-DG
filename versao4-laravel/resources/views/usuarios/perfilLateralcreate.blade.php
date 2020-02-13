@@ -4,6 +4,7 @@
 @section('conteudo')
 <div class="container">
 
+<<<<<<< HEAD
 <div class="row">
     {{-- <nav class="navbar navbar-expand-md navbar-light col-12">
 
@@ -46,6 +47,8 @@
                     </div>
                 </nav> --}}
             </div>
+=======
+>>>>>>> dd535f4ddfc9830d1303339dbcdba7a9ea9a3e6c
         <div class="toast-header">
             <strong class="mr-auto">Digite aqui conhecimentos que queira compartilhar..</strong>
             <a href="./issues copy/icons/add-24px.svg"></a>
