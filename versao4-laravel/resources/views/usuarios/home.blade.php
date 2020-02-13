@@ -333,7 +333,11 @@
                                     </div>
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <p class="card-text">
-                                        <a class="text-muted" title="Ver"> 1 comentário</a>
+                                        <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary btn-sm">Excluir</button>  
+                                        </form>
                                         </p>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                     </div>
@@ -362,7 +366,7 @@
                                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                                     <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
                                     <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>
                                     </div>
                                     </form>
                                 </div>
@@ -381,6 +385,11 @@
                                           <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                        <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>  
+                                        </form>
                                       </div>
                                                            
                                       @endif
