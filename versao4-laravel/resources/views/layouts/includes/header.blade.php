@@ -10,7 +10,7 @@
                         <img src="../img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
                     </a>
                     <!-- busca desktop -->
-                    <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
+                    <form action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
                         @csrf
                         <div class="input-group">
                             <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar"

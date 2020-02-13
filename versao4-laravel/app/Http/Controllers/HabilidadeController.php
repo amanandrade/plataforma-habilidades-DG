@@ -18,31 +18,51 @@ class HabilidadeController extends Controller
         $tag_busca = $request['habilidade_pesquisada'];
         
         $usuarios = \App\User::get();
-        
-        dd(\App\User::query()->WhereHas('habilidades', function($query) use ($tag_busca) {
+
+        // ------------------------------------------------------------------------------------
+        $buscas = (\App\User::query()->WhereHas('habilidades', function($query) use ($tag_busca) {
             return $query->where('habilidades', 'LIKE', "%{$tag_busca}%");
         })->orWhere('nome', 'LIKE', "%{$tag_busca}%")->get());
+        // ------------------------------------------------------------------------------------
+        
+        // dd($buscas);
+        
+        // $usuarios = [];
+        // foreach ($buscas as $busca) {
+        //     $usuarios[] = $busca;
+        // }
 
-        foreach ($usuarios as $usuario) {
-            $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
-        }
+        // $habilidades = "";
+        // dd($array_buscas);
 
-        return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
+        // foreach ($usuarios as $usuario) {
+        //     // $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
+        // }
+
+        return view('usuarios.habilidadesBusca', compact('buscas'));
+
+        // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
+
+        // foreach ($usuarios as $usuario) {
+        //     $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
+        // }
+
+        // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
 
         // -----------------------------------------------------------------------------------
-        $usuario = \App\User::where('nome', 'LIKE', "%{$tag_busca}%")->get();
+        // $usuario = \App\User::where('nome', 'LIKE', "%{$tag_busca}%")->get();
 
-        if(count($usuario) > 0){
-            foreach ($usuario as $user) {
-                $usuario_habilidades = $user->habilidades()->get();
-            }
-            return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
-        }
-        else{
-            $usuario = null; 
-            $usuario_habilidades =null;
-            return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
-        }
+        // if(count($usuario) > 0){
+        //     foreach ($usuario as $user) {
+        //         $usuario_habilidades = $user->habilidades()->get();
+        //     }
+        //     return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+        // }
+        // else{
+        //     $usuario = null; 
+        //     $usuario_habilidades =null;
+        //     return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+        // }
         // -------------------------------------------------------------------------------------
 
     }
