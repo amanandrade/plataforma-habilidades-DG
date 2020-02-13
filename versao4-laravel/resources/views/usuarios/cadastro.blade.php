@@ -255,8 +255,12 @@
         <div class="container">
             <div class="row d-flex justify-content-center mt-3">
             
+<<<<<<< HEAD
+                <a href="{{route('usuarios.login')}}" class="btn btn-danger mr-5">Cancelar</a>
+=======
                <a href="{{route('usuarios.login')}}" class="btn btn-danger mr-5">Cancelar</a>
 
+>>>>>>> 0a09478d59e9a71f0c2186289de02e29dd423649
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
 
             </div>
