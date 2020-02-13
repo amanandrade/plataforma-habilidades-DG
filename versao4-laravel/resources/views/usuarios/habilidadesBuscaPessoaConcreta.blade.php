@@ -77,7 +77,7 @@
                             @endforeach
                             
                         @else
-                            {{ 'USUARIO NAO ENCONTARDO' }}
+                            {{ 'Termo não encontrado.' }}
                         @endif
                         
                         {{-- @foreach ($usuarios as $usuario)

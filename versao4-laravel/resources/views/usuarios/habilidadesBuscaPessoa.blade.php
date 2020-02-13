@@ -37,7 +37,7 @@
                     <div class="input-group-prepend">
                         <button class="btn btn-outline-secondary" type="submit">
                             <i class="fa fa-search"></i>
-                        </button> <!--mudar depois para tag button-->
+                        </button>
                     </div>
                 </div>
             </form>
