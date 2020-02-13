@@ -385,6 +385,7 @@
                                           <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                          <!-- <a class="btn btn-warning btn-sm" href="/home/mensagens_receptor/{{$comentar->id}}/update">Editar</a> -->
                                         <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
