@@ -32,17 +32,20 @@
                     <div class="form-group">
                         <label for="inputSenha">Senha</label>
                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="inputSenha" placeholder="Senha" value="{{old('password')}}">
-                    @error('password')
-                    <div class="invalid-feedback">
-                        {{$message}}
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
-                    @enderror
+                    <button type="submit" class="btn btn-large btn-block btn-info mt-3 w-100"><a style="color: #FFFF">Login</a></button>
+                    
+                    <div class="text-right my-2">
+                        <div class="mb-1" >
+                            <label class="form-check-label" for="exampleCheck1"></label><a style="color:black" href="{{route('usuarios.loginLembrarsenha')}}">Esqueci minha senha</a></label>
+                        </div>
+                        <a style="color: black" href="{{route('usuarios.cadastro')}}">Quero me cadastrar</a>
                     </div>
-                    <div class="mb-1" >
-                        <label class="form-check-label" for="exampleCheck1"></label><a style="color:black" href="{{route('usuarios.loginLembrarsenha')}}">Esqueci minha senha</a></label>
-                    </div>
-                    <a style="color: black" href="{{route('usuarios.cadastro')}}">Quero me cadastrar</a>
-                    <button type="submit" class="btn btn-dark ml-3 pt-1 pb-1 pr-2 pl-2 "><a style="color: #FFFF">Login</a></button>
                 </form>
         </div>
     </div>

@@ -1,4 +1,4 @@
-@include('layouts.includes.header')
+@include('layouts.includes.head')
 
 @yield('conteudo')
 

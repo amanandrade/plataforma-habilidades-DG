@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.index')
 
 @section('titulo','Help')
 
@@ -254,10 +254,10 @@
 
         <div class="container">
             <div class="row d-flex justify-content-center mt-3">
+            
+               <a href="{{route('usuarios.login')}}" class="btn btn-danger mr-5">Cancelar</a>
 
-                <button class="btn btn-primary mr-5" type="submit">Cadastrar</button>
-
-               <a href="{{route('usuarios.login')}}" class="btn btn-dark">Cancelar</a>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
 
             </div>
         </div>

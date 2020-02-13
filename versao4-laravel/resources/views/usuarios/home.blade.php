@@ -1,104 +1,8 @@
-@extends('layouts.index')
+@extends('layouts.indexhome')
 
 @section('titulo', 'Help')
 @section('conteudo')
-    <!-- menu nav e busca -->
-  
-    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
-        <div class="container">
-            <!-- navbar -->
-            <div class="row">
-                <nav class="navbar navbar-expand-md navbar-light col-12 px-md-0 mt-1">
-                    <a class="navbar-item" href="#">
-                        <img src="./img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
-                    </a>
-                    <!-- busca desktop -->
-                    <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
-                        @csrf
-                        <div class="input-group">
-                            <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar por habilidades"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1"
-                                href="{{route('usuarios.habilidades.busca')}}">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <button class="border-0 navbar-toggler p-0" type="button" data-toggle="collapse"
-                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                        <div class="justify-content-end">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="#">Home<span
-                                            class="sr-only">(atual)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="./cadastro.html">Meu
-                                        Cadastro</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right"
-                                        href="{{route('usuarios.habilidades')}}">Habilidades</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right"
-                                        href="{{route('usuarios.perfil')}}">Meu Perfil</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown show">
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        @if(Auth::guest())
-                                        <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
-                                        @else
-                                        <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
-                                        @endif
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="d-none d-sm-block d-md-none d-block d-sm-none">
-                <!-- busca mobile -->
-                <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
-                        @csrf
-                    <div class="input-group my-2">
-                        <input type="text" name="habilidade_pesquisada" class="form-control" placeholder="Pesquisar por habilidades"
-                            aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <!-- nav mobile -->
-                <nav>
-                    <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-feed-tab" data-toggle="tab" href="#nav-feed"
-                            role="tab" aria-controls="nav-feed" aria-selected="true">Feed</a>
-                        <a class="nav-item nav-link" id="nav-notificacao-tab" data-toggle="tab" href="#nav-notificacao"
-                            role="tab" aria-controls="nav-notificacao" aria-selected="false">Notificações</a>
-                        <a class="nav-item nav-link" id="nav-eventos-tab" data-toggle="tab" href="#nav-eventos"
-                            role="tab" aria-controls="nav-eventos" aria-selected="false">Eventos</a>
-                    </div>
-                </nav>
-            </div>
-
-        </div>
-    </header>
-
+    
     <!-- home mobile -->
     <main class="container d-none d-sm-block d-md-none d-block d-sm-none">
         <div class="row tab-content justify-content-center mx-1" id="nav-tabContent">
@@ -429,7 +333,11 @@
                                     </div>
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <p class="card-text">
-                                        <a class="text-muted" title="Ver"> 1 comentário</a>
+                                        <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary btn-sm">Excluir</button>  
+                                        </form>
                                         </p>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                     </div>
@@ -458,7 +366,7 @@
                                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                                     <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
                                     <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>
                                     </div>
                                     </form>
                                 </div>
@@ -477,6 +385,11 @@
                                           <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                        <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>  
+                                        </form>
                                       </div>
                                                            
                                       @endif
