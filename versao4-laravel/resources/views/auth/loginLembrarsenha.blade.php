@@ -26,9 +26,9 @@
                     <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
                         placeholder="Email">
                 </div>
-                <button type="submit" class="btn btn-warning">Solicitar nova senha</button>
+                <a href="{{route('usuarios.login')}}" class="btn btn-danger">Cancelar</a>
 
-                <a href="{{route('usuarios.login')}}" class="btn btn-dark">Cancelar</a>
+                <button type="submit" class="btn btn-info">Solicitar nova senha</button>
             </form>
         </div>
     </div>

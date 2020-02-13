@@ -14,86 +14,56 @@ class HabilidadeController extends Controller
     }
 
     public function create(Request $request){
-        // $habilidade_pesquisada = $request['habilidade_pesquisada'];
-        // dd($habilidade_pesquisada);
-
-        // $usuarios = \App\User::all();
-        // $array_usuarios = [];
-        // foreach ($usuarios as $key => $value) {
-        //     $array_usuarios[] = $value['nome'];
-        // }
-        // dd($array_usuarios);
-
-
-        // $usuario = \App\User::find(3);
-        // $habilidades_usuario = $usuario->habilidades()->get();
-
-        // $array_habilidades = [];
-        // foreach ($habilidades_usuario as $key => $value) {
-        //     $array_habilidades[] = $value['habilidades'];
-        // }
-
-        // 1 -----------------------------------------------------------------------------------------------------
-        // $usuarios = \App\User::get();
-        // foreach ($usuarios as $usuario) {
-
-        //     $habilidades = $usuario->habilidades()->get();
-        //     echo "<br>$usuario[nome]<br>";
-            
-        //     foreach ($habilidades as $key => $value) {
-                
-        //         echo " $value[habilidades] ";
-        //     }
-
-        // }
-
-        // 2 ---------------------------------------------------------------------------------------------------------
-        // $usuarios = \App\User::get();
-        // foreach ($usuarios as $usuario) {
-
-        //     $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$request['habilidade_pesquisada']}%")->get();
-        //     echo "<br>$usuario[nome]<br>";
-
-        //     foreach ($habilidades as $key => $value) {
-        //         echo " $value[habilidades] ";
-        //     }
-
-        // }
-
-        // 3 -----------------------------------------------------------------------------------------------------
-        // $usuarios = \App\User::get();
-        // foreach ($usuarios as $usuario) {
-
-        //     $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$request['habilidade_pesquisada']}%")->get();
-            
-        //     if(count($habilidades) > 0) {
-        //         echo "<br><b>$usuario[nome]</b><br>";
-        //     }
-            
-        //     foreach ($habilidades as $key => $value) {
-        //         echo " $value[habilidades] ";
-        //     }
-
-        // }
-
-        // 4 -----------------------------------------------------------------------------------------------------------
+       
         $tag_busca = $request['habilidade_pesquisada'];
+        
         $usuarios = \App\User::get();
-        foreach ($usuarios as $usuario) {
 
-            $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
-            
-            // if(count($habilidades) > 0) {
-            //     echo "<br><b>$usuario[nome]</b><br>";
-            // }
-            
-            // foreach ($habilidades as $key => $value) {
-            //     echo " $value[habilidades] ";
-            // }
+        // ------------------------------------------------------------------------------------
+        $buscas = (\App\User::query()->WhereHas('habilidades', function($query) use ($tag_busca) {
+            return $query->where('habilidades', 'LIKE', "%{$tag_busca}%");
+        })->orWhere('nome', 'LIKE', "%{$tag_busca}%")->get());
+        // ------------------------------------------------------------------------------------
+        
+        // dd($buscas);
+        
+        // $usuarios = [];
+        // foreach ($buscas as $busca) {
+        //     $usuarios[] = $busca;
+        // }
 
-        }
+        // $habilidades = "";
+        // dd($array_buscas);
 
-        return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
+        // foreach ($usuarios as $usuario) {
+        //     // $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
+        // }
+
+        return view('usuarios.habilidadesBusca', compact('buscas'));
+
+        // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
+
+        // foreach ($usuarios as $usuario) {
+        //     $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
+        // }
+
+        // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
+
+        // -----------------------------------------------------------------------------------
+        // $usuario = \App\User::where('nome', 'LIKE', "%{$tag_busca}%")->get();
+
+        // if(count($usuario) > 0){
+        //     foreach ($usuario as $user) {
+        //         $usuario_habilidades = $user->habilidades()->get();
+        //     }
+        //     return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+        // }
+        // else{
+        //     $usuario = null; 
+        //     $usuario_habilidades =null;
+        //     return view('usuarios.habilidadesBuscaPessoaConcreta', compact('usuario', 'usuario_habilidades'));
+        // }
+        // -------------------------------------------------------------------------------------
 
     }
 
@@ -114,6 +84,8 @@ class HabilidadeController extends Controller
             // }
 
         }
+
+        
 
         return view('usuarios.habilidadesBuscaTag', compact('usuarios', 'habilidades','tag_busca'));
     }
