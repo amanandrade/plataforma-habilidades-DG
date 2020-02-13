@@ -31,9 +31,9 @@ Route::post('/usuario/create', 'UsuarioController@store')->name('usuarios.cadast
 
 
 Route::group(['middleware'=>['auth']], function(){
-    
+
     Route::get('/login/sair', 'LoginController@sair')->name('usuarios.login.sair');
-    
+
     Route::post('/foto/salvar', 'Foto_usuarioController@salvar')->name('usuarios.fotos.salvar');
 
     Route::get('/home', 'HomeController@index')->name('usuarios.home');
@@ -43,7 +43,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/home/mensagens_receptor', 'HomeController@mensagensReceptor')->name('usuarios.home.mensagens_receptor');
     Route::delete('/home/mensagens_receptor/{id}/delete', 'HomeController@destroyReceptor');
     Route::delete('/home/mensagens_emissor/{id}/delete', 'HomeController@destroyEmissor');
-    
+
     Route::get('/perfil', 'PerfilController@index')->name('usuarios.perfil');
     Route::get('/perfil/create', 'PerfilController@create')->name('usuarios.perfil.create');
 
@@ -82,4 +82,5 @@ Route::get('/model', function(){
    ]);
    return \App\User::all();
 });
+
 

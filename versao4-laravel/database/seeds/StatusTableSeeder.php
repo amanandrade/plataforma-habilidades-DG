@@ -11,10 +11,10 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-        // \DB::table('status')->insert(
-        //     [
-        //         'nome_status'=>'Frequencia',
-        //     ]
-        //     );
-    }
+    //     \DB::table('status')->insert(
+    //         [
+    //             'nome_status'=>'Frequencia',
+    //         ]
+    //         );
+    // }
 }

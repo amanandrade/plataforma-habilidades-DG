@@ -3,7 +3,7 @@
 @section('titulo','Help')
 @section('conteudo')
 <div class="container">
-          
+
     <div class="pt-3 row">
     <!-- Parte superior FOTO-NOME-DESCRICAO -->
     <div class="col-lg-12">
@@ -14,17 +14,81 @@
         </div>
 
         <!-- Nome / Descricao -->
-        <div class="d-flex flex-column ">
-            <h3>{{Auth::User()->nome}}</h3>
-            <p>Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
-            <a class="navbar-item d-flex mb-2" href="{{route('usuarios.perfil.create')}}">
-                Editar habilidades<i class="material-icons ml-1" style="font-size: 20px;">edit</i>
-            </a>
-        </div>
+        {{-- <div class=" row justify-content-center"> --}}
+            <div class="d-flex align-items-center flex-column ">
+                <h3>{{Auth::User()->nome}}</h3>
+                <p>Sou uma pessoa que adora descobrir coisas novas! Eu canto nas horas vagas e adoro cozinhar comida japonesa.</p>
+                {{-- <a class="navbar-item d-flex mb-2" href="{{route('usuarios.perfil.create')}}">
+                    Editar habilidades<i class="material-icons ml-1" style="font-size: 20px;">edit</i> --}}
+                {{-- </a> --}}
+            </div>
+        {{-- </div> --}}
+
     </div>
-
-
-    <!-- Botoes de navegacao -->
+<div class="container">
+        <div class="toast-header">
+        <strong class="mr-auto">Digite aqui conhecimentos que queira compartilhar..</strong>
+        <a href="./issues copy/icons/add-24px.svg"></a>
+    </div>
+    <div class="toast-header">
+        <i class="material-icons" style="color:#4CAF50;">
+            label
+        </i>
+        <span class="mr-auto">Bootstrap</span>
+        <button type="button" class="ml-2 mb-1 close">
+            <i class="material-icons">
+                edit
+            </i>
+        </button>
+    </div>
+    <div class="toast-body">
+        Aprendi bootstrap há alguns meses na Digital e me sinto ninja para ensinar xD
+    </div>
+</div>
+<div class="container">
+    <div class="toast-header">
+        <i class="material-icons" style="color:blue;">label
+            </i>
+            <span class="mr-auto">CSS</span>
+            <button type="button" class="ml-2 mb-1 close">
+                <i class="material-icons">
+                    edit
+                </i>
+            </button>
+    </div>
+    <div class="toast-header">
+        <i class="material-icons" style="color:#F44336;">label
+            </i>
+            <span class="mr-auto">Javascript</span>
+            <button type="button" class="ml-2 mb-1 close">
+                <i class="material-icons">
+                    edit
+                </i>
+            </button>
+    </div>
+    <div class="toast-header">
+        <i class="material-icons" style="color:#FFC107;">label
+            </i>
+            <span class="mr-auto">PHP</span>
+            <button type="button" class="ml-2 mb-1 close">
+                <i class="material-icons">
+                    edit
+                </i>
+            </button>
+    </div>
+    <div class="toast-header">
+        <i class="material-icons" style="color:#536DFE;">label
+            </i>
+            <span class="mr-auto">Orientação a objetos</span>
+            <button type="button" class="ml-2 mb-1 close">
+                <i class="material-icons">
+                    edit
+                </i>
+            </button>
+    </div>
+</div>
+</div>
+    {{-- <!-- Botoes de navegacao -->
     <div class="row">
         <div class="pt-3 col-lg-12 col-md-8 cold-sm-6 col-xs-3">
             <nav>
@@ -186,6 +250,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection

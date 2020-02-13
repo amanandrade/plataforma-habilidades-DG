@@ -5,8 +5,8 @@
 <div class="container">
 
 <div class="row">
-    <nav class="navbar navbar-expand-md navbar-light col-12">
-     
+    {{-- <nav class="navbar navbar-expand-md navbar-light col-12">
+
       <button class="border-0 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,13 +38,13 @@
                                 @else
                                 <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
                                 @endif
-                               
-      
+
+
     </div>
                             </ul>
                         </div>
                     </div>
-                </nav>
+                </nav> --}}
             </div>
         <div class="toast-header">
             <strong class="mr-auto">Digite aqui conhecimentos que queira compartilhar..</strong>
