@@ -44,6 +44,9 @@
                                         Cadastro</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="./mensagens.html">Mensagens</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.habilidades')}}">Habilidades</a>
                                 </li>
