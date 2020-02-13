@@ -2,65 +2,6 @@
 
 @section('titulo','Help')
 @section('conteudo')
-    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
-        <div class="container">
-            <!-- navbar -->
-            <div class="row">
-                <nav class="navbar navbar-expand-md navbar-light col-12 px-md-0 mt-1">
-                    <a class="navbar-item" href="#">
-                        <img src="{{asset('img/help_logo.jpg')}}" alt="logo" style="width: 57px" class="rounded">
-                    </a>
-                    <!-- busca desktop -->
-                    <!--  -->
-                    <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
-                        @csrf
-                        <div class="input-group">
-                            <input type="text" name="habilidade_pesquisada" class="form-control" style="width: 300px" placeholder="Pesquisar"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary" type="submit" id="buttom-addon1">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <!--  -->
-                
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                        <div class="justify-content-end">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="{{route('usuarios.home')}}">Home<span
-                                            class="sr-only">(atual)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="./cadastro.html">Meu
-                                        Cadastro</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right"
-                                        href="{{route('usuarios.habilidades')}}">Habilidades</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right"
-                                        href="{{route('usuarios.perfil')}}">Meu Perfil</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    @if(Auth::guest())
-                                    <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
-                                    @else
-                                    <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
-                                    @endif
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>          
-    </header>
     
     <main class="container mt-5">
         <div class="row">
