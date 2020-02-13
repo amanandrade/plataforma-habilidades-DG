@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.index')
 
 @section('titulo','Help')
 
