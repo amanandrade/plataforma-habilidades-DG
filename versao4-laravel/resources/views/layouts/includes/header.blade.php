@@ -7,7 +7,7 @@
             <div class="row">
                 <nav class="navbar navbar-expand-md navbar-light col-12 px-md-0 mt-1">
                     <a class="navbar-item" href="{{route('usuarios.home')}}">
-                        <img src="./img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
+                        <img src="../img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
                     </a>
                     <!-- busca desktop -->
                     <form method="POST" action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
