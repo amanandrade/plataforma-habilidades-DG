@@ -1,0 +1,103 @@
+mysql> use plataforma_habilidades;
+Database changed
+mysql> show tables;
++----------------------------------+
+| Tables_in_plataforma_habilidades |
++----------------------------------+
+| cursos                           |
+| failed_jobs                      |
+| migrations                       |
+| msg_emissor_feeds                |
+| msg_receptor_feeds               |
+| password_resets                  |
+| status                           |
+| tab_habilidades                  |
+| tags                             |
+| users                            |
++----------------------------------+
+10 rows in set (0.41 sec)
+
+mysql> select * from cursos;
++----+-------------------+------------+------------+
+| id | nome_curso        | created_at | updated_at |
++----+-------------------+------------+------------+
+|  1 | FullStack         |       NULL |       NULL |
+|  2 | Marketing Digital |       NULL |       NULL |
++----+-------------------+------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from msg_emissor_feeds;
++----+--------------------------+--------+------------+---------------------+---------------------+
+| id | mensagem                 | estado | usuario_id | created_at          | updated_at          |
++----+--------------------------+--------+------------+---------------------+---------------------+
+|  1 | preciso de ajuda no AJAX |      1 |          1 | 2020-02-13 04:17:01 | 2020-02-13 04:17:01 |
+|  2 | ola                      |      1 |          2 | 2020-02-13 05:35:27 | 2020-02-13 05:35:27 |
+|  3 | Preciso de ajuda em CSS  |      1 |          4 | 2020-02-13 14:21:40 | 2020-02-13 14:21:40 |
++----+--------------------------+--------+------------+---------------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from msg_receptor_feeds;
++----+-------------------+------------+------------+---------------------+---------------------+
+| id | mensagem          | usuario_id | emissor_id | created_at          | updated_at          |
++----+-------------------+------------+------------+---------------------+---------------------+
+|  1 | ok. vou ajudar vc |          2 |          1 | 2020-02-13 04:22:23 | 2020-02-13 04:22:23 |
+|  2 | esta good         |          2 |          2 | 2020-02-13 05:35:37 | 2020-02-13 05:35:37 |
+|  3 | URGENTE!          |          4 |          3 | 2020-02-13 14:21:52 | 2020-02-13 14:21:52 |
+|  4 | Ola, como vai_    |          4 |          2 | 2020-02-13 14:22:16 | 2020-02-13 14:22:16 |
++----+-------------------+------------+------------+---------------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from status;
++----+-------------+------------+------------+
+| id | nome_status | created_at | updated_at |
++----+-------------+------------+------------+
+|  1 | FrequÛncia  |       NULL |       NULL |
+|  2 | Finalista   |       NULL |       NULL |
+|  3 | ConcluÝdo   |       NULL |       NULL |
++----+-------------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from tab_habilidades;
++----+--------------+------------+------------+
+| id | habilidades  | created_at | updated_at |
++----+--------------+------------+------------+
+|  1 | CSS          |       NULL |       NULL |
+|  2 | HTML5        |       NULL |       NULL |
+|  3 | FLEXBOX      |       NULL |       NULL |
+|  4 | Bootstrap    |       NULL |       NULL |
+|  5 | PHP          |       NULL |       NULL |
+|  6 | LARAVEL      |       NULL |       NULL |
+|  7 | JAVASCRIPT   |       NULL |       NULL |
+|  8 | JQUERY       |       NULL |       NULL |
+|  9 | AJAX         |       NULL |       NULL |
+| 10 | React Native |       NULL |       NULL |
++----+--------------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from users;
++----+----------------+---------------------------+-------------------+--------------------------------------------------------------+--------------+--------+------------+-----------+--------------------------------+--------+----------+-----------+----------------+---------------------+---------------------+
+| id | nome           | email                     | email_verified_at | password                                                     | telefone     | genero | nascimento | descricao | foto                           | estado | curso_id | status_id | remember_token | created_at          | updated_at          |
++----+----------------+---------------------------+-------------------+--------------------------------------------------------------+--------------+--------+------------+-----------+--------------------------------+--------+----------+-----------+----------------+---------------------+---------------------+
+|  1 | domlife        | domlife@hotmail.com       |              NULL | $2y$10$bThvqtXrabiQesEh5JeOxuIPBuiLQc4255S5J1FdKNwadAuLFD4ne |    242839268 | 1      | 2020-02-13 | NULL      | img/fotos//foto_.5503759.png   |      1 |        1 |         1 | NULL           | 2020-02-13 04:15:16 | 2020-02-13 04:16:17 |
+|  2 | Daniel Noberto | daniwest@hotmail.com      |              NULL | $2y$10$gSJ.zpVVa5iuHeMUw1zdiuyX8fgAp/FtyXBVo/6nn3w3qgMxX5OQ6 |    242839268 | 1      | 2020-02-13 | NULL      | img/fotos//foto_.63878786.jpeg |      1 |        1 |         1 | NULL           | 2020-02-13 04:20:22 | 2020-02-13 15:11:37 |
+|  3 | teste          | teste@teste.com           |              NULL | $2y$10$d2StdRJ9tPWZBYz65SJxKeIti7.X4iNX1NHyVgXhO3OF4O/cesr6W |    242839268 | 1      | 2020-02-13 | NULL      | NULL                           |   NULL |        1 |         2 | NULL           | 2020-02-13 05:33:11 | 2020-02-13 05:33:11 |
+|  4 | Sergio Moura   | smouracalm@onkkkgmail.com |              NULL | $2y$10$xgMW3KzdPkuvtZ9lprVV6e/SF2D0kbX3sZH95DqOO3VRPkvvq0xD6 | 123123123123 | 3      | 1979-10-24 | NULL      | img/fotos//foto_.24495160.jpeg |      1 |        1 |         2 | NULL           | 2020-02-13 14:19:15 | 2020-02-13 14:20:43 |
++----+----------------+---------------------------+-------------------+--------------------------------------------------------------+--------------+--------+------------+-----------+--------------------------------+--------+----------+-----------+----------------+---------------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from tags;
++----+------------+---------------+------------+------------+
+| id | usuario_id | habilidade_id | created_at | updated_at |
++----+------------+---------------+------------+------------+
+|  1 |          1 |             2 |       NULL |       NULL |
+|  2 |          1 |             5 |       NULL |       NULL |
+|  3 |          2 |             9 |       NULL |       NULL |
+|  4 |          2 |             6 |       NULL |       NULL |
+|  5 |          2 |             2 |       NULL |       NULL |
+|  6 |          2 |             4 |       NULL |       NULL |
+|  7 |          3 |             7 |       NULL |       NULL |
+|  8 |          3 |             9 |       NULL |       NULL |
+|  9 |          4 |             5 |       NULL |       NULL |
+| 10 |          4 |             2 |       NULL |       NULL |
++----+------------+---------------+------------+------------+
+10 rows in set (0.00 sec)

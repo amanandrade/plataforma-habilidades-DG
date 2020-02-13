@@ -102,6 +102,7 @@ class HomeController extends Controller
 
     }
 
+    // Post
     public function mensagensEmissor(Request $request) {
         $dados = $request->all();
 
@@ -110,6 +111,16 @@ class HomeController extends Controller
         return redirect()->route('usuarios.home');
     }
 
+    public function destroyEmissor($id){
+
+        $emissor = \App\Msg_emissor_feed::find($id);
+        $emissor->receptors()->delete();
+        $emissor->delete();
+
+        return redirect('/home');
+    }
+
+    // Comentarios
     public function mensagensReceptor(Request $request){
 
           $dados=$request->all();
@@ -117,5 +128,26 @@ class HomeController extends Controller
           $receptor= \App\Msg_receptor_feed::create($dados);
 
           return redirect()->route('usuarios.home');
+    }
+
+    // public function updateReceptor(Request $request, $id){
+    //     $receptor = \App\Msg_receptor_feed::find($id);
+
+    //     $data = $request->only([
+    //         'mensagem'
+    //     ]);
+
+    //     $receptor->mensagem = $data['mensagem'];
+    //     $receptor->save();
+
+    //     return redirect('/home');
+    // }
+
+    public function destroyReceptor($id){
+
+        $receptor = \App\Msg_receptor_feed::find($id);
+        $receptor->delete();
+
+        return redirect('/home');
     }
 }
