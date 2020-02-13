@@ -130,7 +130,7 @@
                                     <input class="form-check-input" type="radio" name="genero"
                                         id="exampleRadios3" value="3" checked  value="{{old('genero')}}>
                                     <label class="form-check-label" for="exampleRadios3">
-                                        Todos
+                                        Outros
                                     </label>
                                 </div>
                             </div>

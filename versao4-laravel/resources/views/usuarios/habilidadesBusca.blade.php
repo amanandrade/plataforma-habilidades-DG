@@ -7,8 +7,10 @@
         <div class="row">
             <!-- cards de resultado da busca -->
             <div class="d-flex col-md-8 justify-content-center">
+                
+                {{$buscas}}
 
-                <div class="container p-0">
+                {{-- <div class="container p-0">
                     <div class="row d-flex justify-content-md-between justify-content-center">
                         @foreach ($usuarios as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
@@ -42,7 +44,7 @@
                             @endif
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Modal -->
