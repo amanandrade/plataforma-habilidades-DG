@@ -47,13 +47,10 @@ Route::group(['middleware'=>['auth']], function(){
     // Comentario
     Route::post('/home/mensagens_receptor', 'HomeController@mensagensReceptor')->name('usuarios.home.mensagens_receptor');
     Route::delete('/home/mensagens_receptor/{id}/delete', 'HomeController@destroyReceptor');
-<<<<<<< HEAD
     Route::delete('/home/mensagens_emissor/{id}/delete', 'HomeController@destroyEmissor');
 
-=======
     // Route::put('/home/mensagens_receptor/{{$comentar->id}}', 'HomeController@updateReceptor');
     
->>>>>>> 40e45a57ce46dc24ea4a61c1eb3616c7da70768f
     Route::get('/perfil', 'PerfilController@index')->name('usuarios.perfil');
     Route::get('/perfil/create', 'PerfilController@create')->name('usuarios.perfil.create');
 
