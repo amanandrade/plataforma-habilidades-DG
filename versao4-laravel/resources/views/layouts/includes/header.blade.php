@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
+<div class="container">
+    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
         <div class="container">
             <!-- navbar -->
             <div class="row">
@@ -94,3 +95,4 @@
 
         </div>
     </header>
+</div>

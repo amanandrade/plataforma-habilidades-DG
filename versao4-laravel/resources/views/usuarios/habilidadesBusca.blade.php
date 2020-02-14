@@ -10,7 +10,7 @@
                 
                 {{-- {{$buscas}} --}}
 
-                <div class="container p-0">
+                <div class="container">
                     <div class="row d-flex justify-content-md-between justify-content-center">
                         @foreach ($buscas as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)

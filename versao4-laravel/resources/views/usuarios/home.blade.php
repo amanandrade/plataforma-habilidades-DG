@@ -180,6 +180,7 @@
     </main>
 
     <!-- home desktop -->
+    .<div class="container">
     <main class="container d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
         <div class="row">
 
@@ -440,6 +441,8 @@
         </div>
        
     </main>
+
+    </div>
 
     <div class="modal fade" id="modal" tabindex="-1" role="dialog">
      <div class="modal-dialog modal-sm" role="document">

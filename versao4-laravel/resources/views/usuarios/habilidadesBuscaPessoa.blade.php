@@ -32,12 +32,14 @@
              <!-- busca -->
              <form method="POST" action="{{route('usuarios.habilidades.buscapessoaconcreta')}}">
                  @csrf
-                <div class="input-group my-5">
-                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
+                 <div class="d-flex justify-content-end">
+                    <div class="input-group col-md-4 col-sm-12 my-4 pr-0">
+                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Pesquisar" aria-label="Example text with button addon" aria-describedby="button-addon1" required>
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button> <!--mudar depois para tag button-->
+                        </div>
                     </div>
                 </div>
             </form>
