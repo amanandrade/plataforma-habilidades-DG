@@ -39,7 +39,7 @@ class HabilidadeController extends Controller
         //     // $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
         // }
 
-        return view('usuarios.habilidadesBusca', compact('buscas'));
+        return view('usuarios.habilidadesBusca', compact('buscas', 'tag_busca'));
 
         // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
 

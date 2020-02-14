@@ -8,14 +8,14 @@
             <!-- cards de resultado da busca -->
             <div class="d-flex col-md-8 justify-content-center">
                 
-                {{$buscas}}
+                {{-- {{$buscas}} --}}
 
-                {{-- <div class="container p-0">
+                <div class="container p-0">
                     <div class="row d-flex justify-content-md-between justify-content-center">
-                        @foreach ($usuarios as $usuario)
+                        @foreach ($buscas as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
                                         <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
-                                    @if(count($habilidades) > 0) 
+                                    
                                         <div class="card mb-3" style="width: 22rem;">
                                             <div class="card-body">
                                                 <div class="row align-items-center mx-auto">
@@ -40,11 +40,11 @@
                                             
                                             </div>
                                         </div>
-                                    @endif
+                                   
                             @endif
                         @endforeach
                     </div>
-                </div> --}}
+                </div>
             </div>
 
             <!-- Modal -->
