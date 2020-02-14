@@ -334,11 +334,13 @@
                                     </div>
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <p class="card-text">
+                                        @if(Auth::User()->id == $publicar->usuario_id)
                                         <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary btn-sm">Excluir</button>  
                                         </form>
+                                        @endif
                                         </p>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                     </div>
@@ -386,12 +388,15 @@
                                           <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
-                                          <!-- <a class="btn btn-warning btn-sm" href="/home/mensagens_receptor/{{$comentar->id}}/update">Editar</a> -->
+                                          
+                                        <!-- <a class="btn btn-warning btn-sm" href="/home/mensagens_receptor/{{$comentar->id}}/update">Editar</a> -->
+                                        @if(Auth::User()->id == $comentar->usuario_id)
                                         <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>  
                                         </form>
+                                        @endif
                                       </div>
                                                            
                                       @endif
