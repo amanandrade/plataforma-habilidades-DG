@@ -38,22 +38,6 @@
                         @enderror
                 </div>
 
-                <!------------------------------------------------ E-mail -------------------------------------------------->
-                <div class="input-group grupo_icone_input ">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
-                            id="inputGroupPrepend">
-                            <i class="fa fa-envelope"></i>
-                        </span>
-                    </div>
-                    <input type="email" class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('email') is-invalid @enderror"
-                        id="teste" name="email" placeholder="E-mail" value="{{Auth::User()->email}}">
-                        @error('email')
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                        @enderror
-                </div>
 
 
 
@@ -154,7 +138,8 @@
                                     </span>
                                 </div>
                                 <select class="custom-select combobox_curso @error('curso_id') is-invalid @enderror" name="curso_id" value="{{old('curso_id')}}" >
-                                    <option class="escolha" selected>Choose...</option>
+
+                                    <option class="escolha" selected>Escolher...</option>
                                     @foreach($cursos as $curso)
                                     <option class="escolha" value="{{$curso['id']}}">{{$curso['nome_curso']}}</option>
                                     @endforeach
@@ -185,7 +170,7 @@
                                 </span>
                                 </div>
                                 <select class="custom-select  combobox_curso @error('status_id') is-invalid @enderror" name="status_id" value="{{old('status_id')}}">
-                                    <option class="escolha" selected>Choose...</option>
+                                    <option class="escolha" selected>Escolher...</option>
                                     @foreach($status as $stat)
                                     <option class="escolha" value="{{$stat['id']}}">{{$stat['nome_status']}}</option>
                                     @endforeach
@@ -200,34 +185,13 @@
                     </div>
 
 
-
-
-                <!-- ---------------------------------------------------- imagem de perfil ------------------------------------------------------
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-12 imgUp">
-                                <div class="row d-flex justify-content-center mt-3">
-                                    <div class="imagePreview" style=""></div>
-                                </div>
-                                <div class="row d-flex justify-content-center mt-2">
-                                    <label class="btn botao_adicionar">
-                                        Inserir foto
-                                        <input type="file" class="uploadFile img" value="Upload Photo" name="foto" style="width: 0px;height: 0px;overflow: hidden;">
-                                    </label>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                ---------->
             </div>
         </div>
 
         <div class="container">
             <div class="row d-flex justify-content-center mt-3">
 
-               <a href="{{route('usuarios.login')}}" class="btn btn-danger mr-5">Cancelar</a>
+               <a href="{{route('usuarios.home')}}" class="btn btn-danger mr-5">Cancelar</a>
 
                 <button class="btn btn-primary" type="submit">Alterar</button>
 
