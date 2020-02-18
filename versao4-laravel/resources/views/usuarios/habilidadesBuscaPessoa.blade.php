@@ -4,7 +4,7 @@
 @section('conteudo')
 
     <main class="container">
-        
+
             <!-- buttons de filtro principal -->
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4 col-sm-12">
@@ -44,18 +44,18 @@
                 </div>
             </form>
 
-       
+
 
         <div class="row">
             <!-- cards de resultado da busca -->
             <div class="d-flex col-md-8 justify-content-center">
                 <div class="container p-0">
-                
+
                     <div class="row mx-1 d-flex justify-content-md-between justify-content-center">
                         @foreach ($usuarios as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
                                         <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
-                                    @if(count($habilidades) > 0) 
+                                    @if(count($habilidades) > 0)
                                         <div class="card mb-3" style="width: 22rem;">
                                             <div class="card-body">
                                                 <div class="row align-items-center mx-auto">
@@ -63,21 +63,21 @@
                                                         alt="">
                                                     <h5 class="card-title my-0 ml-2"> {{$usuario['nome']}}</h5>
                                                 </div>
-                                            
+
                                                 <!-- <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
 
-                                                @foreach ($habilidades as $key => $value) 
+                                                @foreach ($habilidades as $key => $value)
                                                     <p class="card-text">{{$value['habilidades']}}</p>
                                                 @endforeach -->
 
                                                 <div class="d-flex justify-content-between">
                                                     <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
                                                     <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil">
-                                                        Perfil
+                                                        botao  perfil
                                                     </button>
                                                     <!-- <a href="#" class="btn btn-info py-1 px-4">Chat</a> -->
                                                 </div>
-                                            
+
                                             </div>
                                         </div>
                                     @endif
@@ -92,13 +92,85 @@
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="perfilTitle"><b>Formularo de Perfil</b></h5>
+                        <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <div class="container">
+
+                            <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
+
+
+                            <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4">
+                            <h4 id="nome" class="text-center text">Beatriz Matos</h4>
+                            <h5 id="email" class="mb-4 text">bia@bia.com</h5>
+
+                        </div>
+
+
+                            <div class="toast-header">
+                                <strong class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</strong>
+                                <a href="./issues copy/icons/add-24px.svg"></a>
+                            </div>
+                            <div class="toast-header">
+                                <i class="material-icons" style="color:#4CAF50;">
+                                  label
+                                </i>
+                                <span class="mr-auto">Bootstrap</span>
+                                {{-- <button type="button" class="ml-2 mb-1 close"> --}}
+                                    {{-- <i class="material-icons">
+                                        edit
+                                    </i>
+                                </button> --}}
+                            </div>
+                            {{-- <div class="toast-body">
+                                Aprendi bootstrap há alguns meses na Digital e me sinto ninja para ensinar xD
+                            </div> --}}
+                            </div>
+                            <div class="container">
+                            <div class="toast-header">
+                                <i class="material-icons" style="color:blue;">label
+                                    </i>
+                                    <span class="mr-auto">CSS</span>
+                                    {{-- <button type="button" class="ml-2 mb-1 close">
+                                        <i class="material-icons">
+                                            edit
+                                        </i>
+                                    </button> --}}
+                            </div>
+                            <div class="toast-header">
+                                <i class="material-icons" style="color:#F44336;">label
+                                    </i>
+                                    <span class="mr-auto">Javascript</span>
+                                    {{-- <button type="button" class="ml-2 mb-1 close">
+                                        <i class="material-icons">
+                                            edit
+                                        </i>
+                                    </button> --}}
+                            </div>
+                            <div class="toast-header">
+                                <i class="material-icons" style="color:#FFC107;">label
+                                    </i>
+                                    <span class="mr-auto">PHP</span>
+                                    {{-- <button type="button" class="ml-2 mb-1 close">
+                                        <i class="material-icons">
+                                            edit
+                                        </i>
+                                    </button> --}}
+                            </div>
+                            <div class="toast-header">
+                                <i class="material-icons" style="color:#536DFE;">label
+                                    </i>
+                                    <span class="mr-auto">Orientação a objetos</span>
+                                    {{-- <button type="button" class="ml-2 mb-1 close">
+                                        <i class="material-icons">
+                                            edit
+                                        </i>
+                                    </button> --}}
+                            </div>
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>
