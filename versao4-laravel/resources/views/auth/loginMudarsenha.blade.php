@@ -1,24 +1,23 @@
-@extends('layouts.index')
-
+@include('layouts.includes.head')
+@extends('layouts.index2')
 @section('titulo','Help')
+@include('layouts.includes.footer2')
 
 @section('conteudo')
-<div class="container justify-content-center">
-        <div class="row d-flex justify-content-center mt-5">
+<div class="container">
+        <div class="row justify-content-center mt-5">
             <!-- Formulario de login -->
-            <form method="post" action="{{route('usuarios.loginupdatesenha',$verificado->id)}}" enctype="multipart/form-data">
+            <form class="col-md-4" method="post" action="{{route('usuarios.loginupdatesenha',$verificado->id)}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="inputSenha" class="sr-only"></label>
-                    <input type="email" class="form-control" id="inputSenha" placeholder="{{$verificado->email}}" disabled>
-                </div>
-                <div class="form-group">
+                    <input type="email" class="form-control mb-3" id="inputSenha" placeholder="{{$verificado->email}}" disabled>
                     <label for="inputSenha" class="sr-only">Confirmar nova senha</label>
                     <input type="password" name="password"  class="form-control" id="inputSenha" placeholder="Nova senha">
-                </div>
-                <div class="row justify-content-center mt-5">
-                    <button type="submit" class="btn btn-primary mx-2" style="width: 100px;">Confirmar</button>
-                    <a class="btn btn-dark mx-2" style="width: 100px;" href="{{route('usuarios.login')}}">Cancelar</a>
+                    <div class="d-flex justify-content-around">
+                        <a class="btn btn-danger mt-4 mx-0" style="width: 100px;" href="{{route('usuarios.login')}}">Cancelar</a>
+                        <button type="submit" class="btn btn-info mx-0 mt-4" style="width: 100px;">Confirmar</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -13,7 +13,7 @@ class HomeController extends Controller
         $user=Auth::User();
         $tags=$user->habilidades;
         $habilidades= \App\Tab_habilidade::all();
-        $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->get();
+        $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->paginate(5);
         $comentarios= \App\Msg_receptor_feed::orderBy('id','DESC')->get();
 
         // $publicacao_array = \App\Msg_emissor_feed::select('id', 'mensagem')->get();
