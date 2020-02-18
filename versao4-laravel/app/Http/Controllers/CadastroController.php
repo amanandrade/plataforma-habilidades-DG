@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 class CadastroController extends Controller
 {
     public function index(){
-
-        // echo("cheguei");
-
-        return view('usuarios.editarCadastro');
+        $cursos = \App\Curso::All();
+        $status = \App\Statu::All();
+        return view('usuarios.editarCadastro', compact('cursos', 'status'));
     }
     public function edit(){
 

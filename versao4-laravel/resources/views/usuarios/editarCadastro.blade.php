@@ -1,12 +1,6 @@
 @extends('layouts.indexhome')
 
-@section('titulo','Help')
-@section('conteudo')
-
-@extends('layouts.index')
-
-@section('titulo','Help')
-
+@section('titulo', 'Help')
 @section('conteudo')
 <!--------------------------------------------- container c_nav ------------------------------------------------------>
 <div class="container c_nav">
@@ -16,7 +10,7 @@
 <!------------------------------------------------- container c_form ------------------------------------------------------>
 <div class="container c_form">
 
-    <form class="formulario" method="POST" action="{{route('usuarios.editarCadastro.edit')}}" enctype="multipart/form-data">
+    <form class="formulario" method="POST" action="" enctype="multipart/form-data">
         @csrf
         <div class="row mt-3">
             <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
@@ -61,34 +55,7 @@
                         @enderror
                 </div>
 
-                <!------------------------------------------------ Password -------------------------------------------------->
-                <div class="input-group grupo_icone_input ">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
-                            id="inputGroupPrepend"></span>
-                    </div>
-                    <input type="password"
-                        class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('password') is-invalid @enderror" id="teste"
-                         name="password" placeholder="Digite sua senha" value="">
-                         @error('password')
-                        <div class="invalid-feedback">
-                            {{$message}}
-                        </div>
-                        @enderror
-                </div>
 
-                <!-- ---------------------------------------------- Confirm Password ------------------------------------------
-                <div class="input-group grupo_icone_input ">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text border-top-0 border-right-0 border-left-0 border-bottom-0"
-                            id="inputGroupPrepend">
-                            <i class="fa fa-lock"></i>
-                        </span>
-                    </div>
-                    <input type="password"
-                        class="form-control linha_input border-top-0 border-right-0 border-left-0" id="teste"
-                        placeholder="Confirmar senha" required>
-                </div> -->
 
                 <!------------------------------------------------ Telefone -------------------------------------------------->
                 <div class="input-group grupo_icone_input ">
@@ -262,7 +229,7 @@
 
                <a href="{{route('usuarios.login')}}" class="btn btn-danger mr-5">Cancelar</a>
 
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <button class="btn btn-primary" type="submit">Alterar</button>
 
             </div>
         </div>
