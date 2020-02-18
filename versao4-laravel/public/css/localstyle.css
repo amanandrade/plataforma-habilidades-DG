@@ -18,6 +18,10 @@ mark{
 a:hover{
     text-decoration: none;
 }
+
+img#foto-perfil:hover{
+    cursor: pointer;
+}
     
 p.card-text { font-weight: 100;
      
