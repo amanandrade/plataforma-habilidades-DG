@@ -54,26 +54,14 @@
             <div class="container">
 
                 <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
-                    <!-- @if(empty(Auth::User()->estado)) -->
-                <!-- <img id="capa" src="./img/capa.jpg" alt="" class="img-fluid">     -->
+
+
                 <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4">
-                <!-- <a href="" data-toggle="modal" data-target="#modal" class="text-warning pb-2">Editar foto<i class="material-icons ml-1" style="font-size: 20px;" title="Editar foto">edit</i></a> -->
-                <!-- @elseif(Auth::User()->estado == 1) -->
                 <h4 id="nome" class="text-center text">Beatriz Matos</h4>
                 <h5 id="email" class="mb-4 text">bia@bia.com</h5>
-                <!-- <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-30 mt-4" data-toggle="modal" data-target="#modal"> -->
+
             </div>
 
-
-
-                <!-- @endif
-
-                @if(Auth::guest()) -->
-                <!-- <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4> -->
-                <!-- @else -->
-                <!-- <h4 class="text-center text-white">Beatriz Matos</h4>
-                <h5 class="mb-4 text-white">bia@bia.com</h5> -->
-                <!-- @endif -->
 
                 <div class="toast-header">
                     <strong class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</strong>
