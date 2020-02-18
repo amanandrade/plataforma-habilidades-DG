@@ -116,7 +116,7 @@
                         @endforeach
                         <div class="d-flex justify-content-center p-2">
                             {{ $publicacao->links() }}
-                        </div> 
+                        </div>
                         <!-- <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button> -->
                     </div>
 
@@ -197,17 +197,11 @@
                 <a href="" data-toggle="modal" data-target="#modal" class="text-warning pb-2">Editar foto<i class="material-icons ml-1" style="font-size: 20px;" title="Editar foto">edit</i></a>
                 @elseif(Auth::User()->estado == 1)
 
-<<<<<<< HEAD
-                <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 mt-4" data-toggle="modal" data-target="#modal">
-
-
-=======
                 <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 mt-4" data-toggle="modal" data-target="#modal" id="foto-perfil">
                     <!-- <a href="#" class="hvr-icon-up">
                         Icon Up
                         <img src="myicon.svg" class="hvr-icon" />
                     </a>           -->
->>>>>>> a7a2358c8cf1ea34315971984585d6c5f3b54dca
                 @endif
 
                 @if(Auth::guest())
@@ -421,7 +415,7 @@
                         @endforeach
                         <div class="d-flex justify-content-center p-2">
                             {{ $publicacao->links() }}
-                        </div> 
+                        </div>
                         <!-- <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center mais"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button> -->
                     </div>
 
@@ -502,10 +496,5 @@
 
      </div>
 
-<<<<<<< HEAD
- </div>
-@endsection
-=======
     </div>
 @endsection
->>>>>>> a7a2358c8cf1ea34315971984585d6c5f3b54dca
