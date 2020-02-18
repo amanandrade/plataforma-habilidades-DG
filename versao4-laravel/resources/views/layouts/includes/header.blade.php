@@ -44,14 +44,17 @@
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.habilidades')}}">Habilidades</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.perfil')}}">Meu Perfil</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
                                 <div class="dropdown show">
                                     <div class="dropdown-menu dropdown-menu-right">
+
+                                        <a class="dropdown-item" href="{{route('usuarios.cadastro')}}">Editar Cadastro</a>
+
                                         @if(Auth::guest())
                                         <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
                                         @else

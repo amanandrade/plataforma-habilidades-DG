@@ -2,15 +2,15 @@
 
 @section('titulo', 'Help')
 @section('conteudo')
-    
+
     <!-- home mobile -->
     <main class="container d-none d-sm-block d-md-none d-block d-sm-none">
         <div class="row tab-content justify-content-center mx-1" id="nav-tabContent">
-            
+
             <!-- FEED -->
             <div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
 
-    
+
                 <!-- INPUT PARA POSTAGENS -->
 
                 <form method="POST"  action="{{route('usuarios.home.mensagens_emissor')}}" enctype="multipart/form-data">
@@ -25,21 +25,21 @@
                                     style="width:50px;"></span>
                         @endif
                         </div>
-                        
+
                         <textarea class="form-control py-3 mt-3" name="mensagem" aria-label="With textarea"
                             placeholder="O que você está pensando, {{Auth::User()->nome}}?" required></textarea>
                     </div>
 
                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                     <input type="hidden" name="estado" value="1">
-                
+
                     <div class="text-right mt-1">
                         <button type="submit" class="btn btn-primary btn-sm">Publicar</button>
                     </div>
                 </form>
 
                 <!-- FEED -->
-               
+
                     <div class="mt-1">
                         @foreach ($publicacao as $publicar)
                             <div class="card mt-3 justify-content-center">
@@ -78,16 +78,16 @@
                                     <div class="col-sm-8">
                                     <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0 py-0 ml-3"
                                      id="teste" name="mensagem" placeholder="Escreve um comentário..." required>
-                                   
+
                                     </div>
                                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                                     <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
                                     <div class="col-sm-2 text-right">
-                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>
                                     </div>
                                     </form>
                                 </div>
-                                
+
                                    @foreach($comentarios as $comentar)
                                       @if($publicar->id == $comentar->emissor_id)
 
@@ -107,17 +107,17 @@
                                             <div class="col-sm-4 ml-3 mb-4 text-secondary text-align-right">{{$comentar->mensagem}} </div>
 
                                       </div>
-                                                           
+
                                       @endif
                                    @endforeach
-                                
+
                                 </div>
                             </div>
                         @endforeach
                         <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
                     </div>
-                
-              
+
+
             </div>
               <!-- END FEED -->
             <!-- NOTIFICAÇÕES -->
@@ -196,8 +196,8 @@
                 @elseif(Auth::User()->estado == 1)
 
                 <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 mt-4" data-toggle="modal" data-target="#modal">
-               
-               
+
+
                 @endif
 
                 @if(Auth::guest())
@@ -266,9 +266,9 @@
                                         @endforeach
                                     </select>
                                     <button type="submit" class="btn-primary">Gravar</button>
-                                   
+
                                     </form>
-                                    
+
                                 </li>
                                   @foreach($tags as $tag)
                                 <li class="list-group-item d-flex justify-content-between align-items-center py-2">
@@ -276,7 +276,7 @@
                                     <i class="material-icons" style="color:#4CAF50;">label</i>
                                     @endforeach
                                 </li>
-                              
+
                             </ul>
                         </div>
                     </div>
@@ -299,14 +299,14 @@
                                     style="width:50px;"></span>
                         @endif
                         </div>
-                        
+
                         <textarea class="form-control py-3" name="mensagem" aria-label="With textarea"
                             placeholder="O que você está pensando, {{Auth::User()->nome}}?" required></textarea>
                     </div>
 
                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                     <input type="hidden" name="estado" value="1">
-                
+
                     <div class="input-group mt-1 justify-content-between">
                         <input type="hidden" class="form-control" aria-label="Text input with dropdown button">
                         <div class="input-group-append align-items-center">
@@ -323,7 +323,7 @@
                 </form>
 
                 <!-- FEED -->
-               
+
                     <div class="mt-1">
                         @foreach ($publicacao as $publicar)
                             <div class="card mt-3 justify-content-center">
@@ -342,7 +342,7 @@
                                         <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary btn-sm">Excluir</button>  
+                                            <button type="submit" class="btn btn-primary btn-sm">Excluir</button>
                                         </form>
                                         @endif
                                         </p>
@@ -368,7 +368,7 @@
                                     <div class="col-sm-8">
                                     <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0 py-0 ml-3"
                                      id="teste" name="mensagem" placeholder="Escreve um comentário..." required>
-                                   
+
                                     </div>
                                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                                     <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
@@ -377,7 +377,7 @@
                                     </div>
                                     </form>
                                 </div>
-                                
+
                                    @foreach($comentarios as $comentar)
                                       @if($publicar->id == $comentar->emissor_id)
 
@@ -392,26 +392,26 @@
                                           <span class="ml-3 text-muted">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
-                                          
+
                                         <!-- <a class="btn btn-warning btn-sm" href="/home/mensagens_receptor/{{$comentar->id}}/update">Editar</a> -->
                                         @if(Auth::User()->id == $comentar->usuario_id)
                                         <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>  
+                                            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>
                                         </form>
                                         @endif
                                       </div>
-                                                           
+
                                       @endif
                                    @endforeach
-                                
+
                                 </div>
                             </div>
                         @endforeach
                         <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center mais"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
                     </div>
-               
+
                 <!-- END FEED -->
 
             </div>
@@ -448,44 +448,44 @@
                 </div>
             </div>
         </div>
-       
+
     </main>
 
     </div>
 
     <div class="modal fade" id="modal" tabindex="-1" role="dialog">
      <div class="modal-dialog modal-sm" role="document">
-         <div class="modal-content">    
-           
+         <div class="modal-content">
+
              <div class="modal-header">
              <h6 class="modal-title">Upload de Imagens</h6>
-           
+
              <button type="button" class="close" data-dismiss="modal">
                  <span>&times;</span>
              </button>
              </div>
-             
+
              <div class="modal-body">
              <form method="post" action="{{route('usuarios.home.update', $user->id)}}"  enctype="multipart/form-data">
              @csrf
                  <div class="form-group">
                      <input type="hidden" name="nome" class="form-control" placeholder="Login" value="{{$user->nome}}">
                  </div>
-                 
+
                  <div class="form-group">
-                     <input type="file" name="foto" class="form-control" accept="image/png,image/jpeg"> 
+                     <input type="file" name="foto" class="form-control" accept="image/png,image/jpeg">
                  </div>
 
                  <div class="form-group">
                      <input type="hidden" name="estado" class="form-control" value="1">
                  </div>
-                 
+
                  <button type="Submit" class="btn btn-primary">Gravar</button>
              </form>
              </div>
              <div class="modal-footer">
              <a href="#" data-toggle="modal" data-target="" data-dismiss="modal"></a>
-                 
+
              </div>
          </div>
 

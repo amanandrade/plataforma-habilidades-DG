@@ -43,14 +43,14 @@ Route::group(['middleware'=>['auth']], function(){
     // Post
     Route::post('/home/mensagens_emissor', 'HomeController@mensagensEmissor')->name('usuarios.home.mensagens_emissor');
     Route::delete('/home/mensagens_emissor/{id}/delete', 'HomeController@destroyEmissor');
-    
+
     // Comentario
     Route::post('/home/mensagens_receptor', 'HomeController@mensagensReceptor')->name('usuarios.home.mensagens_receptor');
     Route::delete('/home/mensagens_receptor/{id}/delete', 'HomeController@destroyReceptor');
     Route::delete('/home/mensagens_emissor/{id}/delete', 'HomeController@destroyEmissor');
 
     // Route::put('/home/mensagens_receptor/{{$comentar->id}}', 'HomeController@updateReceptor');
-    
+
     Route::get('/perfil', 'PerfilController@index')->name('usuarios.perfil');
     Route::get('/perfil/create', 'PerfilController@create')->name('usuarios.perfil.create');
 
@@ -59,6 +59,9 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/habidades/buscatag', 'HabilidadeController@buscatag')->name('usuarios.habilidades.buscatag');
     Route::get('/habidades/buscapessoa', 'HabilidadeController@buscapessoa')->name('usuarios.habilidades.buscapessoa');
     Route::post('/habidades/buscapessoaconcreta', 'HabilidadeController@buscapessoaconcreta')->name('usuarios.habilidades.buscapessoaconcreta');
+
+    Route::get('/editarCadastro', 'CadastroController@index')->name('usuarios.cadastro');
+    Route::get('/editarCadastro', 'CadastroControlle@edit')->name('usuarios.editarCadastro');
 });
 
 
@@ -89,5 +92,6 @@ Route::get('/model', function(){
    ]);
    return \App\User::all();
 });
+
 
 

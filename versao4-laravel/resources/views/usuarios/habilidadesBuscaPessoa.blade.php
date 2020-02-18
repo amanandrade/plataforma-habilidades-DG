@@ -106,13 +106,13 @@
 
                                 <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
                                     {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
-                                    <img class="card-img-top rounded-circle w-25" src="{{asset($usuario['foto'])}}"alt="">
+                                    <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
                                     <h4 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
                                     <h5 id="email" class="mb-4 text">{{$usuario['email']}}</h5>
                                 </div>
 
                                 <div class="toast-header">
-                                    <strong class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</strong>
+                                    <span class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</span>
                                     <a href="./issues copy/icons/add-24px.svg"></a>
                                 </div>
 

@@ -16,7 +16,7 @@
 <!------------------------------------------------- container c_form ------------------------------------------------------>
 <div class="container c_form">
 
-    <form class="formulario" method="POST" action="{{route('usuarios.cadastro.store')}}" enctype="multipart/form-data">
+    <form class="formulario" method="POST" action="{{route('usuarios.editarCadastro.edit')}}" enctype="multipart/form-data">
         @csrf
         <div class="row mt-3">
             <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
