@@ -37,13 +37,16 @@
                                     <a class="nav-link align-items text-right" href="{{route('usuarios.home')}}">Home<span
                                             class="sr-only">(atual)</span></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="./mensagens">Mensagens</a>
-                                </li>
+                               
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.habilidades')}}">Habilidades</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right" href="./mensagens">Mensagens</a>
+                                </li>
+                                
                                 {{-- <li class="nav-item">
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.perfil')}}">Meu Perfil</a>
