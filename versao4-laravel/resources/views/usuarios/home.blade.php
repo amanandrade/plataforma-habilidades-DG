@@ -341,15 +341,17 @@
                                         <p class="card-text">{{$publicar->mensagem}}</p>
                                     </div>
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
-                                        <p class="card-text">
-                                        @if(Auth::User()->id == $publicar->usuario_id)
-                                        <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-primary btn-sm">Excluir</button>
-                                        </form>
-                                        @endif
-                                        </p>
+                                        <div class="row">
+                                            <p class="card-text">
+                                            @if(Auth::User()->id == $publicar->usuario_id)
+                                            <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                            </form>
+                                            @endif
+                                            </p>
+                                        </div>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                     </div>
                                 </div>
