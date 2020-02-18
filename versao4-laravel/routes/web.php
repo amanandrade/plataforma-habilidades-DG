@@ -60,7 +60,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/habidades/buscapessoa', 'HabilidadeController@buscapessoa')->name('usuarios.habilidades.buscapessoa');
     Route::post('/habidades/buscapessoaconcreta', 'HabilidadeController@buscapessoaconcreta')->name('usuarios.habilidades.buscapessoaconcreta');
 
-    Route::get('/editarCadastro', 'CadastroController@index')->name('usuarios.cadastro');
+    Route::get('/editarCadastro', 'CadastroController@index')->name('usuarios.editarCadastro');
     Route::get('/editarCadastro', 'CadastroControlle@edit')->name('usuarios.editarCadastro');
 });
 

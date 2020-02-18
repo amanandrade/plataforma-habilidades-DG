@@ -9,7 +9,7 @@ class CadastroController extends Controller
     public function index(){
 
         // echo("cheguei");
-        Auth::user();
+
         return view('usuarios.editarCadastro');
     }
     public function edit(){

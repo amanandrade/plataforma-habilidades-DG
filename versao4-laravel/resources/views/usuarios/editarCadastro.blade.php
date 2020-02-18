@@ -20,7 +20,7 @@
         @csrf
         <div class="row mt-3">
             <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
-                <h4>Cadastro</h4>
+                <h4>Editar cadastro</h4>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                         </span>
                     </div>
                     <input type="text" class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('nome') is-invalid @enderror"
-                        id="teste" name="nome" placeholder="Nome Sobrenome" value="{{old('nome')}}">
+                id="teste" name="nome" placeholder="Nome Sobrenome" value="{{Auth::User()->nome}}">
                         @error('nome')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -53,7 +53,7 @@
                         </span>
                     </div>
                     <input type="email" class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('email') is-invalid @enderror"
-                        id="teste" name="email" placeholder="E-mail" value="{{old('email')}}">
+                        id="teste" name="email" placeholder="E-mail" value="{{Auth::User()->email}}">
                         @error('email')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -69,7 +69,7 @@
                     </div>
                     <input type="password"
                         class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('password') is-invalid @enderror" id="teste"
-                         name="password" placeholder="Digite sua senha" value="{{old('password')}}">
+                         name="password" placeholder="Digite sua senha" value="">
                          @error('password')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -99,7 +99,7 @@
                         </span>
                     </div>
                     <input type="tel" class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('telefone') is-invalid @enderror"
-                        id="teste" name="telefone" placeholder="Telefone" value="{{old('telefone')}}">
+                        id="teste" name="telefone" placeholder="Telefone" value="{{Auth::User()->telefone}}">
                         @error('telefone')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -160,7 +160,7 @@
                                 </span>
                             </div>
                             <input type="date" class="form-control input_idade border-top-0 border-right-0 border-left-0 @error('nascimento') is-invalid @enderror"
-                             id="idade" name="nascimento" placeholder="Idade"  value="{{old('nascimento')}}">
+                             id="idade" name="nascimento" placeholder="Idade"  value="{{Auth::User()->nascimento}}">
                              @error('nascimento')
                         <div class="invalid-feedback">
                             {{$message}}

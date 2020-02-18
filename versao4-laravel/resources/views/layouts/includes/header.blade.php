@@ -53,7 +53,7 @@
                                 <div class="dropdown show">
                                     <div class="dropdown-menu dropdown-menu-right">
 
-                                        <a class="dropdown-item" href="{{route('usuarios.cadastro')}}">Editar Cadastro</a>
+                                        <a class="dropdown-item" href="{{route('usuarios.editarCadastro')}}">Editar Cadastro</a>
 
                                         @if(Auth::guest())
                                         <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
