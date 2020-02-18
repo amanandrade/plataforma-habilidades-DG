@@ -82,7 +82,7 @@
                                     </div>
                                     <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
                                     <input type="hidden" name="emissor_id" value="{{$publicar->id}}">
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-2 text-right">
                                     <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Comentar</button>  
                                     </div>
                                     </form>
@@ -91,17 +91,21 @@
                                    @foreach($comentarios as $comentar)
                                       @if($publicar->id == $comentar->emissor_id)
 
-                                      <div class="row">
-                                          <div class="col-sm-1">
-                                          <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
-                                          </div>
-                                          <div class="col-sm-6 mt-2 ml-2">
-                                          <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
-                                          </div>
-                                          <div class="col-sm-4 mt-2">
-                                          <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
-                                          </div>
-                                          <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
+                                      <div class="row justify-content-between">
+                                        <div class="row d-flex flex-nowrap ml-3">
+                                            <div class="col-sm-4 px-0">
+                                            <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mb-2" style="width:40px;">
+                                            </div>
+                                            <div class="col-sm-6 mt-2 ml-2 px-0">
+                                            <h6 class="card-title text-dark">{{$comentar->user->nome}}</h6>
+                                            </div>
+                                        </div>
+
+                                            <div class="col-sm-4 px-0 text-right">
+                                            <span class="text-muted">{{$comentar->updated_at}}</span>
+                                            </div>
+                                            <div class="col-sm-4 ml-3 mb-4 text-secondary text-align-right">{{$comentar->mensagem}} </div>
+
                                       </div>
                                                            
                                       @endif
@@ -347,7 +351,7 @@
                                 </div>
                             </div>
 
-                            <div class="collapse mt-1" id="codigo{{$publicar->id}}">
+                            <div class="collapse mt-1 post-feed" id="codigo{{$publicar->id}}">
                                 <div class="card card-body">
                                 <form method="post" action="{{route('usuarios.home.mensagens_receptor')}}" enctype="multipart/form-data">
                                  @csrf
@@ -377,15 +381,15 @@
                                    @foreach($comentarios as $comentar)
                                       @if($publicar->id == $comentar->emissor_id)
 
-                                      <div class="row">
+                                      <div class="row justify-content-between">
                                           <div class="col-sm-1">
                                           <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
                                           </div>
-                                          <div class="col-sm-6 mt-2 ml-2">
+                                          <div class="col-sm-6 mt-2 ml-2 px-0">
                                           <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
                                           </div>
-                                          <div class="col-sm-4 mt-2">
-                                          <span class="ml-3 text-secondary">{{$comentar->updated_at}}</span>
+                                          <div class="col-sm-4 mt-2 px-0">
+                                          <span class="ml-3 text-muted">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
                                           
@@ -405,7 +409,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
+                        <button type="button" class="mt-3 btn btn-outline-secondary btn-lg btn-block d-flex align-items-center justify-content-center mais"><i class="material-icons align-itens-center text-center-center">more_horiz</i></button>
                     </div>
                
                 <!-- END FEED -->
