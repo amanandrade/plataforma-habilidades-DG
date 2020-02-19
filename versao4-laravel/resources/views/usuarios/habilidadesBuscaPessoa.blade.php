@@ -118,17 +118,21 @@
 
                                 </div>
                                 <div class="container">
+
+                                   
+
                                     @foreach ($habilidades as $key => $value)
-                                    <div class="toast-header">
+                                        <div class="toast-header">
 
-                                        <i class="material-icons" style="color:blue;">label
-                                            </i>
+                                            @php 
+                                                $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+                                                $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
+                                            @endphp
 
+                                            <i class="material-icons" style="color:{{$color}};">label</i>
+                                            <span class="mr-auto">{{$value['habilidades']}}</span>
 
-                                                    <span class="mr-auto">{{$value['habilidades']}}</span>
-
-
-                                    </div>
+                                        </div>
                                     @endforeach
 
                                 </div>
