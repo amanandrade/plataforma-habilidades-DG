@@ -26,8 +26,17 @@
                                             
                                                 <h6 class="card-subtitle my-2 text-muted">Habilidades:</h6>
 
-                                                @foreach ($habilidades as $key => $value) 
-                                                    <p class="card-text">{{$value['habilidades']}}</p>
+                                                @php 
+                                                    // $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+                                                    // $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
+                                                @endphp
+
+                                                @foreach ($habilidades as $key => $value)        
+                                                    <div class="d-flex justify-content-start align-items-center mb-2">
+                                                        {{-- <i class=" card-text material-icons" style="color:{{$color}};">label</i> --}}
+                                                        <i class=" card-text material-icons" style="color:grey;">label</i>
+                                                        {{$value['habilidades']}}
+                                                    </div>
                                                 @endforeach
 
                                                 <div class="d-flex justify-content-between">

@@ -287,7 +287,6 @@
                                         {{$tag['habilidades']}}
                                         </div>
                                         <div class="d-flex justify-content-end align-items-center">
-                                            
                                             <button type="submit" class="material-icons btn btn-md p-0 text-danger">clear</button>
                                         </div>
                                        
