@@ -283,7 +283,11 @@
 
                                     <li class="list-group-item d-flex justify-content-between align-items-center py-2">
                                         {{$tag['habilidades']}}
-                                        <i class="material-icons" style="color:{{$color}};">label</i>
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <i class="material-icons" style="color:{{$color}};">label</i>
+                                            <button type="submit" class="material-icons btn btn-md p-0 text-danger">clear</button>
+                                        </div>
+                                       
                                     </li>
                                  @endforeach
                             </ul>
