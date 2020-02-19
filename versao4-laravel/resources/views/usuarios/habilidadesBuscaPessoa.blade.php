@@ -118,9 +118,6 @@
 
                                 </div>
                                 <div class="container">
-
-                                   
-
                                     @foreach ($habilidades as $key => $value)
                                         <div class="toast-header">
 
@@ -134,7 +131,6 @@
 
                                         </div>
                                     @endforeach
-
                                 </div>
                         </div>
                         <div class="modal-footer">
