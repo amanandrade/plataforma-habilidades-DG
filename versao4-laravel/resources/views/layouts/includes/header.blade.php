@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<div class="container">
-    <header class="container-fluid d-flex sticky-top justify-content-center bg-white px-0">
-        <div class="container">
+    <header class="d-flex sticky-top justify-content-center bg-white nfo px-0">
+        <div class="container border-bottom mb-3">
             <!-- navbar -->
             <div class="row">
                 <nav class="navbar navbar-expand-md navbar-light col-12 px-md-0 mt-1">
                     <a class="navbar-item" href="{{route('usuarios.home')}}">
                         <img src="../img/help_logo.jpg" alt="logo" style="width: 57px" class="rounded">
                     </a>
-                    <!-- busca desktop -->
+                    <!-- busca -->
                     <form action="{{route('usuarios.habilidades.busca')}}" class="ml-2 d-none d-sm-block d-md-none d-md-block d-lg-none d-lg-block d-xl-none d-xl-block">
                         @csrf
                         <div class="input-group">
@@ -51,20 +50,20 @@
                                     <a class="nav-link align-items text-right"
                                         href="{{route('usuarios.perfil')}}">Meu Perfil</a>
                                 </li> --}}
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                <li class="nav-item dropdown d-flex justify-content-end text-secondary">
                                 <div class="dropdown show">
                                     <div class="dropdown-menu dropdown-menu-right">
 
-                                        <a class="dropdown-item" href="{{route('usuarios.editarCadastro')}}">Editar Cadastro</a>
+                                        <a class="dropdown-item text-secondary text-right" href="{{route('usuarios.editarCadastro')}}">Editar Cadastro</a>
 
                                         @if(Auth::guest())
                                         <h4 class="text-center text-white" href="{{route('usuarios.login')}}"></h4>
                                         @else
-                                        <a class="dropdown-item" href="{{route('usuarios.login.sair')}}">Sair</a>
+                                        <a class="dropdown-item text-secondary text-right" href="{{route('usuarios.login.sair')}}">Sair</a>
                                         @endif
                                     </div>
                                 </div>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
                             </ul>
                         </div>
                     </div>
@@ -101,4 +100,3 @@
 
         </div>
     </header>
-</div>

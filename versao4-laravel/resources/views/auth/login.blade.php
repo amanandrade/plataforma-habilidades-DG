@@ -17,7 +17,7 @@
                 <form method="post" action="{{route('usuarios.login.entrar')}}" enctype="multipart/form-data">
                 @csrf
               
-                    <img style="width:200px" class="mt-5 mb-3" src="{{ asset('img/help_logo.jpg')}}" alt="Logo">
+                    <img style="width:200px" class="mt-5 mb-3 rounded" src="{{ asset('img/help_logo.jpg')}}" alt="Logo">
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
                         <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" value="{{old('email')}}">

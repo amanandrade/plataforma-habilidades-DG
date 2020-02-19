@@ -1,5 +1,5 @@
  <!-------------------------------------- end container c_form ------------------------------------------------------>
- <footer class="container mt-3 bg-light">
+ <footer class="container mt-3 bg-white border-top">
         <div class="row justify-content-center align-itens-center pt-4">
             <a href="mailto:email@contato.com.br">Fale Conosco</a>
         </div>

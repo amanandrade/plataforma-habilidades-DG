@@ -182,7 +182,7 @@
                                     </span>
                                 </div>
                                 <select class="custom-select combobox_curso @error('curso_id') is-invalid @enderror" name="curso_id" value="{{old('curso_id')}}" >
-                                    <option class="escolha" selected>Choose...</option>
+                                    <option class="escolha" selected>Escolher...</option>
                                     @foreach($cursos as $curso)
                                     <option class="escolha" value="{{$curso['id']}}">{{$curso['nome_curso']}}</option>
                                     @endforeach
@@ -213,7 +213,7 @@
                                 </span>
                                 </div>
                                 <select class="custom-select  combobox_curso @error('status_id') is-invalid @enderror" name="status_id" value="{{old('status_id')}}">
-                                    <option class="escolha" selected>Choose...</option>
+                                    <option class="escolha" selected>Escolher...</option>
                                     @foreach($status as $stat)
                                     <option class="escolha" value="{{$stat['id']}}">{{$stat['nome_status']}}</option>
                                     @endforeach

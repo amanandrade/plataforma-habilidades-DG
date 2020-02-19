@@ -48,6 +48,13 @@
                                     <!-- ajuastar foto quando o usuário não coloca foto -->
                                     <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
                                         <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
+                                        @if(Auth::User()->id == $publicar->usuario_id)
+                                            <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
+                                            </form>
+                                            @endif
                                     </div>
                                     <div class="p-1">
                                         <p class="card-text">{{$publicar->mensagem}}</p>
@@ -93,7 +100,7 @@
 
                                       <div class="row justify-content-between">
                                         <div class="row d-flex flex-nowrap ml-3">
-                                            <div class="col-sm-4 px-0">
+                                            <div class="px-0">
                                             <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mb-2" style="width:40px;">
                                             </div>
                                             <div class="col-sm-6 mt-2 ml-2 px-0">
@@ -101,11 +108,17 @@
                                             </div>
                                         </div>
 
-                                            <div class="col-sm-4 px-0 text-right">
-                                            <span class="text-muted">{{$comentar->updated_at}}</span>
+                                            <div class="col-sm-4 px-0 text-right d-flex flex-nowrap justify-content-end align-items-center">
+                                            <span class="text-muted col-4">{{$comentar->updated_at}}</span>
+                                                @if(Auth::User()->id == $comentar->usuario_id)
+                                                <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
+                                                </form>
+                                                @endif
                                             </div>
                                             <div class="col-sm-4 ml-3 mb-4 text-secondary text-align-right">{{$comentar->mensagem}} </div>
-
                                       </div>
 
                                       @endif
@@ -288,8 +301,7 @@
                                         </div>
                                         <div class="d-flex justify-content-end align-items-center">
                                             <button type="submit" class="material-icons btn btn-md p-0 text-danger">clear</button>
-                                        </div>
-                                       
+                                        </div>                                  
                                     </li>
                                  @endforeach
                             </ul>
@@ -347,20 +359,22 @@
                                     <!-- ajuastar foto quando o usuário não coloca foto -->
                                     <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
                                         <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
+
                                     </div>
-                                    <div class="p-1">
+                                    <div class="p-1 d-flex flex-nowrap justify-content-between">
                                         <p class="card-text">{{$publicar->mensagem}}</p>
-                                    </div>
-                                    <div class="mr-2 ml-2 d-flex justify-content-between">
-                                        <div class="row">
-                                            <p class="card-text">
                                             @if(Auth::User()->id == $publicar->usuario_id)
                                             <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                                                <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
                                             </form>
                                             @endif
+                                    </div>
+                                    <div class="mr-2 ml-2 d-flex justify-content-between">
+                                        <div class="row">
+                                            <p class="card-text">
+                                                <a class="text-muted ml-2" title="Ver"> 1 comentário</a>
                                             </p>
                                         </div>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
@@ -402,11 +416,11 @@
                                           <div class="col-sm-1">
                                           <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
                                           </div>
-                                          <div class="col-sm-6 mt-2 ml-2 px-0">
+                                          <div class="col-sm-7 mt-2 ml-2 px-0">
                                           <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
                                           </div>
-                                          <div class="col-sm-4 mt-2 px-0">
-                                          <span class="ml-3 text-muted">{{$comentar->updated_at}}</span>
+                                          <div class="mt-2 px-0">
+                                          <span class="mr-4 text-muted">{{$comentar->updated_at}}</span>
                                           </div>
                                           <div class="ml-3 mb-4 text-secondary">{{$comentar->mensagem}} </div>
 
@@ -415,7 +429,7 @@
                                         <form action="/home/mensagens_receptor/{{$comentar->id}}/delete" method = "post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Excluir</button>
+                                            <button type="submit" class="mr-4 btn btn-outline-danger btn-sm">Excluir</button>
                                         </form>
                                         @endif
                                       </div>

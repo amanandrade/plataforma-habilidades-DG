@@ -1,8 +1,8 @@
-<footer class="container mt-3">
-        <div class="row justify-content-center align-itens-center pt-4 bg-light">
+<footer class="container mt-3 bg-white border-top">
+        <div class="row justify-content-center align-itens-center pt-4">
             <a href="mailto:email@contato.com.br">Fale Conosco</a>
         </div>
-        <div class="row justify-content-center align-itens-center pb-4 bg-light">
+        <div class="row justify-content-center align-itens-center pb-4">
         <p class="m-0">© Copyright Help! 2019</p>
         </div>
         </footer>
