@@ -73,7 +73,7 @@
                                                 <div class="d-flex justify-content-between">
                                                     <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
                                                 <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil{{$usuario['id']}}" >
-                                                        botao  perfil
+                                                        Ver perfil
                                                     </button>
                                                     <!-- <a href="#" class="btn btn-info py-1 px-4">Chat</a> -->
                                                 </div>

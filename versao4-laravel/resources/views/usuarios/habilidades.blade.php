@@ -10,7 +10,7 @@
                 <div class="col-md-4 col-sm-12">
                     <a href="{{route('usuarios.habilidades.buscapessoa')}}" class="d-flex flex-column btn btn-success align-items-center mt-3 w-100">
                         <i class="material-icons d-flex flex-column">extension</i>
-                        Pessoa
+                        Pessoas
                     </a>
                 </div>
 
