@@ -9,12 +9,18 @@ use Auth;
 class HomeController extends Controller
 {
     public function index(){
-
+        
         $user=Auth::User();
         $tags=$user->habilidades;
         $habilidades= \App\Tab_habilidade::all();
         $publicacao = \App\Msg_emissor_feed::orderBy('id','DESC')->paginate(5);
         $comentarios= \App\Msg_receptor_feed::orderBy('id','DESC')->get();
+        
+        // contador de comentários --> vamos pesquisa com profs se podemos usar aqui javascript
+        // $countcoments= \App\Msg_receptor_feed::groupBy('emissor_id')->select('emissor_id',DB::msg_receptor_feeds('count(*) as total'))->get();
+        // $countcoments= \App\Msg_receptor_feed::groupBy('emissor_id')->select('count(*) as total, emissor_id')->get();
+        // $countcoments= DB::table('Msg_receptor_feed')->select('count(*)')->groupBy('emissor_id');
+        // dd($countcoments);
 
         // $publicacao_array = \App\Msg_emissor_feed::select('id', 'mensagem')->get();
         // $comentario_array = \App\Msg_receptor_feed::select('mensagem', 'emissor_id')->get();
@@ -25,7 +31,7 @@ class HomeController extends Controller
 
         // select count(emissor_id) from msg_receptor_feeds where emissor_id = 6;
 
-        return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao','comentarios'));
+        // return view('usuarios.home', compact('user', 'tags', 'habilidades', 'publicacao','comentarios', 'countcoments'));
     }
 
     public function update(Request $req){
@@ -113,6 +119,10 @@ class HomeController extends Controller
 
           return redirect()->route('usuarios.home');
     }
+
+
+
+
 
     // public function updateReceptor(Request $request, $id){
     //     $receptor = \App\Msg_receptor_feed::find($id);

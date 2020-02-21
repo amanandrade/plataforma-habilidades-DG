@@ -377,7 +377,9 @@
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <div class="row">
                                             <p class="card-text">
-                                                <a class="text-muted ml-2" title="Ver"> 1 comentário</a>
+                                                @foreach($countcoments as $countcoment)
+                                                <a class="text-muted ml-2" title="Ver">{{$countcoment->emissor_id}} comentário</a>
+                                                @endforeach
                                             </p>
                                         </div>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
