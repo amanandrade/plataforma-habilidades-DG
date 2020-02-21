@@ -39,6 +39,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/home', 'HomeController@index')->name('usuarios.home');
     Route::post('/home/update/{id}', 'HomeController@update')->name('usuarios.home.update');
     Route::post('/home/addTags', 'HomeController@addTags')->name('usuarios.home.addTags');
+    Route::delete('home/destroyTags/{id}', 'HomeController@destroyTags')->name('usuarios.home.destroyTags');
 
     // Post
     Route::post('/home/mensagens_emissor', 'HomeController@mensagensEmissor')->name('usuarios.home.mensagens_emissor');

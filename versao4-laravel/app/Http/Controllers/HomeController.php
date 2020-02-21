@@ -49,44 +49,19 @@ class HomeController extends Controller
         return redirect()->route('usuarios.home');
     }
 
+    // -----adicionando TAGS----//
     public function addTags(Request $req){
 
-        /*-------------------------------------------------------------------------*/
-        // $req->validate([
-        //     'habilidade_id'=>'unique:tags',
-        // ]);
+        $recupera_habilidade = \App\Tab_habilidade::find($req['habilidade_id']);
+        $recupera_user = \App\User::find($req['usuario_id']);
+        $habilidades_usuario = $recupera_user->habilidades()->get();
 
-        // $recupera = \App\Tab_habilidade::find($req['habilidade_id']);
-        // dd($recupera['habilidades']);
-
-        // $user=\App\User::find($req['usuario_id']);
-       
-        // carregando habiliades ta tabelas tag_habilidades
-        // $habilidades = \App\Tab_habilidade::all();
-        // $array_habilidades = [];
-        // foreach ($habilidades as $key => $value) {
-        //     $array_habilidades[] = $value['habilidades'];
-        // }
-        // dd($array_habilidades);
-
-        // carregando habiliades da conta
-        // $teste = $user->habilidades()->get();
-        // $array = [];
-        // foreach ($teste as $key => $value) {
-        //   $array[] = $value['habilidades'];
-        // }
-        /*-------------------------------------------------------------------------*/
-
-      $recupera_habilidade = \App\Tab_habilidade::find($req['habilidade_id']);
-      $recupera_user = \App\User::find($req['usuario_id']);
-      $habilidades_usuario = $recupera_user->habilidades()->get();
-
-       $control = false;
-       foreach ($habilidades_usuario as $key => $value) {
-           if($value['habilidades'] == $recupera_habilidade['habilidades']){
-               $control = true;
-           }
-       }
+        $control = false;
+        foreach ($habilidades_usuario as $key => $value) {
+            if($value['habilidades'] == $recupera_habilidade['habilidades']){
+                $control = true;
+            }
+        }
 
        if($control == false){
         $recupera_user->habilidades()->attach($req['habilidade_id']);
@@ -97,12 +72,21 @@ class HomeController extends Controller
         // $user->habilidades()->attach($req['habilidade_id']);
         /*-------------------------------------------------------------------------*/
 
-    
         return redirect()->route('usuarios.home');
 
     }
 
-    // Post
+    
+    public function destroyTags($id){
+        $tag = \App\Tab_habilidade::find($id);
+        $tag->delete();
+
+        return redirect()->route('usuarios.home');
+        
+    }
+
+
+    //--------Post
     public function mensagensEmissor(Request $request) {
         $dados = $request->all();
 

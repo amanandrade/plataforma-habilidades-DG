@@ -272,21 +272,19 @@
 
                                 <li class="list-group-item d-flex justify-content-between align-items-center py-2">
 
-                                <form method="post" action="{{route('usuarios.home.addTags')}}" enctype="multipart/form-data">
-                                @csrf
-                                    <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
+                                    <form method="post" action="{{route('usuarios.home.addTags')}}" enctype="multipart/form-data">
+                                    @csrf
+                                        <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
 
-                                    <select type="habilidade_id" name="habilidade_id">
-                                            <option value="">Selecione</option>
-                                        @foreach($habilidades as $hab)
-                                            <option value="{{$hab['id']}}">{{$hab['habilidades']}}</option>
-                                        @endforeach
-                                    </select>
-                                    <button type="submit" class="btn-primary">Gravar</button>
-
+                                        <select class="custom-select col-8" id="inputGroupSelect04" type="habilidade_id" name="habilidade_id">
+                                                <option value="">Selecione</option>
+                                            @foreach($habilidades as $hab)
+                                                <option value="{{$hab['id']}}">{{$hab['habilidades']}}</option>
+                                            @endforeach
+                                        </select>
+                                        <button type="submit" class="btn btn-primary btn-sm">Gravar</button>
                                     </form>
-
-                                </li>
+                                </li> 
                                   @foreach($tags as $tag)
 
                                     @php 
@@ -294,15 +292,20 @@
                                         $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
                                     @endphp
 
-                                    <li class="list-group-item d-flex justify-content-between align-items-center py-2">
-                                        <div class="d-flex justify-content-start align-items-center">
-                                        <i class="material-icons" style="color:{{$color}};">label</i>
-                                        {{$tag['habilidades']}}
-                                        </div>
-                                        <div class="d-flex justify-content-end align-items-center">
+                                <li class="list-group-item d-flex justify-content-between align-items-center py-2">
+                                    <div class="d-flex justify-content-start align-items-center">
+                                    <i class="material-icons" style="color:{{$color}};">label</i>
+                                    {{$tag['habilidades']}}
+                                    </div>
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <form action="{{route('usuarios.home.destroyTags',$tag['id'])}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
                                             <button type="submit" class="material-icons btn btn-md p-0 text-danger">clear</button>
-                                        </div>                                  
-                                    </li>
+                                            <input type="hidden" name="id" value="{{$tag['id']}}">
+                                        </form>
+                                    </div>                                  
+                                </li>
                                  @endforeach
                             </ul>
                         </div>
@@ -512,7 +515,7 @@
                      <input type="hidden" name="estado" class="form-control" value="1">
                  </div>
 
-                 <button type="Submit" class="btn btn-primary">Gravar</button>
+                 <button type="submit" class="btn btn-primary">Gravar</button>
              </form>
              </div>
              <div class="modal-footer">
