@@ -63,8 +63,10 @@ Route::group(['middleware'=>['auth']], function(){
 
     Route::get('/editarCadastro', 'CadastroController@index')->name('usuarios.editarCadastro');
     Route::post('/editarCadastro', 'CadastroController@edit')->name('usuarios.editarCadastro');
-});
 
+    //mensagens
+    Route::get('/mensagens', 'MensagemController@index')->name('usuarios.mensagem');
+});
 
 
 

@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS plataforma_habilidades
+DROP DATABASE IF EXISTS plataforma_habilidades;
 CREATE DATABASE plataforma_habilidades;
 USE plataforma_habilidades;
 /*
