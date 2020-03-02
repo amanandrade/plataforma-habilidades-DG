@@ -377,7 +377,13 @@
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <div class="row">
                                             <p class="card-text">
-                                                <a class="text-muted ml-2" title="Ver"> 1 comentário</a>
+                                                @if($publicar->receptors()->count() > 1)
+                                                <a class="text-muted ml-2" title="Ver"> {{$publicar->receptors()->count()}} comentários</a>
+                                                @elseif ($publicar->receptors()->count() == 1)
+                                                <a class="text-muted ml-2" title="Ver"> {{$publicar->receptors()->count()}} comentário</a>
+                                                @else ($publicar->receptors()->count() == 0)
+                                                <a class="text-muted ml-2 invisible" title="Ver"> {{$publicar->receptors()->count()}} comentário</a>
+                                                @endif
                                             </p>
                                         </div> 
 
