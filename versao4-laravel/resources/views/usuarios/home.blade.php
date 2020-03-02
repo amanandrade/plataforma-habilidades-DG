@@ -362,7 +362,7 @@
                                     <!-- ajuastar foto quando o usuário não coloca foto -->
                                     <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
                                         <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
-
+                                    
                                     </div>
                                     <div class="p-1 d-flex flex-nowrap justify-content-between">
                                         <p class="card-text">{{$publicar->mensagem}}</p>
@@ -379,8 +379,15 @@
                                             <p class="card-text">
                                                 <a class="text-muted ml-2" title="Ver"> 1 comentário</a>
                                             </p>
-                                        </div>
+                                        </div> 
+
+                                        <div>
+                                        <div class="text-right">
+                                        <i class="fa fa-eye"></i>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
+                                        </div> 
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>

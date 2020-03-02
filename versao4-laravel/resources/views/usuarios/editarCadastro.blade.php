@@ -10,7 +10,7 @@
 <!------------------------------------------------- container c_form ------------------------------------------------------>
 <div class="container c_form">
 
-    <form class="formulario" method="POST" action="" enctype="multipart/form-data">
+    <form method="post" action="{{route('usuarios.editarCadastros', Auth::User()->id)}}" enctype="multipart/form-data">
         @csrf
         <div class="row mt-3">
             <div class="col-md-6 col-sm-12 m-auto d-flex justify-content-center mb-3">
@@ -193,7 +193,7 @@
 
                <a href="{{route('usuarios.home')}}" class="btn btn-danger mr-5">Cancelar</a>
 
-                <button class="btn btn-primary" type="submit">Alterar</button>
+                <button type="submit" class="btn btn-primary">Alterar</button>
 
             </div>
         </div>

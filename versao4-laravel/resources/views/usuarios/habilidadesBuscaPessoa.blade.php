@@ -55,7 +55,7 @@
                         @foreach ($usuarios as $usuario)
                             @if($usuario['nome'] != Auth::User()->nome)
                                         <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
-                                    @if(count($habilidades) > 0)
+                                   
                                         <div class="card mb-3" style="width: 22rem;">
                                             <div class="card-body">
                                                 <div class="row align-items-center mx-auto">
@@ -72,7 +72,7 @@
 
                                                 <div class="d-flex justify-content-between">
                                                     <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
-                                                <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil{{$usuario['id']}}" >
+                                                    <button type="button" class="btn btn-light text-primary py-1 px-4 w-100 mt-2" data-toggle="modal" data-target="#perfil{{$usuario['id']}}" >
                                                         Ver perfil
                                                     </button>
                                                     <!-- <a href="#" class="btn btn-info py-1 px-4">Chat</a> -->
@@ -80,7 +80,7 @@
 
                                             </div>
                                         </div>
-                                    @endif
+                                   
                             @endif
                         @endforeach
                     </div>
@@ -89,57 +89,57 @@
 
             <!-- Modal -->
             @foreach ($usuarios as $usuario)
-                            @if($usuario['nome'] != Auth::User()->nome)
-                                        <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
-                                    @if(count($habilidades) > 0)
-        <div class="modal fade" id="perfil{{$usuario['id']}}" tabindex="-1" role="dialog" aria-labelledby="perfilTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-
-                                <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
-                                    {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
-                                    <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
-                                    <h4 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
-                                    <h5 id="email" class="mb-4 text">{{$usuario['email']}}</h5>
+                @if($usuario['nome'] != Auth::User()->nome)
+                        <!-- {{$habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get()}} -->
+                    
+                        <div class="modal fade" id="perfil{{$usuario['id']}}" tabindex="-1" role="dialog" aria-labelledby="perfilTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
+                                <div class="modal-body">
+                                    <div class="container">
 
-                                <div class="toast-header">
-                                    <span class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</span>
-                                    <a href="./issues copy/icons/add-24px.svg"></a>
-                                </div>
+                                        <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
+                                            {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
+                                            <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
+                                            <h4 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
+                                            <h5 id="email" class="mb-4 text">{{$usuario['email']}}</h5>
+                                        </div>
 
-                                </div>
-                                <div class="container">
-                                    @foreach ($habilidades as $key => $value)
                                         <div class="toast-header">
-
-                                            @php 
-                                                $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
-                                                $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
-                                            @endphp
-
-                                            <i class="material-icons" style="color:{{$color}};">label</i>
-                                            <span class="mr-auto">{{$value['habilidades']}}</span>
+                                            <span class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</span>
+                                            <a href="./issues copy/icons/add-24px.svg"></a>
+                                        </div>
 
                                         </div>
-                                    @endforeach
+                                        <div class="container">
+                                            @foreach ($habilidades as $key => $value)
+                                                <div class="toast-header">
+
+                                                    @php 
+                                                        $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
+                                                        $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)];
+                                                    @endphp
+
+                                                    <i class="material-icons" style="color:{{$color}};">label</i>
+                                                    <span class="mr-auto">{{$value['habilidades']}}</span>
+
+                                                </div>
+                                            @endforeach
+                                        </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>
+                                </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                @endif
+                    
                 @endif
             @endforeach
 

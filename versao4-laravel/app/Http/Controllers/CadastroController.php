@@ -10,14 +10,15 @@ use Auth;
 class CadastroController extends Controller
 {
     public function index(){
+        $user=Auth::User();
         $cursos = \App\Curso::All();
         $status = \App\Statu::All();
-        return view('usuarios.editarCadastro', compact('cursos', 'status'));
+        return view('usuarios.editarCadastro', compact('cursos', 'status','user'));
     }
-    public function edit(UsuarioRequest  $request){
-        $dados = $request->All();
-        $usuario = Auth::User();
-        $usuario->update($dados);
-        return redirect()->Route('usuarios.home');
+    public function edit(Request $request){
+       $dados=$request->All();
+       $usuario=Auth::User();
+       $usuario->update($dados);
+       return redirect()->route('usuarios.home');
     }
 }
