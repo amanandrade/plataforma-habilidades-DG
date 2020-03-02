@@ -59,4 +59,14 @@ class User extends Authenticatable
     public function receptor(){
         return $this->hasMany(Msg_receptor_feed::class);
     }
+
+
+    // mensagens 
+    public function mensagensEnviadas(){
+        return $this->hasMany(Mensagens::class, 'remetente_user_id');
+    }
+
+    public function mensagensRecebidas(){
+        return $this->hasMany(Mensagens::class, 'destino_user_id');
+    }
 }

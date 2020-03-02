@@ -25,7 +25,7 @@ class Mensagens extends Migration
             $table->string('msgLida');
             $table->string('hora');
             $table->string('assunto');
-            $table->text('mensagem');
+            $table->text('texto');
         });
     }
 
