@@ -389,7 +389,7 @@
 
                                         <div>
                                         <div class="text-right">
-                                        <i class="fa fa-eye"></i>
+                                       
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                         </div> 
                                         </div>
