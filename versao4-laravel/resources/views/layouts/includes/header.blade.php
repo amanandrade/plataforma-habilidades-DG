@@ -33,17 +33,16 @@
                         <div class="justify-content-end">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="{{route('usuarios.home')}}">Home<span
-                                            class="sr-only">(atual)</span></a>
+                                    <a class="nav-link align-items text-right" href="{{route('usuarios.home')}}">@if(!empty($current) && $current === 'home')<b class="text-dark">Home</b> @else Home @endif</a>
                                 </li>
                                
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right"
-                                        href="{{route('usuarios.habilidades')}}">Habilidades</a>
+                                        href="{{route('usuarios.habilidades')}}">@if(!empty($current) && $current === 'habilidade')<b class="text-dark">Habilidades</b> @else Habilidades @endif</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right" href="./mensagens">Mensagens</a>
+                                    <a class="nav-link align-items text-right" href="{{route('usuarios.mensagem')}}">@if(!empty($current) && $current === 'mensagens')<b class="text-dark">Mensagens</b> @else Mensagens @endif</a>
                                 </li>
                                 
                                 {{-- <li class="nav-item">

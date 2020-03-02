@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.indexhome', ['current' => 'habilidade'])
 
 @section('titulo','Help')
 @section('conteudo')

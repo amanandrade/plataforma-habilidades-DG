@@ -104,7 +104,7 @@
                                     <div class="card-body">
                                         <div class="row align-items-center mx-auto">
                                             
-                                            <h5 class="card-title my-0 ml-2">TERMO NAO ENCONTRADO !..</h5>
+                                            <p class="my-0 ml-2">Termo não encontrado =(</p>
                                         </div>
                                     </div>
                                 </div>
