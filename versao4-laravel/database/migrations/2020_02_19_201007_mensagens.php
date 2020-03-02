@@ -15,9 +15,11 @@ class Mensagens extends Migration
     {
         Schema::create('mensagens', function(Blueprint $table){
             $table->bigIncrements('id');
+            $table->bigInteger('remetente_user_id')->unsigned();
+            $table->bigInteger('destino_user_id')->unsigned();
             // Remetente
             // criar o campo e dps criar a chave estrangeira 
-            $table->foreign('remente_user_id')->references('id')->on('users');
+            $table->foreign('remetente_user_id')->references('id')->on('users');
             // Destino
             $table->foreign('destino_user_id')->references('id')->on('users');
             $table->string('msgLida');
