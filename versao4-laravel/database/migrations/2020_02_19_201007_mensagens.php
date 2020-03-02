@@ -16,14 +16,13 @@ class Mensagens extends Migration
         Schema::create('mensagens', function(Blueprint $table){
             $table->bigIncrements('id');
             // Remetente
-            // criar o campo e dps criar a chave estrangeira 
-            $table->foreign('remente_user_id')->references('id')->on('users');
+            $table->foreign('remetente_user_id')->references('id')->on('users');
             // Destino
             $table->foreign('destino_user_id')->references('id')->on('users');
             $table->string('msgLida');
             $table->string('hora');
             $table->string('assunto');
-            $table->text('mensagem');
+            $table->text('texto');
         });
     }
 
