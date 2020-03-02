@@ -116,3 +116,26 @@ INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`)
 INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`) VALUES (13,1,9,NULL,NULL);
 INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`) VALUES (14,5,7,NULL,NULL);
 INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`) VALUES (15,5,1,NULL,NULL);
+
+
+/*
+
+    DB - Mensagens 
+
+CREATE TABLE IF NOT EXISTS `mensagens` (
+  `ID` int(9) unsigned NOT NULL AUTO_INCREMENT,
+  `remente_user_id` int(180) DEFAULT NULL,
+  `destino_user_id` int(180) DEFAULT NULL,
+  `msgLida` varchar(180) DEFAULT NULL,
+  `hora` varchar(180) DEFAULT NULL,
+  `assunto` varchar(180) DEFAULT NULL,
+  `texto` text,
+  PRIMARY KEY (`ID`)
+);
+
+
+INSERT INTO `mensagens` (`ID`, `remente_user_id`, `destino_user_id`, `msgLida`, `hora`, `assunto`, `texto`) VALUES
+(1, '2', '1', 'si', '24/08/2017, 3:16 am', 'Noma mensagem', 'Ola'),
+(2, '1', '3', 'si', '24/08/2017, 3:17 am', 'Outra mensagem', 'Eaii');
+
+*/ 
