@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.indexhome', ['current' => 'pessoas'])
 
 @section('titulo','Help')
 @section('conteudo')
@@ -79,7 +79,7 @@
                             <div class="card mb-3 w-100">
                                 <div class="card-body">
                                     <div class="row align-items-center mx-auto">
-                                        <p class="my-0 ml-2">Termo não encontrado!..<img src="../img/emoji_not_found.png" alt="" style="width: 50px" class="rounded"></p>    
+                                        <p class="my-0 ml-2">Termo não encontrado!<img src="../img/frown-face.svg" alt="" style="width: 30px" class="rounded ml-2"></p>    
                                     </div>
                                 </div>
                             </div>
@@ -96,28 +96,27 @@
                     <div class="modal fade" id="perfil{{$usuario['id']}}" tabindex="-1" role="dialog" aria-labelledby="perfilTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                             <div class="modal-body">
                                 <div class="container">
 
                                     <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
                                         {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
                                         <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
-                                        <h4 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
-                                        <h5 id="email" class="mb-4 text">{{$usuario['email']}}</h5>
+                                        <h3 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
+                                        <span id="nome" class="text-center w-100">Curso: {{$usuario->curso->nome_curso}} - {{$usuario->statu->nome_status}}</span>
+                                        <span id="email" class="mb-2 text">{{$usuario['email']}}</span>
                                     </div>
 
-                                    <div class="toast-header">
-                                        <span class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</span>
-                                        <a href="./issues copy/icons/add-24px.svg"></a>
+                                    <div class="toast-header mt-3">
+                                        <span>Habilidades e conhecimentos:</span>
                                     </div>
 
-                                    </div>
                                     <div class="container">
                                         @foreach ($habilidades as $key => $value)
                                             <div class="toast-header">
@@ -133,6 +132,7 @@
                                             </div>
                                         @endforeach
                                     </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <a class="card-link btn btn-info py-1 px-4 w-100" style="color:#FFFF;" data-toggle="collapse" href="#codigo{{$usuario->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Mensagem</a>

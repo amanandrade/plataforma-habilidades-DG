@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            
+
     <!-- font awesome -->
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous">
@@ -24,6 +24,18 @@
 
     <!-- local style -->
     <link rel="stylesheet" href="{{asset('css/localstyle.css')}}">
+
+    {{-- Mask JQuery --}}
+    <script src="jquery.1.7.2.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
+    <script>
+        $document.ready(function($){
+            $("#telefone_editarcadastro").mask("(00) 00000-0000", {placeholder:" (__) _____ - ____" });
+        });
+
+    </script>
+
+
 
     <title>@yield('titulo')</title>
 </head>

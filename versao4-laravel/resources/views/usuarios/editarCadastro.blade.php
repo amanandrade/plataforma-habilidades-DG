@@ -50,7 +50,8 @@
                         </span>
                     </div>
                     <input type="tel" class="form-control linha_input border-top-0 border-right-0 border-left-0 @error('telefone') is-invalid @enderror"
-                        id="teste" name="telefone" placeholder="Telefone" value="{{Auth::User()->telefone}}">
+                        id="telefone_editarcadastro" name="telefone" placeholder="Telefone" value="{{Auth::User()->telefone}}">
+
                         @error('telefone')
                         <div class="invalid-feedback">
                             {{$message}}
@@ -138,9 +139,9 @@
                                     </span>
                                 </div>
                                 <select class="custom-select combobox_curso @error('curso_id') is-invalid @enderror" name="curso_id" value="{{old('curso_id')}}" required>
-
-                                    <option class="escolha" selected value="">Escolher...</option>
                                     @foreach($cursos as $curso)
+                                <option class="escolha" selected value="{{Auth::User()->curso_id}}">{{$curso['nome_curso']}}</option>
+
                                     <option class="escolha" value="{{$curso['id']}}">{{$curso['nome_curso']}}</option>
                                     @endforeach
                                 </select>
@@ -170,8 +171,9 @@
                                 </span>
                                 </div>
                                 <select class="custom-select  combobox_curso @error('status_id') is-invalid @enderror" name="status_id" value="{{old('status_id')}}" required>
-                                    <option class="escolha" selected value="">Escolher...</option>
                                     @foreach($status as $stat)
+                                <option class="escolha" selected value="{{Auth::User()->status_id}}">{{$stat['nome_status']}}</option>
+
                                     <option class="escolha" value="{{$stat['id']}}">{{$stat['nome_status']}}</option>
                                     @endforeach
                                 </select>
