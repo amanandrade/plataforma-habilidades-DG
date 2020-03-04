@@ -96,23 +96,27 @@
                     <div class="modal fade" id="perfil{{$usuario['id']}}" tabindex="-1" role="dialog" aria-labelledby="perfilTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="perfilTitle"><b>Perfil</b></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
                             <div class="modal-body">
                                 <div class="container">
 
                                     <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
                                         {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
                                         <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
-                                        <h4 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
-                                        <h5 id="email" class="mb-4 text">{{$usuario['email']}}</h5>
+                                        <h3 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
+                                        <span id="nome" class="text-center w-100">Curso: {{$usuario->curso->nome_curso}} - {{$usuario->statu->nome_status}}</span>
+                                        <span id="email" class="mb-2 text">{{$usuario['email']}}</span>
                                     </div>
 
+                                    <div class="toast-header mt-3">
+                                        <span>Habilidades e conhecimentos:</span>
                                     </div>
+
                                     <div class="container">
                                         @foreach ($habilidades as $key => $value)
                                             <div class="toast-header">
@@ -128,6 +132,7 @@
                                             </div>
                                         @endforeach
                                     </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>

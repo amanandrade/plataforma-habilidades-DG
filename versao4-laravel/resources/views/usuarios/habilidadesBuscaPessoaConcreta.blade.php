@@ -118,10 +118,14 @@
                                             {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
                                             <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($user['foto'])}}"alt="">
                                             <h4 id="nome" class="text-center text">{{$user['nome']}}</h4>
-                                            <h5 id="email" class="mb-4 text">{{$user['email']}}</h5>
+                                            <span id="nome" class="text-center w-100">Curso: {{$user->curso->nome_curso}} - {{$user->statu->nome_status}}</span>
+                                            <span id="email" class="mb-2 text">{{$user['email']}}</span>
                                         </div>
 
+                                        <div class="toast-header mt-3">
+                                            <span>Habilidades e conhecimentos:</span>
                                         </div>
+
                                         <div class="container">
                                             @foreach ($habilidades as $key => $value)
                                                 <div class="toast-header">
@@ -137,6 +141,7 @@
                                                 </div>
                                             @endforeach
                                         </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>

@@ -39,7 +39,6 @@ class HabilidadeController extends Controller
         // foreach ($usuarios as $usuario) {
         //     // $habilidades = $usuario->habilidades()->where('habilidades', 'LIKE',"%{$tag_busca}%")->get();
         // }
-
         return view('usuarios.habilidadesBusca', compact('buscas', 'tag_busca'));
 
         // return view('usuarios.habilidadesBusca', compact('usuarios', 'habilidades','tag_busca'));
