@@ -35,6 +35,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right" href="{{route('usuarios.home')}}">@if(!empty($current) && $current === 'home')<b class="text-dark">Home</b> @else Home @endif</a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link align-items text-right"
+                                        href="{{route('usuarios.habilidades.buscapessoa')}}">@if(!empty($current) && $current === 'pessoas')<b class="text-dark">Pessoas</b> @else Pessoas @endif</a>
+                                </li>
                                
                                 <li class="nav-item">
                                     <a class="nav-link align-items text-right"
