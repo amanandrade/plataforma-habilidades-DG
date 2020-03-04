@@ -66,7 +66,7 @@ Route::group(['middleware'=>['auth']], function(){
 
     //mensagens
     Route::get('/mensagens', 'MensagemController@index')->name('usuarios.mensagem');
-    Route::post('/mensagensEnviar/{id}', 'MensagemController@mensagemRemetente')->name('usuarios.mensagem');
+    //Route::post('/mensagensEnviar/{id}', 'MensagemController@mensagemRemetente')->name('usuarios.mensagem');
 });
 
 
