@@ -118,6 +118,8 @@ INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`)
 INSERT INTO `tags` (`id`,`usuario_id`,`habilidade_id`,`created_at`,`updated_at`) VALUES (15,5,1,NULL,NULL);
 
 
-INSERT INTO `mensagens` (`ID`, `remetente_user_id`, `destino_user_id`, `msgLida`, `hora`, `assunto`, `mensagem`) VALUES
-(1, '2', '1', 'si', '24/08/2017, 3:16 am', 'Noma mensagem', 'Olá colega! Como vai?'),
-(2, '1', '3', 'si', '24/08/2017, 3:17 am', 'Outra mensagem', 'Oie! Tudo bem! Precisa de ajuda?');
+INSERT INTO `mensagens` (`ID`, `remetente_user_id`, `destino_user_id`, `assunto`, `mensagem`) VALUES
+(1, '2', '1', 'Noma mensagem', 'Olá colega! Como vai?'),
+(2, '1', '3', 'Outra mensagem', 'Oie! Tudo bem! Precisa de ajuda?');
+
+

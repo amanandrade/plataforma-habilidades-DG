@@ -189,8 +189,46 @@
                                     </div>
                             </div>
                             <div class="modal-footer">
-                                <a href="#" class="btn btn-info py-1 px-4 w-100">Chat</a>
+                                <a class="card-link btn btn-info py-1 px-4 w-100" style="color:#FFFF;" data-toggle="collapse" href="#codigo{{$usuario->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Mensagem</a>
                             </div>
+
+
+                            <!-- MENSAGEM -->
+                            <div class="collapse mt-1 post-feed" id="codigo{{$usuario->id}}">
+                                <div class="card card-body">
+                                <form method="post" action="{{route('usuarios.habilidades.mensagem')}}" enctype="multipart/form-data">
+                                 @csrf
+                                 @method('POST')
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                    <input type="hidden" name = "remetente_user_id" value = "{{Auth::User()->id}}">
+                                    <input type="hidden" name = "destino_user_id" value = "{{$usuario->id}}">
+
+                                    <input type="text" class="form-control border-top-0 border-right-0 border-left-0 py-0 ml-3"
+                                     id="assunto" name="assunto" placeholder="Assunto" required>
+
+                                    <input type="textarea" class="form-control border-top-0 border-right-0 border-left-0 py-0 ml-3"
+                                     id="mensagem" name="mensagem" placeholder="Escreve uma mensagem..." required>
+                                    </div>
+                                    </br>
+                                    <button type="submit" class="btn btn-primary btn-sm mt-2 mb-5">Enviar</button>
+                                    </form>
+                                </div>
+
+                                
+
+                                      <div class="row justify-content-between">
+                                          <div class="col-sm-1">
+                                          <img src="" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
+                                          </div>
+                                          <div class="col-sm-7 mt-2 ml-2 px-0">
+                                          </div>
+                                          <div class="mt-2 px-0">
+                                          </div>
+                                      </div>
+                                </div>
+                            </div>
+                            <!--  -->
                             </div>
                         </div>
                     </div>

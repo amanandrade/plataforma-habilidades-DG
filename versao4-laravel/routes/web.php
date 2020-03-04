@@ -66,7 +66,11 @@ Route::group(['middleware'=>['auth']], function(){
 
     //mensagens
     Route::get('/mensagens', 'MensagemController@index')->name('usuarios.mensagem');
-    //Route::post('/mensagensEnviar/{id}', 'MensagemController@mensagemRemetente')->name('usuarios.mensagem');
+    Route::post('/habidades/busca', 'MensagemController@mensagemRemetente')->name('usuarios.habilidades.mensagem');
+    // Route::post('/habidades/buscapessoa', 'MensagemController@mensagemRemetente')->name('usuarios.habilidades.mensagem');
+    // Route::post('/habidades/buscatag', 'MensagemController@mensagemRemetente')->name('usuarios.habilidades.mensagem');
+    // Route::post('/habidades/buscapessoaconcreta', 'MensagemController@mensagemRemetente')->name('usuarios.habilidades.mensagem');
+    
 });
 
 

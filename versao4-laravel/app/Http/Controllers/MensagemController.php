@@ -21,7 +21,7 @@ class MensagemController extends Controller
 
         $remetente = \App\Mensagens::create($dados);
 
-        return redirect()->route('usuarios');
+        return redirect()->route('usuarios.home');
     }
 
 }
