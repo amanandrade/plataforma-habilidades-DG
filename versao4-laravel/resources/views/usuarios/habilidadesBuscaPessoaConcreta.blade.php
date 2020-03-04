@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.indexhome', ['current' => 'pessoas'])
 
 @section('titulo','Help')
 @section('conteudo')
@@ -85,7 +85,7 @@
                             <div class="card mb-3 w-100">
                                 <div class="card-body">
                                     <div class="row align-items-center mx-auto">
-                                        <p class="my-0 ml-2">Termo não encontrado!..<img src="../img/emoji_not_found.png" alt="" style="width: 50px" class="rounded"></p>
+                                        <p class="my-0 ml-2">Termo não encontrado!<img src="../img/frown-face.svg" alt="" style="width: 30px" class="rounded ml-2"></p>    
                                     </div>
                                 </div>
                             </div>
@@ -119,11 +119,6 @@
                                             <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($user['foto'])}}"alt="">
                                             <h4 id="nome" class="text-center text">{{$user['nome']}}</h4>
                                             <h5 id="email" class="mb-4 text">{{$user['email']}}</h5>
-                                        </div>
-
-                                        <div class="toast-header">
-                                            <span class="mr-auto">Selecione aqui conhecimentos que queira compartilhar..</span>
-                                            <a href="./issues copy/icons/add-24px.svg"></a>
                                         </div>
 
                                         </div>
