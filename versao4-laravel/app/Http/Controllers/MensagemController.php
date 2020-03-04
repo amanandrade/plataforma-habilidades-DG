@@ -10,16 +10,17 @@ class MensagemController extends Controller
 {
     public function index(){
         $user = Auth::user( );
-        $mensagens = \App\Mensagens::all();
+        $mensagens = $user->mensagensRecebidas;
 
-        return view('usuarios.mensagem', compact('mensagens'));
+        return view('usuarios.mensagem', compact('mensagens', 'user'));
     }
 
-    public function mensagemEmissor(Request $request){
-        
+    public function mensagemRemetente(Request $request){
+        $dados = $request->all();
+
+        $remetente = \App\Mensagens::create($dados);
+
+        return redirect()->route('usuarios');
     }
 
-    public function mensagemDestino(Request $request){
-
-    }
 }
