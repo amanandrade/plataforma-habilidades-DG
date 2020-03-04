@@ -9,12 +9,10 @@
   <div class="row">
       <div class="card m-2" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">{{$mensagem['assunto']}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{$mensagem['remetente_user_id']}}</h6>
-          <p class="card-text">{{$mensagem['texto']}}</p>
-          <small>{{$mensagem['hora']}}</small>
-          
-        </div>
+          <h5 class="card-title">{{$mensagem->remetente->nome}}</h5>
+          <h5 class="card-subtitle mb-2 text-muted">{{$mensagem['assunto']}}</h5>
+          <p class="card-text">{{$mensagem['mensagem']}}</p>
+          <small>{{$mensagem['created_at']}}</small>
       </div>
     </div>
   </div>
