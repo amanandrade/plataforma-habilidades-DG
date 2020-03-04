@@ -1,4 +1,4 @@
-@extends('layouts.indexhome')
+@extends('layouts.indexhome', ['current' => 'home'])
 
 @section('titulo', 'Help')
 @section('conteudo')
@@ -61,7 +61,13 @@
                                     </div>
                                     <div class="mr-2 ml-2 d-flex justify-content-between">
                                         <p class="card-text">
-                                        <a class="text-muted" title="Ver"> 1 comentário</a>
+                                            @if($publicar->receptors()->count() > 1)
+                                            <a class="text-muted ml-2" title="Ver"> {{$publicar->receptors()->count()}} comentários</a>
+                                            @elseif ($publicar->receptors()->count() == 1)
+                                            <a class="text-muted ml-2" title="Ver"> {{$publicar->receptors()->count()}} comentário</a>
+                                            @else ($publicar->receptors()->count() == 0)
+                                            <a class="text-muted ml-2 invisible" title="Ver"> {{$publicar->receptors()->count()}} comentário</a>
+                                            @endif
                                         </p>
                                         <a class="card-link" style="color:#536DFE;" data-toggle="collapse" href="#codigo{{$publicar->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Comentar</a>
                                     </div>

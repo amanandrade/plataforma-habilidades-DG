@@ -60,6 +60,7 @@
                     @csrf
                         <input type="hidden" name="usuario_id" value="{{Auth::User()->id}}">
 
+
                         <select type="habilidade_id" name="habilidade_id">
                                 <option value="">Selecione</option>
                             @foreach($habilidades as $hab)

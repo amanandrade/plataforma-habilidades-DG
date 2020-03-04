@@ -8,7 +8,8 @@ class HabilidadeController extends Controller
 {
     public function index(){
 
-        $habilidades = \App\Tab_habilidade::all();
+        // $habilidades = \App\Tab_habilidade::all();
+        $habilidades = \App\Tab_habilidade::orderBy('habilidades','ASC')->get();
         return view('usuarios.habilidades', compact('habilidades'));
 
     }
