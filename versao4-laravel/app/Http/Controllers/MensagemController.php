@@ -11,6 +11,7 @@ class MensagemController extends Controller
     public function index(){
         $user = Auth::user( );
         $mensagens = $user->mensagensRecebidas;
+        
 
         return view('usuarios.mensagem', compact('mensagens', 'user'));
     }
