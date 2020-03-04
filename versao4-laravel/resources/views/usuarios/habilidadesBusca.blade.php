@@ -79,7 +79,7 @@
                             <div class="card mb-3 w-100">
                                 <div class="card-body">
                                     <div class="row align-items-center mx-auto">
-                                        <p class="my-0 ml-2">Termo não encontrado =(</p>    
+                                        <p class="my-0 ml-2">Termo não encontrado!..<img src="../img/emoji_not_found.png" alt="" style="width: 50px" class="rounded"></p>    
                                     </div>
                                 </div>
                             </div>

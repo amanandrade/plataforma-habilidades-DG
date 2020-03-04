@@ -37,7 +37,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link align-items text-right"
+                                    <a class="nav-link align-items text-right" 
                                         href="{{route('usuarios.habilidades.buscapessoa')}}">@if(!empty($current) && $current === 'pessoas')<b class="text-dark">Pessoas</b> @else Pessoas @endif</a>
                                 </li>
                                
