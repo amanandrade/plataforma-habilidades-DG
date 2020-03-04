@@ -137,9 +137,9 @@
                                         <i class="fa fa-graduation-cap"></i>
                                     </span>
                                 </div>
-                                <select class="custom-select combobox_curso @error('curso_id') is-invalid @enderror" name="curso_id" value="{{old('curso_id')}}" >
+                                <select class="custom-select combobox_curso @error('curso_id') is-invalid @enderror" name="curso_id" value="{{old('curso_id')}}" required>
 
-                                    <option class="escolha" selected>Escolher...</option>
+                                    <option class="escolha" selected value="">Escolher...</option>
                                     @foreach($cursos as $curso)
                                     <option class="escolha" value="{{$curso['id']}}">{{$curso['nome_curso']}}</option>
                                     @endforeach
@@ -169,8 +169,8 @@
                                     <i class="fa fa-graduation-cap"></i>
                                 </span>
                                 </div>
-                                <select class="custom-select  combobox_curso @error('status_id') is-invalid @enderror" name="status_id" value="{{old('status_id')}}">
-                                    <option class="escolha" selected>Escolher...</option>
+                                <select class="custom-select  combobox_curso @error('status_id') is-invalid @enderror" name="status_id" value="{{old('status_id')}}" required>
+                                    <option class="escolha" selected value="">Escolher...</option>
                                     @foreach($status as $stat)
                                     <option class="escolha" value="{{$stat['id']}}">{{$stat['nome_status']}}</option>
                                     @endforeach
