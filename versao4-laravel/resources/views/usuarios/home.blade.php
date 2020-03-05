@@ -22,7 +22,7 @@
                                     style="width:50px;"></span>
                         @elseif(Auth::User()->estado == 1)
                             <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
-                                    style="width:50px;"></span>
+                                    style="width:50px; height:50px; object-fit: cover;"></span>
                         @endif
                         </div>
 
@@ -46,7 +46,7 @@
                                 <div class="card-body p-2">
                                     <div class="d-flex flex-nowrap align-items-center p-1">
                                     <!-- ajuastar foto quando o usuário não coloca foto -->
-                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
+                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px; height:50px; object-fit: cover;">
                                         <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
                                         @if(Auth::User()->id == $publicar->usuario_id)
                                             <form action="/home/mensagens_emissor/{{$publicar->id}}/delete" method = "post">
@@ -148,27 +148,27 @@
                     <ul class="list-group">
                         <li class="list-group-item d-flex align-items-center mb-3">
                             <img src="./img/mulher3.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                                style="width:50px; height:50px; object-fit: cover;">
                             <span><b>Beatriz Amorim</b> busca por ajuda em <mark>CSS</mark>.</span>
                         </li>
                         <li class="list-group-item d-flex align-items-center mb-3">
                             <img src="./img/homem3.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                                style="width:50px; height:50px; object-fit: cover;">
                             <span><b>Justem Dumbaxe</b> busca por ajuda em <mark>Javascript</mark>.</span>
                         </li>
                         <li class="list-group-item d-flex align-items-center mb-3">
                             <img src="./img/homem2.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                                style="width:50px; height:50px; object-fit: cover;">
                             <span><b>Felgueiras</b> busca por ajuda em <mark>HTML</mark>.</span>
                         </li>
                         <li class="list-group-item d-flex align-items-center mb-3">
                             <img src="./img/mulher1.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                                style="width:50px; height:50px; object-fit: cover;">
                             <span><b>Clara</b> busca por ajuda em <mark>Wordpress</mark>.</span>
                         </li>
                         <li class="list-group-item d-flex align-items-center mb-3">
                             <img src="./img/mulher2.JPG" alt="" class="rounded-circle mr-3"
-                                style="width:50px; height: 50px;">
+                                style="width:50px; height:50px; object-fit: cover;">
                             <span><b>Duda</b> busca por ajuda em <mark>Mídias Sociais</mark>.</span>
                         </li>
                     </ul>
@@ -216,7 +216,7 @@
                 <a href="" data-toggle="modal" data-target="#modal" class="text-warning pb-2">Editar foto<i class="material-icons ml-1" style="font-size: 20px;" title="Editar foto">edit</i></a>
                 @elseif(Auth::User()->estado == 1)
 
-                <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle w-50 mt-4" data-toggle="modal" data-target="#modal" id="foto-perfil">
+                <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle mt-4 mb-2" style="width:150px; height:150px; object-fit: cover;" data-toggle="modal" data-target="#modal" id="foto-perfil">
                     <!-- <a href="#" class="hvr-icon-up">
                         Icon Up
                         <img src="myicon.svg" class="hvr-icon" />
@@ -332,7 +332,7 @@
                                     style="width:50px;"></span>
                         @elseif(Auth::User()->estado == 1)
                             <span class="input-group-text"><img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
-                                    style="width:50px;"></span>
+                                    style="width:50px; height:50px; object-fit: cover;"></span>
                         @endif
                         </div>
 
@@ -366,7 +366,7 @@
                                 <div class="card-body p-2">
                                     <div class="d-flex flex-nowrap align-items-center p-1">
                                     <!-- ajuastar foto quando o usuário não coloca foto -->
-                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px;">
+                                    <img src="{{$publicar->user->foto}}" alt="" class="rounded-circle mr-3" style="width:50px; height:50px; object-fit: cover;">
                                         <h5 class="card-tittle">{{$publicar->user->nome}}</h5>
                                     
                                     </div>

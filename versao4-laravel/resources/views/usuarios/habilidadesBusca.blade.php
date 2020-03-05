@@ -21,7 +21,7 @@
                                                 <div class="card mb-3" style="width: 22rem;">
                                                     <div class="card-body">
                                                         <div class="row align-items-center mx-auto">
-                                                            <img class="card-img-top rounded-circle w-25" src="{{asset($usuario['foto'])}}"
+                                                            <img class="card-img-top rounded-circle mb-2" style="width:80px; height:80px; object-fit: cover;" src="{{asset($usuario['foto'])}}"
                                                                 alt="">
                                                             <h5 class="card-title my-0 ml-2"> {{$usuario['nome']}}</h5>
                                                         </div>
@@ -43,8 +43,8 @@
 
                                                         <div class="d-flex justify-content-between">
                                                             <!-- <a href="#" class="btn btn-light text-primary py-1 px-4">Perfil</a> -->
-                                                            <button type="button" class="btn btn-light text-primary py-1 px-4" data-toggle="modal" data-target="#perfil{{$usuario['id']}}">
-                                                                Perfil
+                                                            <button type="button" class="btn btn-light w-100 text-primary py-1 px-4" data-toggle="modal" data-target="#perfil{{$usuario['id']}}">
+                                                                Ver perfil
                                                             </button>
                                                         </div>
                                                     
@@ -55,7 +55,7 @@
                                                 <div class="card mb-3" style="width: 22rem;">
                                                     <div class="card-body">
                                                         <div class="row align-items-center mx-auto">
-                                                            <img class="card-img-top rounded-circle w-25" src="{{asset($usuario['foto'])}}"
+                                                            <img class="card-img-top rounded-circle mb-2" style="width:80px; height:80px; object-fit: cover;" src="{{asset($usuario['foto'])}}"
                                                                 alt="">
                                                             <h5 class="card-title my-0 ml-2"> {{$usuario['nome']}}</h5>
                                                         </div>
@@ -106,7 +106,7 @@
 
                                     <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
                                         {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
-                                        <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($usuario['foto'])}}"alt="">
+                                        <img class="card-img-top rounded-circle m-2" style="width:150px; height:150px; object-fit: cover;" src="{{asset($usuario['foto'])}}"alt="">
                                         <h3 id="nome" class="text-center text">{{$usuario['nome']}}</h4>
                                         <span id="nome" class="text-center w-100">Curso: {{$usuario->curso->nome_curso}} - {{$usuario->statu->nome_status}}</span>
                                         <span id="email" class="mb-2 text">{{$usuario['email']}}</span>
