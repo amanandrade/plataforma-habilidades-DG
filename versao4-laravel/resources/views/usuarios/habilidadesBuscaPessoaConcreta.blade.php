@@ -144,12 +144,12 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                <a class="card-link btn btn-info py-1 px-4 w-100" style="color:#FFFF;" data-toggle="collapse" href="#codigo{{$usuario->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Mensagem</a>
+                                <a class="card-link btn btn-info py-1 px-4 w-100" style="color:#FFFF;" data-toggle="collapse" href="#codigo{{$user->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Mensagem</a>
                             </div>
 
 
                             <!-- MENSAGEM -->
-                            <div class="collapse mt-1 post-feed" id="codigo{{$usuario->id}}">
+                            <div class="collapse mt-1 post-feed" id="codigo{{$user->id}}">
                                 <div class="card card-body">
                                 <form method="post" action="{{route('usuarios.habilidades.mensagem')}}" enctype="multipart/form-data">
                                  @csrf
@@ -157,7 +157,7 @@
                                 <div class="row">
                                     <div class="col-sm-8">
                                     <input type="hidden" name = "remetente_user_id" value = "{{Auth::User()->id}}">
-                                    <input type="hidden" name = "destino_user_id" value = "{{$usuario->id}}">
+                                    <input type="hidden" name = "destino_user_id" value = "{{$user->id}}">
 
                                     <input type="text" class="form-control border-top-0 border-right-0 border-left-0 py-0 ml-3"
                                      id="assunto" name="assunto" placeholder="Assunto" required>
