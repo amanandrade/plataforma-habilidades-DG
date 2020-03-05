@@ -46,7 +46,6 @@
                                                             <button type="button" class="btn btn-light text-primary py-1 px-4" data-toggle="modal" data-target="#perfil{{$usuario['id']}}">
                                                                 Perfil
                                                             </button>
-                                                            <a class="card-link btn btn-info py-1 px-4 w-100" style="color:#FFFF;" data-toggle="collapse" href="#codigo{{$usuario->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">Mensagem</a>
                                                         </div>
                                                     
                                                     </div>
