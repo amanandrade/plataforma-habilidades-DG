@@ -81,10 +81,10 @@
                                 <div class="row">
                                     <div class="col-sm-1">
                                     @if(empty(Auth::User()->estado))
-                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width:40px;">
+                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width:150px; height:150px; object-fit: cover;">
                                     @elseif(Auth::User()->estado == 1)
                                     <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
-                                            style="width:40px;">
+                                            style="width: 40px; height: 40px; object-fit: cover;">
                                     @endif
                                     </div>
 
@@ -107,7 +107,7 @@
                                       <div class="row justify-content-between">
                                         <div class="row d-flex flex-nowrap ml-3">
                                             <div class="px-0">
-                                            <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mb-2" style="width:40px;">
+                                            <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mb-2" style="width: 40px; height: 40px; object-fit: cover;">
                                             </div>
                                             <div class="col-sm-6 mt-2 ml-2 px-0">
                                             <h6 class="card-title text-dark">{{$comentar->user->nome}}</h6>
@@ -411,10 +411,10 @@
                                 <div class="row">
                                     <div class="col-sm-1">
                                     @if(empty(Auth::User()->estado))
-                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width:40px;">
+                                    <img src="{{asset('img/photos.png')}}" alt="" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
                                     @elseif(Auth::User()->estado == 1)
                                     <img src="{{asset(Auth::User()->foto)}}" alt="" class="rounded-circle"
-                                            style="width:40px;">
+                                    style="width: 40px; height: 40px; object-fit: cover;">
                                     @endif
                                     </div>
 
@@ -436,7 +436,7 @@
 
                                       <div class="row justify-content-between">
                                           <div class="col-sm-1">
-                                          <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width:40px;">
+                                          <img src="{{$comentar->user->foto}}" alt="" class="rounded-circle mr-3 mb-2" style="width: 40px; height: 40px; object-fit: cover;">
                                           </div>
                                           <div class="col-sm-7 mt-2 ml-2 px-0">
                                           <h6 class="card-tittle text-dark">{{$comentar->user->nome}}</h6>
