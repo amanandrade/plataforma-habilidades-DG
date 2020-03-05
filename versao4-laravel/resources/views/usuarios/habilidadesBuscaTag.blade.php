@@ -74,7 +74,6 @@
                                                     <button type="button" class="btn btn-light text-primary py-1 px-4" data-toggle="modal" data-target="#perfil{{$usuario['id']}}">
                                                         Perfil
                                                     </button>
-                                                    <a href="#" class="btn btn-info py-1 px-4">Chat</a>
                                                 </div>
                                             
                                             </div>
