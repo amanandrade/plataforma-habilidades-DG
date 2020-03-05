@@ -60,7 +60,7 @@
                                     <div class="card mb-3" style="width: 22rem;">
                                         <div class="card-body">
                                             <div class="row align-items-center mx-auto">
-                                                <img class="card-img-top rounded-circle w-25" src="{{asset($user['foto'])}}"
+                                                <img class="card-img-top rounded-circle" style="width:80px; height:80px; object-fit: cover;" src="{{asset($user['foto'])}}"
                                                     alt="">
                                                 <h5 class="card-title my-0 ml-2"> {{$user['nome']}}</h5>
                                             </div>
@@ -116,7 +116,7 @@
 
                                         <div class="d-flex justify-content-center align-items-center flex-column flex-wrap ">
                                             {{-- <img id="perfil" src="./img/foto.png" alt="" class="rounded-circle  mt-4"> --}}
-                                            <img class="card-img-top rounded-circle w-25 m-2" src="{{asset($user['foto'])}}"alt="">
+                                            <img class="card-img-top rounded-circle m-2" style="width:80px; height:80px; object-fit: cover;" src="{{asset($user['foto'])}}"alt="">
                                             <h4 id="nome" class="text-center text">{{$user['nome']}}</h4>
                                             <span id="nome" class="text-center w-100">Curso: {{$user->curso->nome_curso}} - {{$user->statu->nome_status}}</span>
                                             <span id="email" class="mb-2 text">{{$user['email']}}</span>
